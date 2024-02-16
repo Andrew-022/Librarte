@@ -1,0 +1,29 @@
+.author{
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+}
+.picture{
+    width: 25%;
+    height: 400px;
+}
+.information{
+    padding-left: 20px;
+}
+
+.bookPreview{
+    width: 15%;
+    text-align: center;
+    font-size: 70%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.bookCover{
+    width: 100%;
+}
+
+.books{
+    display: flex;
+    flex-direction: row;
+}
