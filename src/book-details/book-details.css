@@ -1,0 +1,33 @@
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+}
+
+.line {
+    height: 2px;
+    background-color: black;
+    flex-grow: 1;
+}
+
+.centered-word {
+    margin: 0 20px;
+    color: #342E37;
+    font-size: 130%;
+}
+
+.ficha-tecnica{
+    display: flex;
+    width: 100%
+}
+.subdiv{
+    flex: 1;
+}
+
+.caracteristicas{
+    flex: 1;
+    font-weight: bold;
+}
+
