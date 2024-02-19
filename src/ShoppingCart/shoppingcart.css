@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0 15%;
+}
+.shopping-cart-container {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    padding-bottom: 10%;
+    padding-top: 2%;
+}
+.checkout-container {
+    flex-basis: 30%;
+    height: 45%;
+    padding: 2% 2% 1%;
+    border: 1px solid #77CF7C;
+    border-radius: 5px;
+}
+.checkout-container h2 {
+    text-align: center;
+    margin-bottom: 5%;
+    margin-top: 0;
+}
+.items-container {
+    flex-basis: 70%;
+    border: 1px solid #77CF7C;
+    border-radius: 5px;
+}
+h1 {
+    text-align: start;
+    margin: 0;
+}
+.cart-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between; /* Alinear los elementos de los ítems */
+    border-bottom: 1px solid #77CF7C;
+    padding: 3% 2%;
+}
+.cart-item:last-child {
+    border-bottom: none;
+    padding-bottom: 3%;
+}
+.item-image {
+    width: 80px;
+    height: 100px;
+    margin-right: 20px;
+    margin-left: 10px;
+    background-color: #625f5f;
+    border: 1px solid #090707;
+}
+.item-details {
+    display: flex;
+    flex-grow: 1; /* Hacer que la sección de detalles crezca */
+}
+
+.item-details-left {
+    display: flex;
+    flex-direction: column; /* Apilar elementos verticalmente */
+    margin-right: 50px; /* Agregar espacio entre la columna de texto y los botones */
+}
+
+.item-details-right {
+    display: flex;
+    align-items: center; /* Centrar elementos verticalmente */
+}
+.item-title {
+    font-weight: bold;
+    margin: 0;
+}
+
+.item-author {
+    color: #888;
+    margin: 0;
+}
+.item-price {
+    font-size: 1.1em;
+    margin-top: 5%;
+}
+.summary {
+    padding: 1%;
+}
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.summary-item p {
+    margin: 0.15%;
+}
+.total {
+    font-size: 1.25em;
+    font-weight: bold;
+    margin-top: 4%;
+}
+.pay-button {
+    display: block;
+    width: 100%;
+    padding: 4%;
+    background-color: #77CF7C;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 4% 2% 0;
+}
+.pay-button:hover {
+    color: #130f0f;
+}
+
+.item-controls-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Alinear los botones a la derecha */
+    border: 1px solid #77CF7C ; /* Estilo del rectángulo */
+    padding: 5px; /* Espacio alrededor de los botones */
+    border-radius: 5px; /* Borde redondeado */
+    margin-top: 5%;
+}
+
+.item-controls button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    margin-left: 5px; /* Agregar margen entre los botones */
+}
+
+.item-controls .item-quantity {
+    padding: 0 5px;
+    font-size: 1em;
+}
+
+.fa-solid.fa-trash {
+    align-self: center;
+    color: red;
+    margin-right: 2%;
+}
+
+.fa-solid.fa-trash:hover {
+    cursor: pointer;
+}
+
+
