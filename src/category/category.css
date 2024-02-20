@@ -1,0 +1,42 @@
+
+.titulo-categorias {
+    background-color: #77CF7C; /* Color de fondo verde */
+    text-align: center;
+    width: 15%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: start;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.item:last-child {
+    margin-bottom: 0;
+}
+
+.icono {
+    margin-left: 5px;
+}
