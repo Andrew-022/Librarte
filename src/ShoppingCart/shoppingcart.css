@@ -43,7 +43,7 @@ h1 {
 }
 .item-image {
     width: 13%;
-    height: 100px;
+    height: 90%;
     margin-right: 3%;
     margin-left: 2%;
     background-color: #625f5f;
@@ -62,7 +62,6 @@ h1 {
 
 .item-details-right {
     display: flex;
-    align-items: center; /* Centrar elementos verticalmente */
 }
 .item-title {
     font-weight: bold;
@@ -113,12 +112,12 @@ h1 {
 
 .item-controls-container {
     display: flex;
-    align-items: center;
     justify-content: flex-end; /* Alinear los botones a la derecha */
     border: 1px solid #77CF7C ; /* Estilo del rectángulo */
     padding: 0.75%; /* Espacio alrededor de los botones */
     border-radius: 5%; /* Borde redondeado */
-    margin-top: 5%;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .item-controls button {
@@ -135,9 +134,8 @@ h1 {
 }
 
 .fa-solid.fa-trash {
-    align-self: center;
     color: red;
-    margin-right: 2%;
+    margin: auto 2% auto auto;
 }
 
 .fa-solid.fa-trash:hover {
