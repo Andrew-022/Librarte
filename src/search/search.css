@@ -1,0 +1,47 @@
+body{
+    margin: 0 15%;
+}
+
+main {
+    font-style: italic; /* Texto en cursiva */
+}
+
+strong {
+    font-weight: bold; /* Texto en negrita */
+}
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    align-items: center;
+}
+
+.bookPreview {
+    width: calc(16.2% - 2%);
+    padding: 1% 2% 1%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1%;
+}
+.bookPreview p{
+    margin: 0;
+}
+.bookPreview b{
+    text-align: center;
+}
+
+.bookCover {
+    width: 100%;
+    height: auto;
+}
+
+.bookInfo {
+    margin-top: 1%;
+}
+
+.bookPrice {
+    font-weight: bold;
+    text-align: center;
+    padding: 3%;
+}
