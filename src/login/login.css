@@ -1,0 +1,69 @@
+body{
+    margin: 0 15%;
+}
+main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column; /* Alinear los elementos verticalmente */
+    background-color: #fff;
+    border-radius: 1%;
+    padding: 5%;
+    width: 50%;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    width: 50%;
+}
+
+.container button {
+    padding: 2% 3%;
+    border: none;
+    cursor: pointer;
+    flex: 1;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+button.active {
+    background-color: #77CF7C;
+    color: #fff;
+}
+
+.btn-inicio {
+    background-color: #77CF7C;
+    color: #fff;
+    width: 50%; /* Ancho del botón igual al 100% del contenedor */
+    border: none;
+    padding: 2%; /* Ajustar padding según sea necesario */
+    border-radius: 3%;
+}
+
+.btn-inicio:hover {
+    color: black;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    margin-bottom: 2%;
+    padding: 2%; /* Establecer padding para los campos de entrada de texto */
+    border: none;
+    background-color: #E5E5E5;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.inactive:hover {
+    background-color: #9bea9f;
+    color: white;
+}
