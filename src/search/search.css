@@ -18,7 +18,7 @@ strong {
 }
 
 .bookPreview {
-    width: calc(16.2% - 2%);
+    width: calc(14.2%);
     padding: 1% 2% 1%;
     border: 1px solid #ccc;
     border-radius: 5px;
