@@ -36,7 +36,7 @@
     padding-top: 2px;
 }
 
-#nOpiniones{
+.nOpiniones{
     margin: 0;
     color: #7B757E;
     font-size: 80%;
@@ -71,7 +71,8 @@
     font-size: 70%;
 }
 
-.añadir-a-la-cesta{
+.boton-generico{
+    padding: 5px ;
     color: #93D497;
     background-color: white;
     font-weight: bold;
@@ -82,7 +83,7 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.añadir-a-la-cesta:active {
+.boton-generico:active {
     transform: scale(0.9); /* Reduce el tamaño del botón al hacer clic */
 }
 
@@ -133,3 +134,65 @@
     font-weight: bold;
 }
 
+
+.opiniones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.puntuacion-circulo{
+    width: 100px; /* Ajusta el tamaño del círculo según tus necesidades */
+    height: 100px;
+    border-radius: 50%; /* Hace que el borde sea redondeado, creando un círculo */
+    background-color: #93D497; /* Puedes cambiar el color de fondo según tus preferencias */
+    text-align: center; /* Centra el contenido del párrafo dentro del círculo */
+    line-height: 100px;
+    font-size: 200%;
+    font-weight: bold;
+    margin: 0;
+}
+
+#boton-opinion{
+    width: 200px;
+}
+.puntuacion-con-estrellas{
+    display: flex;
+    flex-direction: row;
+}
+
+.estrellas-con-opiniones-column{
+    margin-bottom: auto;
+    margin-top: auto;
+    padding: 5px;
+}
+
+
+#rating-opiniones{
+    font-size: 20px;
+}
+
+.profile-picture{
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    border: 1px solid gray;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    margin-bottom: auto;
+    margin-right: 10px;
+}
+
+.cajon-comentarios{
+    display: flex;
+    padding-top: 10px;
+}
+
+.username{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    font-weight: bold;
+    color: #7B757E;
+}
