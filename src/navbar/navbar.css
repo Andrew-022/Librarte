@@ -58,7 +58,7 @@
     height: 25px;
 }
 
-.input {
+input {
     display: flex;
     width: 400px;
     padding: 8px;
@@ -71,9 +71,11 @@
 }
 
 .account,
-.cart {
+.cart,
+.session {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-left: 20px;
 }
 
