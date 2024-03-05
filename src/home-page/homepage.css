@@ -1,0 +1,121 @@
+main {
+    margin-top: 2rem;
+}
+.carousel-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.carousel {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.carousel-arrow {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+    width: 5%;
+    display: flex;
+}
+
+.carousel-arrow.right{
+    justify-content: start;
+}
+
+.carousel-arrow.left{
+    justify-content: end;
+}
+
+.carousel-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.carousel-content img {
+    width: 100%;
+    height: auto;
+    padding: 0.5em;
+}
+
+.books {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+    margin-top: 1rem;
+}
+
+.books img {
+    width: 14%;
+    height: auto;
+    padding: 0.5em;
+}
+
+.recommended-books {
+    margin-top: 1rem;
+
+}
+
+.recommended-books.title {
+    display: flex;
+    justify-content: start;
+    padding-left: 1.3rem;
+}
+
+.recommended-books.title h1{
+    font-size: 1rem;
+}
+
+.recommended-books.title a{
+    color: red;
+}
+
+.recommended-books.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    margin-top: 0;
+}
+
+.recommended-books.content img{
+    width: 14%;
+    height: auto;
+    padding: 0.5em;
+}
+
+.new-releases {
+    margin-top: 1rem;
+}
+
+.new-releases.title {
+    display: flex;
+    justify-content: start;
+    padding-left: 1.3rem;
+}
+
+.new-releases.title h1{
+    font-size: 1rem;
+}
+
+.new-releases.title a{
+    color: red;
+}
+
+.new-releases.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    margin-top: 0;
+}
+
+.new-releases.content img{
+    width: 14%;
+    height: auto;
+    padding: 0.5em;
+}
