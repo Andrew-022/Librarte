@@ -58,7 +58,7 @@
     height: 25px;
 }
 
-input {
+.navbar input {
     display: flex;
     width: 400px;
     padding: 8px;

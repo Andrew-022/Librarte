@@ -55,66 +55,37 @@ main {
     padding: 0.5em;
 }
 
-.recommended-books {
+.recommended-books, .new-releases {
     margin-top: 1rem;
-
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-.recommended-books.title {
+.recommended-books.title, .new-releases.title {
     display: flex;
     justify-content: start;
     padding-left: 1.3rem;
 }
 
-.recommended-books.title h1{
+.recommended-books.title h1, .new-releases.title h1{
     font-size: 1rem;
 }
 
-.recommended-books.title a{
+.recommended-books.title a, .new-releases.title a{
     color: red;
 }
 
-.recommended-books.content {
+.recommended-books.content, .new-releases.content {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: row wrap;
     margin-top: 0;
+    width: 100%;
 }
 
-.recommended-books.content img{
-    width: 14%;
-    height: auto;
-    padding: 0.5em;
-}
-
-.new-releases {
-    margin-top: 1rem;
-}
-
-.new-releases.title {
-    display: flex;
-    justify-content: start;
-    padding-left: 1.3rem;
-}
-
-.new-releases.title h1{
-    font-size: 1rem;
-}
-
-.new-releases.title a{
-    color: red;
-}
-
-.new-releases.content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: row wrap;
-    margin-top: 0;
-}
-
-.new-releases.content img{
+.recommended-books.content img, .new-releases.content img{
     width: 14%;
     height: auto;
     padding: 0.5em;

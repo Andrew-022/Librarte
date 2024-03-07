@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
-        <link rel="stylesheet" href="profile.css">
+        <link rel="stylesheet" type="text/css" href="Librarte/src/profile/profile.css">
     </head>
 
     <body>
@@ -30,9 +30,22 @@
                 <h1>Mis Datos</h1>
                 <div class="personal-data">
                     <h2>Datos personales y de contacto</h2>
-                    <p>Nombre y apellidos:</p>
-                    <p>Nombre de usuario:</p>
-                    <p>Email:</p>
+                    <label>
+                        <p>Nombre:</p>
+                        <input type="text"/>
+                    </label>
+                    <label>
+                        <p>Apellidos:</p>
+                        <input type="text"/>
+                    </label>
+                    <label>
+                        <p>Usuario:</p>
+                        <input type="text"/>
+                    </label>
+                    <label>
+                        <p>Email:</p>
+                        <input type="text"/>
+                    </label>
                 </div>
                 <div class="address">
                     <h2>Dirección de envío</h2>
@@ -42,7 +55,9 @@
                     </div>
                     <div class="add-address">
                         <i class="fa-solid fa-pen-to-square"></i>
-                        <input type="text" placeholder="Añadir nueva dirección"/>
+                        <label>
+                            <input type="text" placeholder="Añadir nueva dirección"/>
+                        </label>
                     </div>
                 </div>
                 <div class="password">

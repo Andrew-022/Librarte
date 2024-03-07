@@ -1,0 +1,20 @@
+.flex-container {
+    display:flex;
+    width: 100%;
+}
+
+.left-margin, .right-margin {
+    display: flex;
+    width: 15%;
+    flex-direction: row;
+}
+
+.left-margin {
+    align-items: flex-start;
+}
+.right-margin {
+    align-items: flex-end;
+}
+.content {
+    width: 70%;
+}
