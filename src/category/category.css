@@ -1,15 +1,35 @@
 
+
+.main-category{
+    display: flex;
+    flex-direction: row;
+}
+
+.tittle{
+    display: flex;
+    justify-content: center;
+}
 .titulo-categorias {
     background-color: #77CF7C; /* Color de fondo verde */
     text-align: center;
-    width: 15%;
 }
 
+.ajustes{
+    width: 20%;
+}
+
+.ajustes ul li {
+    cursor: pointer;
+}
+
+.resultados{
+    width: 80%;
+    padding-left: 20px;
+}
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    text-align: start;
 }
 
 li {
@@ -29,8 +49,10 @@ a {
 
 .item {
     display: flex;
-    align-items: center;
+    width: 100%;
+    height: 100%;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .item:last-child {
@@ -38,5 +60,61 @@ a {
 }
 
 .icono {
-    margin-left: 5px;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.parametro{
+    margin: 0px;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.sort{
+    display: flex;
+}
+
+strong {
+    font-weight: bold; /* Texto en negrita */
+}
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2%;
+    align-items: center;
+}
+
+.bookPreview {
+    width: calc(20.25% - 2%);
+    padding: 1% 2% 1%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 1%;
+    cursor: pointer;
+}
+.bookPreview p{
+    margin: 0;
+}
+.bookPreview b{
+    text-align: center;
+}
+
+.bookCover {
+    width: 100%;
+    height: auto;
+}
+
+.bookInfo {
+    margin-top: 1%;
+}
+
+.bookPrice {
+    font-weight: bold;
+    text-align: center;
+    padding: 3%;
 }
