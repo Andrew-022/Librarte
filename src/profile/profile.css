@@ -1,5 +1,5 @@
 main {
-    display: flex;
+    display: flex !important;
     flex-direction: row;
     flex-wrap: nowrap;
     padding: 0.1em 0.1em 0.1em 0.1em;
@@ -34,7 +34,7 @@ main {
     padding: 5px 0;
 }
 
-.content {
+.profile-content {
     display: flex;
     flex-direction: column;
     width: 80%;
