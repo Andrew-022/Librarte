@@ -1,6 +1,4 @@
-body{
-    margin: 0 15%;
-}
+
 main {
     height: 100%;
     display: flex;
@@ -9,28 +7,33 @@ main {
     align-items: center;
     margin-top: 10%;
 }
-
+.content{
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
 
 .formulario {
     display: flex;
     background-color: #fff;
     border-radius: 1%;
     padding: 5%;
-    width: 50%;
+    width: 60%;
     text-align: center;
+    margin: auto;
 }
 
 .container {
     display: flex;
-    width: 50%;
+    justify-content: center;
+    width: 50vh;
 }
 
 .container button {
     padding: 2% 3%;
     border: none;
     cursor: pointer;
-    flex: 1;
-    width: 50%;
+    width: 40vh;
     box-sizing: border-box;
 }
 

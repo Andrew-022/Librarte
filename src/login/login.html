@@ -4,26 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Sheila Cazorla Rodríguez">
-    <link rel="stylesheet" href="login.css">
+    <base href="/">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="Librarte/src/js/utils.js"></script>
+    <link rel="stylesheet" href="Librarte/src/login/login.css">
+    <link rel="stylesheet" href="Librarte/src/index.css">
     <title>LibrArte</title>
 </head>
 <body>
-    <header></header>
-    <main>
-        <div class="container">
-            <button id="btnRegistro" class="inactive">Registro</button>
-            <button id="btnInicioSesion" class="active">Inicio de Sesión</button>
+    <header>
+        <script>include("header","Librarte/src/navbar/navbar.html")</script>
+    </header>
+    <main class="flex-container">
+        <div class="left-margin">
         </div>
-        <div id="registroForm" class="formulario">
-            <form>
-                <input type="email" placeholder="Correo electrónico" required>
-                <input type="password" placeholder="Contraseña" required>
-                <button type="submit" class="btn-inicio">Iniciar sesión</button>
-            </form>
+        <div class="content">
+            <div class="container">
+                <button id="btnRegistro" class="inactive">Registro</button>
+                <button id="btnInicioSesion" class="active">Inicio de Sesión</button>
+            </div>
+            <div id="registroForm" class="formulario">
+                <form>
+                    <input type="email" placeholder="Correo electrónico" required>
+                    <input type="password" placeholder="Contraseña" required>
+                    <button type="submit" class="btn-inicio">Iniciar sesión</button>
+                </form>
+            </div>
+        </div>
+        <div class="right-margin">
         </div>
     </main>
-    <footer>
-
-    </footer>
 </body>
 </html>
