@@ -2,12 +2,13 @@ function include(tag, file) {
     $(tag).load(file);
 }
 function includeByQuery(tag, query, file) {
+    const template = document.querySelector(tag);
     fetch(file)
         .then(response => response.text())
         .then(html => {
             const parser = new DOMParser();
             const parsedHTML = parser.parseFromString(html, 'text/html');
-            const content = parsedHTML.querySelector('#' + query);
+            const content = parsedHTML.querySelector(query);
             template.appendChild(content);
         })
         .catch(error => console.error('Error al cargar el archivo: ', error));
