@@ -1,0 +1,14 @@
+.recommended-books.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    margin-top: 0;
+    width: 100%;
+}
+
+.recommended-books.content img{
+    width: 14%;
+    height: auto;
+    padding: 0.5em;
+}
