@@ -7,6 +7,7 @@
     <base href="/">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="Librarte/src/js/utils.js"></script>
+    <script src="Librarte/src/register/register.js"></script>
     <link rel="stylesheet" href="Librarte/src/register/register.css">
     <link rel="stylesheet" href="Librarte/src/index.css">
     <title>LibrArte</title>
@@ -24,12 +25,12 @@
                 <button id="btnInicioSesion" class="inactive">Inicio de Sesión
                 </button>
             </div>
-            <div id="registroForm" class="formulario">
-                <form>
-                    <input type="text" placeholder="Nombre" required>
-                    <input type="text" placeholder="Apellidos" required>
-                    <input type="email" placeholder="Correo electrónico" required>
-                    <input type="password" placeholder="Contraseña" required>
+            <div  class="formulario">
+                <form id="registerForm">
+                    <input type="text" id="name" name="name" placeholder="Nombre" pattern="[a-zA-ZáéíóúÁÉÍÓÚ\s]+" title="Ingrese un nombre válido (solo letras y espacios)" required>
+                    <input type="text" id="last_name" name="last-name"  placeholder="Apellidos" pattern="[a-zA-ZáéíóúÁÉÍÓÚ\s]+" title="Ingrese apellidos válidos (solo letras y espacios)" required>
+                    <input type="email" id="email" name="email" placeholder="Correo electrónico" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Ingrese una dirección de correo electrónico válida" required>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" minlength="8" maxlength="16" title="La contraseña debe tener al menos 8 caracteres" required>
                     <button type="submit" class="btn-registro">Registrarse</button>
                 </form>
             </div>
