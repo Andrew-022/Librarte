@@ -5,14 +5,15 @@
 }
 .picture{
     width: 25%;
-    height: 400px;
+    height: auto;
+    object-fit: contain;
 }
 .information{
     padding-left: 20px;
 }
 
 .bookPreview{
-    width: 15%;
+    width: 100%;
     text-align: center;
     font-size: 70%;
     padding: 5px;
@@ -21,13 +22,22 @@
 
 .bookCover{
     width: 100%;
+    object-fit: contain;
 }
 
 .books{
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
 }
 
 p{
     text-align: justify;
+}
+@media screen and (max-width: 600px) {
+    .author{
+        display: flex;
+        flex-direction: column;
+        column-count: 1;
+    }
 }
