@@ -2,13 +2,12 @@ $(document).ready(function() {
     fetch("Librarte/src/shoppingcart/shoppingcart.json")
         .then(response => response.json())
         .then(data => {
-            var productos = data.productos;
+            const productos = data.productos;
 
-            // Iterar sobre cada producto y agregarlo al carrito
             productos.forEach(function(producto) {
-                var item = `
+                const item = `
                     <section class="cart-item">
-                        <img class="item-image" src="${producto.imagen}">
+                        <img class="item-image" src="${producto.imagen}" alt="Portada libro">
                         <section class="item-details">
                             <div class="item-details-left">
                                 <p class="item-title">${producto.titulo}</p>
@@ -28,11 +27,9 @@ $(document).ready(function() {
                 $(".items-container").append(item);
             });
 
-            // Calcular subtotal
             var subtotal = productos.reduce((total, producto) => total + producto.precio, 0);
             $(".summary-item:nth-child(1) .summary-price").text(subtotal.toFixed(2)+ "€");
 
-            // Calcular total (asumiendo que los gastos de envío son 5€)
             var total = subtotal + 5;
             $(".summary-item.total .summary-price.total-price").text(total.toFixed(2) + "€");
         })
