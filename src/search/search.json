@@ -1,0 +1,40 @@
+{
+  "libros": [
+    {
+      "titulo": "La Chica Del Verano",
+      "autor": "La Vecina Rubia",
+      "precio": 18.90,
+      "imagen": "https://m.media-amazon.com/images/I/71ZPSEXuwtL._SY466_.jpg"
+    },
+    {
+      "titulo": "La Chica Del Verano",
+      "autor": "La Vecina Rubia",
+      "precio": 18.90,
+      "imagen": "https://m.media-amazon.com/images/I/71ZPSEXuwtL._SY466_.jpg"
+    },
+    {
+      "titulo": "La Chica Del Verano",
+      "autor": "La Vecina Rubia",
+      "precio": 18.90,
+      "imagen": "https://m.media-amazon.com/images/I/71ZPSEXuwtL._SY466_.jpg"
+    },
+    {
+      "titulo": "La Chica Del Verano",
+      "autor": "La Vecina Rubia",
+      "precio": 18.90,
+      "imagen": "https://m.media-amazon.com/images/I/71ZPSEXuwtL._SY466_.jpg"
+    },
+    {
+      "titulo": "La Chica Del Verano",
+      "autor": "La Vecina Rubia",
+      "precio": 18.90,
+      "imagen": "https://m.media-amazon.com/images/I/71ZPSEXuwtL._SY466_.jpg"
+    },
+    {
+      "titulo": "La Chica Del Verano",
+      "autor": "La Vecina Rubia",
+      "precio": 18.90,
+      "imagen": "https://m.media-amazon.com/images/I/71ZPSEXuwtL._SY466_.jpg"
+    }
+  ]
+}

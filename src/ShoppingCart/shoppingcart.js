@@ -7,7 +7,7 @@ $(document).ready(function() {
             productos.forEach(function(producto) {
                 const item = `
                     <section class="cart-item">
-                        <img class="item-image" src="${producto.imagen}" alt="Portada libro">
+                        <img class="item-image" src="${producto.imagen}" alt="Portada libroyy">
                         <section class="item-details">
                             <div class="item-details-left">
                                 <p class="item-title">${producto.titulo}</p>
