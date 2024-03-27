@@ -18,6 +18,7 @@ main {
     background-color: #fff;
     border-radius: 1%;
     padding: 5%;
+    width: 60%;
     text-align: center;
     margin: auto;
 }
@@ -44,9 +45,9 @@ button.active {
 .btn-inicio {
     background-color: #77CF7C;
     color: #fff;
-    width: 50%; /* Ancho del botón igual al 100% del contenedor */
+    width: 50%;
     border: none;
-    padding: 2%; /* Ajustar padding según sea necesario */
+    padding: 2%;
     border-radius: 3%;
 }
 
@@ -58,7 +59,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
     margin-bottom: 2%;
-    padding: 2%; /* Establecer padding para los campos de entrada de texto */
+    padding: 2%;
     border: none;
     background-color: #E5E5E5;
     width: 100%;
@@ -115,5 +116,6 @@ input[type="password"] {
     .btn-inicio {
         background-color: #77CF7C;
         padding: 5%;
+        margin-top: 3%;
     }
 }
