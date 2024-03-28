@@ -70,3 +70,7 @@ input[type="password"] {
     background-color: #9bea9f;
     color: white;
 }
+.loginmsg{
+    color: red;
+    margin: auto;
+}
