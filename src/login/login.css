@@ -75,6 +75,22 @@ input[type="password"] {
     margin: auto;
 }
 
+.welcome-message.login {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome-message.login h1 {
+    color: #9bea9f;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.welcome-message.login p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
 @media only screen and (max-width: 1100px) {
     .content{
         margin-top: 15%;
@@ -117,5 +133,9 @@ input[type="password"] {
         background-color: #77CF7C;
         padding: 5%;
         margin-top: 3%;
+    }
+
+    .welcome-message.login p {
+        display: none;
     }
 }

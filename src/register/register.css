@@ -55,6 +55,21 @@ button.active {
     color: black;
 }
 
+.welcome-message.register {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome-message.register h1 {
+    color: #9bea9f;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.welcome-message.register p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
 
 input[type="text"],
 input[type="email"],
@@ -113,5 +128,8 @@ input[type="password"] {
     .btn-registro {
         background-color: #77CF7C;
         padding: 5%;
+    }
+    .welcome-message.register p {
+        display: none;
     }
 }
