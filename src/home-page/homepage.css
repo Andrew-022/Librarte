@@ -76,7 +76,7 @@ main {
     color: red;
 }
 
-.recommended-books.content, .new-releases.content {
+.recommended-books-content, .new-releases-content {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,8 +85,10 @@ main {
     width: 100%;
 }
 
-.recommended-books.content img, .new-releases.content img{
+.recommended-books-content img, .new-releases-content img{
     width: 14%;
     height: auto;
     padding: 0.5em;
 }
+
+

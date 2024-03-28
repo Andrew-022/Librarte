@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="Librarte/src/js/utils.js"></script>
+        <script src="Librarte/src/js/utils.js" type="application/javascript"></script>
         <link rel="stylesheet" type="text/css" href="Librarte/src/index.css">
         <link rel="stylesheet" href="Librarte/src/home-page/homepage.css">
     </head>
@@ -45,13 +45,15 @@
                     <img src="Librarte/src/assets/books/El_Hombre_Bicentenario_Isaac_Asimov.jpg" alt="Imagen del libro"/>
                     <img src="Librarte/src/assets/books/I_Robot_Isaac_Asimov.jpg" alt="Imagen del libro"/>
                 </article>
+
                 <article class="recommended-books">
                     <div class="recommended-books title">
                         <h1>Recomendados &nbsp;<a href="#">Ver más</a></h1>
                     </div>
-                    <div class="recommended-books-content">
+                    <div class="recommended-books-content" id="recommended-books-content">
                         <script>
-                            include(".recommended-books-content", "Librarte/src/book-collection/book-collection.html")
+                            include(".recommended-books-content", "Librarte/src/book-collection/book-collection.html");
+                            fetchBooksOnlyImages("recommended-books-content", 4)
                         </script>
                     </div>
                 </article>
@@ -60,12 +62,14 @@
                     <div class="new-releases title">
                         <h1>Novedades &nbsp;<a href="#">Ver más</a></h1>
                     </div>
-                    <div class="new-releases-content">
+                    <div class="new-releases-content" id="new-releases-content">
                         <script>
                             include(".new-releases-content", "Librarte/src/book-collection/book-collection.html")
+                            fetchBooksOnlyImages("new-releases-content", 4)
                         </script>
                     </div>
                 </article>
+
             </div>
             <div class="right-margin"></div>
         </main>

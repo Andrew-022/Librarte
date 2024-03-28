@@ -1,17 +1,40 @@
 
 .book{
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     padding-top: 10px;
     flex: 1;
+    width: 100%;
 }
+.book-picture {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: flex-start;
+    width: 25%;
+}
+.book-picture img{
+    min-width: 50%;
+    width: 100%;
+    height: auto;
+}
+
 .picture{
     width: 25%;
     height: 400px;
 }
 .sinopsis{
+    display: flex;
+    flex-flow: column wrap;
     padding-left: 20px;
+    flex: 2;
+    width: 60%;
+}
+.compra {
+    display: flex;
+    flex-direction: column;
     flex: 1;
+    width: 15%;
 }
 
 .title-sinopsis{
@@ -45,12 +68,6 @@
 .leerMas{
     color: #93D497;
     cursor: pointer;
-}
-
-.compra {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
 }
 
 .datosprecio {

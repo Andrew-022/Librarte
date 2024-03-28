@@ -1,4 +1,4 @@
-.recommended-books.content{
+.book-collection.content{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,7 +7,7 @@
     width: 100%;
 }
 
-.recommended-books.content img{
+.book-collection.content img{
     width: 14%;
     height: auto;
     padding: 0.5em;
