@@ -185,6 +185,7 @@
     overflow: hidden;
     margin-bottom: auto;
     margin-right: 10px;
+    aspect-ratio: 1 / 1;
 }
 
 .cajon-comentario{
@@ -192,6 +193,9 @@
     padding-top: 10px;
 }
 
+.comentario{
+    flex: 1;
+}
 .username{
     margin-bottom: 5px;
     margin-top: 5px;
@@ -201,4 +205,14 @@
 
 .author-details .content{
     width: 100%;
+}
+
+.review{
+    margin-top: 5px;
+}
+
+.publicationDateReview{
+    margin: 0;
+    color: #7B757E;
+    padding-left: 5px;
 }
