@@ -53,7 +53,18 @@
 
             <section class="resultados">
                 <div class="sort">
-                    <p style="padding-left: 10px">300 resultados</p>
+                    <p style="padding-left: 10px; margin-right: auto">300 resultados</p>
+                    <p>Ordenar por: </p>
+                    <div class="dropdown">
+                        <button id="selectedSort" onclick="toggleDropdown()" class="dropbtn">Mas valorados</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a onclick="changeSort(0)">Mas valorados</a>
+                            <a onclick="changeSort(1)">Titulo A-Z</a>
+                            <a onclick="changeSort(2)">Titulo Z-A</a>
+                            <a onclick="changeSort(3)">Precio ascendente</a>
+                            <a onclick="changeSort(4)">Precio descendente</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="books">
                 </div>
