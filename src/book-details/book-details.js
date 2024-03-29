@@ -20,7 +20,7 @@ $(document).ready(function() {
                 return libros.find(libro => libro.id === id);
             }
 
-            const book = buscarLibroPorId(4);
+            const book = buscarLibroPorId(1);
 
             const tittle = book.title;
             const sinopsis = book.sinopsis;
@@ -42,6 +42,7 @@ $(document).ready(function() {
 
             document.getElementById('tittle').textContent = tittle;
             document.getElementById("tittleSpan").textContent = tittle;
+            document.getElementById("tittleSpan2").textContent = tittle;
             document.getElementById('cover').src = cover;
             document.getElementById('sinopsisinfo').textContent = sinopsis;
             document.getElementById("editorial").textContent = editorial + " " + isbn;
