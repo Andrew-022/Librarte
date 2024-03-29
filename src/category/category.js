@@ -41,13 +41,13 @@ const sorts=["Mas valorados", "Titulo A-Z", "Titulo Z-A", "Precio ascendente", "
 
 
 function changeSort(id) {
-    var sort = document.getElementById("selectedSort");
-    sort.textContent = sorts[id];
+    document.getElementById("selectedSort").textContent = sorts[id];
+    document.getElementById("selectedSortMobile").textContent  = sorts[id];
 }
 
 
-function toggleDropdown() {
-    var dropdown = document.getElementById("myDropdown");
+function toggleDropdown(id) {
+    var dropdown = document.getElementById(id);
     dropdown.classList.toggle("show");
 }
 // Cierra el menú desplegable si el usuario hace clic fuera de él

@@ -66,7 +66,7 @@ a {
 }
 
 .parametro{
-    margin: 0px;
+    margin: 0;
 }
 
 
@@ -164,12 +164,45 @@ strong {
     display: block;
 }
 
+.ajustes-mobile{
+    display: none;
+}
 
-
+.filter-container{
+    display: flex;
+    flex-direction: row;
+}
 @media only screen and (max-width: 1100px) {
     .books{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 5px;
+    }
+
+    .main-category{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ajustes{
+        display: none;
+    }
+
+    .ajustes-mobile{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ordenar{
+        display: none;
+    }
+
+    #selectedSort{
+        display: none;
+    }
+
+    .dropdown{
+        width: 100%;
+        padding: 5px;
     }
 }

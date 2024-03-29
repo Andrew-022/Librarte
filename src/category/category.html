@@ -13,11 +13,7 @@
 </head>
 <body>
 <header>
-    <div class="navbar">
-        <script>
-            include(".navbar", "Librarte/src/navbar/navbar.html")
-        </script>
-    </div>
+
 </header>
 <div class="flex-container">
     <div class ="left-margin"></div>
@@ -51,12 +47,45 @@
                 </div>
             </section>
 
+            <section class="ajustes-mobile">
+                <div class="filter-container">
+                    <div class="dropdown">
+                        <button id="Categorias" onclick="toggleDropdown('myDropdownCategory')" class="dropbtn" >Categorías</button>
+                        <div id="myDropdownCategory" class="dropdown-content">
+                            <a >Imprescindibles</a>
+                            <a >Ficción</a>
+                            <a >Cómic y Manga</a>
+                            <a >No Ficción</a>
+                            <a >Infantil</a>
+                            <a >Fantasía</a>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button id="Filtros" onclick="toggleDropdown('myDropdownFilters')" class="dropbtn">Filtros</button>
+                        <div id="myDropdownFilters" class="dropdown-content">
+                            <a>Precio</a>
+                            <a>Idioma</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button id="selectedSortMobile" onclick="toggleDropdown('myDropdownMobile')" class="dropbtn">Mas valorados</button>
+                    <div id="myDropdownMobile" class="dropdown-content">
+                        <a onclick="changeSort(0)">Mas valorados</a>
+                        <a onclick="changeSort(1)">Titulo A-Z</a>
+                        <a onclick="changeSort(2)">Titulo Z-A</a>
+                        <a onclick="changeSort(3)">Precio ascendente</a>
+                        <a onclick="changeSort(4)">Precio descendente</a>
+                    </div>
+                </div>
+            </section>
+
             <section class="resultados">
                 <div class="sort">
-                    <p style="padding-left: 10px; margin-right: auto">300 resultados</p>
-                    <p>Ordenar por: </p>
+                    <p style="padding-left: 10px; margin-right: auto; width: 100%">300 resultados</p>
+                    <p class="ordenar">Ordenar por: </p>
                     <div class="dropdown">
-                        <button id="selectedSort" onclick="toggleDropdown()" class="dropbtn">Mas valorados</button>
+                        <button id="selectedSort" onclick="toggleDropdown('myDropdown')" class="dropbtn">Mas valorados</button>
                         <div id="myDropdown" class="dropdown-content">
                             <a onclick="changeSort(0)">Mas valorados</a>
                             <a onclick="changeSort(1)">Titulo A-Z</a>
