@@ -1,7 +1,7 @@
 function include(tag, file) {
     $(tag).load(file);
 }
-function includeByQuery(tag, query, file) {
+function includeByQuery(tag, query, file, jsFile) {
     const template = document.querySelector(tag);
     fetch(file)
         .then(response => response.text())
@@ -21,4 +21,11 @@ function includeByQuery(tag, query, file) {
         document.head.appendChild(link);
     }
     loadCSS();
+
+    function loadJS() {
+        const script = document.createElement('script');
+        script.src = jsFile;
+        document.head.appendChild(script);
+    }
+    loadJS();
 }
