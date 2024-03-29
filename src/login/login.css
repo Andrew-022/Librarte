@@ -26,7 +26,7 @@ main {
 .container {
     display: flex;
     justify-content: center;
-    width: 50vh;
+    margin: auto;
 }
 
 .container button {
@@ -45,9 +45,9 @@ button.active {
 .btn-inicio {
     background-color: #77CF7C;
     color: #fff;
-    width: 50%; /* Ancho del botón igual al 100% del contenedor */
+    width: 50%;
     border: none;
-    padding: 2%; /* Ajustar padding según sea necesario */
+    padding: 2%;
     border-radius: 3%;
 }
 
@@ -59,7 +59,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"] {
     margin-bottom: 2%;
-    padding: 2%; /* Establecer padding para los campos de entrada de texto */
+    padding: 2%;
     border: none;
     background-color: #E5E5E5;
     width: 100%;
@@ -73,4 +73,69 @@ input[type="password"] {
 .loginmsg{
     color: red;
     margin: auto;
+}
+
+.welcome-message.login {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome-message.login h1 {
+    color: #9bea9f;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.welcome-message.login p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1100px) {
+    .content{
+        margin-top: 15%;
+    }
+    .container{
+        width: 90%;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 3%;
+
+    }
+    .container button {
+        padding: 3% 3%;
+    }
+    .btn-inicio {
+        background-color: #77CF7C;
+        padding: 3%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .content{
+        margin-top: 15%;
+    }
+    .container{
+        width: 90%;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 5%;
+
+    }
+    .container button {
+        padding: 5% 3%;
+    }
+    .btn-inicio {
+        background-color: #77CF7C;
+        padding: 5%;
+        margin-top: 3%;
+    }
+
+    .welcome-message.login p {
+        display: none;
+    }
 }
