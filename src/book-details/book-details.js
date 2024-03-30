@@ -1,18 +1,30 @@
-$(document).ready(function() {
-
-        function printStars(score, starcontainer) {
-                for (let i = 0; i < Math.round(score); i++){
-                        const star = document.createElement('i');
-                        star.className="fa-solid fa-star";
-                        starcontainer.appendChild(star);
-                }
-                for (let i = 0; i < 5-Math.round(score); i++){
-                        const star = document.createElement('i');
-                        star.className="fa-solid fa-star";
-                        star.style="color: grey";
-                        starcontainer.appendChild(star);
-                }
+function printStars(score, starcontainer) {
+        for (let i = 0; i < Math.round(score); i++){
+                const star = document.createElement('i');
+                star.className="fa-solid fa-star";
+                starcontainer.appendChild(star);
         }
+        for (let i = 0; i < 5-Math.round(score); i++){
+                const star = document.createElement('i');
+                star.className="fa-solid fa-star";
+                star.style="color: grey";
+                starcontainer.appendChild(star);
+        }
+}
+
+function changeStars(score, prefix) {
+        for (let i = 0; i < score; i++){
+                const star = document.getElementById(prefix + i);
+                star.style="color: yellow";
+        }
+        for (let i = 4; i >=score; i--){
+                console.log(prefix + i)
+                const star = document.getElementById(prefix + i);
+                star.style="color: grey";
+        }
+}
+
+$(document).ready(function() {
     fetch('Librarte/src/booksJson/books.json')
         .then(response => response.json())
         .then(libros => {
@@ -43,6 +55,7 @@ $(document).ready(function() {
             document.getElementById('tittle').textContent = tittle;
             document.getElementById("tittleSpan").textContent = tittle;
             document.getElementById("tittleSpan2").textContent = tittle;
+            document.getElementById("tittleSpan3").textContent = tittle;
             document.getElementById('cover').src = cover;
             document.getElementById('sinopsisinfo').textContent = sinopsis;
             document.getElementById("editorial").textContent = editorial + " " + isbn;
@@ -118,4 +131,18 @@ $(document).ready(function() {
                     });
             })
             .catch(error => console.error('Error al cargar el JSON de libros:', error));
+});
+
+const openPopupButton = document.getElementById('boton-opinion');
+const overlay = document.getElementById('overlay');
+const popup = document.getElementById('popup');
+
+openPopupButton.addEventListener('click', function() {
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
+        changeStars(1,"starReview");
+});
+overlay.addEventListener('click', function() {
+        overlay.style.display = 'none';
+        popup.style.display = 'none';
 });

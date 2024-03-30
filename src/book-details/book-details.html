@@ -119,6 +119,25 @@
         <div style="height: 30px;"></div>
     </div>
     <div class ="right-margin"></div>
+
+    <div id="overlay"></div>
+
+    <div id="popup">
+        <div class="popup-content">
+            <h2 class="commenttext" >¿Has leido <span id="tittleSpan3"></span>?</h2>
+            <p class="commenttext">deja tu opinion para ayudar a otros lectores</p>
+            <div id="starcontainercomment">
+                <i  onclick="changeStars(1,'starReview')" id="starReview0" class="fa-solid fa-star"></i>
+                <i onclick="changeStars(2,'starReview')" id="starReview1" class="fa-solid fa-star"></i>
+                <i onclick="changeStars(3,'starReview')" id="starReview2" class="fa-solid fa-star"></i>
+                <i onclick="changeStars(4,'starReview')" id="starReview3" class="fa-solid fa-star"></i>
+                <i onclick="changeStars(5,'starReview')" id="starReview4" class="fa-solid fa-star"></i>
+            </div>
+            <textarea id="commentInput" placeholder="¿Que te ha parecido"></textarea>
+            <button id="submitComment" class="boton-generico">Enviar</button>
+        </div>
+    </div>
+
 </div>
 </body>
 
