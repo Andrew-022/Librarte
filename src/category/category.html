@@ -19,7 +19,7 @@
     <div class ="left-margin"></div>
     <main class="content">
         <div class="tittle">
-            <h1 class="main-tittle-category">Libros de <span style="color: #77CF7C;" >Fantasía</span> </h1>
+            <h1 class="main-tittle-category">Libros de <span id="selectedCategory">Fantasía</span> </h1>
         </div>
 
         <article class="main-category">
@@ -27,12 +27,12 @@
             <section class="ajustes">
                 <p class="titulo-categorias">Categorías</p>
                 <ul>
-                    <li><a href="#">Imprescindibles</a></li>
-                    <li><a href="#">Ficción</a></li>
-                    <li><a href="#">Cómics y Manga</a></li>
-                    <li><a href="#">No Ficción</a></li>
-                    <li><a href="#">Infantil</a></li>
-                    <li style="font-weight: bold"><a href="#">Fantasía</a></li>
+                    <li><a id="category0" onclick="changeCategory(0)" class="category">Imprescindibles</a></li>
+                    <li><a id="category1" onclick="changeCategory(1)" class="category">Ficción</a></li>
+                    <li><a id="category2" onclick="changeCategory(2)" class="category">Cómics y Manga</a></li>
+                    <li><a id="category3" onclick="changeCategory(3)" class="category">No Ficción</a></li>
+                    <li><a id="category4" onclick="changeCategory(4)" class="category">Infantil</a></li>
+                    <li><a id="category5" onclick="changeCategory(5)" class="category">Fantasía</a></li>
                 </ul>
                 <p class="titulo-categorias">Filtros</p>
                 <div class="menu">
@@ -52,12 +52,12 @@
                     <div class="dropdown">
                         <button id="Categorias" onclick="toggleDropdown('myDropdownCategory')" class="dropbtn" >Categorías</button>
                         <div id="myDropdownCategory" class="dropdown-content">
-                            <a >Imprescindibles</a>
-                            <a >Ficción</a>
-                            <a >Cómic y Manga</a>
-                            <a >No Ficción</a>
-                            <a >Infantil</a>
-                            <a >Fantasía</a>
+                            <a onclick="changeCategory(0)">Imprescindibles</a>
+                            <a onclick="changeCategory(1)">Ficción</a>
+                            <a onclick="changeCategory(2)">Cómic y Manga</a>
+                            <a onclick="changeCategory(3)">No Ficción</a>
+                            <a onclick="changeCategory(4)">Infantil</a>
+                            <a onclick="changeCategory(5)">Fantasía</a>
                         </div>
                     </div>
                     <div class="dropdown">

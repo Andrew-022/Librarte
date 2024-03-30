@@ -38,11 +38,23 @@ $(document).ready(function() {
 });
 
 const sorts=["Mas valorados", "Titulo A-Z", "Titulo Z-A", "Precio ascendente", "Precio descendente"]
+const categories=["Imprescindibles", "Fición", "Cómic y Manga", "No ficción", "Infantil", "Fantasía"]
 
 
 function changeSort(id) {
     document.getElementById("selectedSort").textContent = sorts[id];
     document.getElementById("selectedSortMobile").textContent  = sorts[id];
+}
+
+function changeCategory(id) {
+    document.getElementById("selectedCategory").textContent = categories[id];
+    var categorias = document.getElementsByClassName("category");
+    for (var i = 0; i < categories.length; i++) {
+        categorias[i].style.fontWeight = "normal";
+    }
+    document.getElementById("category" + id).style.fontWeight = "bold";
+
+
 }
 
 
