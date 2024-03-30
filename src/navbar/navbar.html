@@ -10,14 +10,15 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <link rel="stylesheet" href="Librarte/src/navbar/navbar.css">
+        <script src="Librarte/src/navbar/navbar.js"></script>
     </head>
 
     <body>
         <nav class="navbar" id="navbar">
-            <div class="navbar-row1">
+            <div class="navbar-row1" id="navbar-row1">
 
                 <div class="hamburger-menu">
-                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-bars" id="open-menu"></i>
                 </div>
 
                 <div class="company-logo">
@@ -46,6 +47,58 @@
 
             </div>
 
+            <aside class="mobile-menu" id="menu">
+                <div class="mobile-menu-close">
+                    <i class="fa-solid fa-xmark" id="close-menu"></i>
+                </div>
+                <div class="mobile-menu-header">
+                    <img src="Librarte/src/assets/asimov_isaac.jpg" alt="User profile picture" class="icon"/>
+                    <h1>NOMBRE</h1>
+                </div>
+                <div class="line-separator"></div>
+                <ul>
+                    <li>
+                        <img src="Librarte/src/assets/UserIcon.svg" alt="Account" class="icon"/>
+                        <a href="#">Perfil</a>
+                    </li>
+                    <li>
+                        <img src="Librarte/src/assets/BasketIcon.svg" alt="Shopping Cart" class="icon"/>
+                        <a href="#">Cesta</a>
+                    </li>
+                    <li>
+                        <img src="Librarte/src/assets/Home.svg" alt="Home" class="icon"/>
+                        <a href="#">Home</a>
+                    </li>
+                </ul>
+                <div class="line-separator"></div>
+                <ul>
+                    <li>
+                        <img src="Librarte/src/assets/Book.svg" alt="Book" class="icon"/>
+                        <a href="#">Imprescindibles</a>
+                    </li>
+                    <li>
+                        <img src="Librarte/src/assets/Book.svg" alt="Book" class="icon"/>
+                        <a href="#">Ficción</a>
+                    </li>
+                    <li>
+                        <img src="Librarte/src/assets/Book.svg" alt="Book" class="icon"/>
+                        <a href="#">No Ficción</a>
+                    </li>
+                    <li>
+                        <img src="Librarte/src/assets/Book.svg" alt="Book" class="icon"/>
+                        <a href="#">Infantil</a>
+                    </li>
+                    <li>
+                        <img src="Librarte/src/assets/Book.svg" alt="Book" class="icon"/>
+                        <a href="#">Comic y Manga</a>
+                    </li>
+                    <li>
+                        <img src="Librarte/src/assets/Help.svg" alt="Help" class="icon"/>
+                        <a href="#">Ayuda</a>
+                    </li>
+                </ul>
+            </aside>
+
             <div class="navbar-row2">
                 <div class="navbar2-items">
                     <a href="#" class="navbar-link">Inicio</a>
@@ -64,5 +117,6 @@
                 </div>
             </div>
         </nav>
+
     </body>
 </html>
