@@ -348,4 +348,8 @@ p{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+
+    #popup {
+        width: 80%;
+    }
 }
