@@ -21,11 +21,11 @@ main {
     display: flex;
 }
 
-.carousel-arrow.right{
+.carousel-arrow.account-items{
     justify-content: start;
 }
 
-.carousel-arrow.left{
+.carousel-arrow.company-logo{
     justify-content: end;
 }
 

@@ -22,29 +22,26 @@
     padding: 5px 5px 0px 0px;
 }
 
-.navbar1-items, .navbar2-items {
-    display: flex;
-}
 .navbar2-items {
+    display: flex;
     justify-content: center;
     padding-right: 1em;
 }
 
-.left,
-.right,
-.center {
+.company-logo,
+.account-items,
+.searchbar {
     display: flex;
-    /*flex: initial;*/
 }
-.center {
+.searchbar {
     flex-direction: row;
     flex-wrap: nowrap;
 }
 
-.left {
+.company-logo {
     margin-right: 10px;
 }
-.right {
+.account-items {
     margin-left: 10px;
 }
 
@@ -66,7 +63,7 @@
     border-radius: 4px;
 }
 
-.right span{
+.account-items span{
     margin-left: 10px;
 }
 
@@ -79,9 +76,6 @@
     margin-left: 20px;
 }
 
-i {
-    /*margin-right: 5px;*/
-}
 .textarea-icon {
     color:black;
     left: -6%;
@@ -97,3 +91,88 @@ i {
 .navbar-link:hover{
     cursor: pointer;
 }
+
+.hamburger-menu {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) {
+    .navbar-row2, .account-items span, .searchbar {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .company-logo {
+        margin-right: 0px;
+        display: flex;
+        flex-basis: auto;
+    }
+
+    .navbar-row1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-flow: row nowrap;
+        padding: 0px 15px 0px 15px;
+    }
+
+    .hamburger-menu {
+        width: 25%;
+        display: flex;
+    }
+
+    .account-items {
+        width: 25%;
+        margin: 0px 0px 0px 0px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .session {
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .navbar-row2, .account-items span, .searchbar {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .company-logo {
+        margin-right: 0px;
+        display: flex;
+        flex-basis: auto;
+    }
+
+    .navbar-row1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-flow: row nowrap;
+        padding: 0px 15px 0px 15px;
+    }
+
+    .hamburger-menu {
+        width: 25%;
+        display: flex;
+    }
+
+    .account-items {
+        width: 25%;
+        margin: 0px 0px 0px 0px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .session {
+        margin-left: 0px;
+    }
+}
+
