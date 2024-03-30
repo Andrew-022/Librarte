@@ -2,7 +2,7 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    padding: 10px;
+    padding: 0px !important;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -16,6 +16,14 @@
     flex-basis: 100%;
     align-items: center;
     justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.navbar-row1 {
+    padding-top: 10px;
+}
+.navbar-row2 {
+    padding-bottom: 10px;
 }
 
 .navbar-row2 a {
@@ -94,15 +102,24 @@
 
 .hamburger-menu {
     display: none;
+    color: black;
 }
 
-@media screen and (max-width: 1100px) {
-    .navbar-row2, .account-items span, .searchbar {
+.navbar2-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1100px) and (min-width: 501px){
+    .navbar2-items, .account-items span, .searchbar {
         display: none;
     }
 
     .navbar {
         justify-content: center;
+    }
+
+    .navbar input {
+        width: 100%;
     }
 
     .company-logo {
@@ -111,12 +128,18 @@
         flex-basis: auto;
     }
 
-    .navbar-row1 {
+    .navbar-row1, .navbar-row2 {
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-flow: row nowrap;
-        padding: 0px 15px 0px 15px;
+    }
+    .navbar-row1 {
+        padding: 0.5em 1.5em 0.5em 1.5em;
+    }
+    .navbar-row2 {
+        background: white;
+        padding-top: 0.5em;
     }
 
     .hamburger-menu {
@@ -133,16 +156,46 @@
 
     .session {
         margin-left: 0px;
+    }
+
+    .navbar2-searchbar {
+        display: flex;
+        width: 100%;
+    }
+
+    .navbar2-searchbar input{
+        padding-left: 2em;
+        border-radius: 10px;
+        border-style: solid;
+        border-color: #93D497;
+    }
+
+    .navbar2-mobile {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        position: relative;
+    }
+
+    .navbar2-mobile i {
+        color: #93D497;
+        position: absolute;
+        left: 0.7em;
+        top: 43%;
+        transform: translateY(-50%);
     }
 }
 
 @media screen and (max-width: 500px) {
-    .navbar-row2, .account-items span, .searchbar {
+    .navbar2-items, .account-items span, .searchbar {
         display: none;
     }
 
     .navbar {
         justify-content: center;
+    }
+    .navbar input{
+        width: 100%;
     }
 
     .company-logo {
@@ -151,12 +204,18 @@
         flex-basis: auto;
     }
 
-    .navbar-row1 {
+    .navbar-row1, .navbar-row2 {
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-flow: row nowrap;
-        padding: 0px 15px 0px 15px;
+    }
+    .navbar-row1 {
+        padding: 0.5em 1.5em 0.5em 1.5em;
+    }
+    .navbar-row2 {
+        background: white;
+        padding-top: 0.5em;
     }
 
     .hamburger-menu {
@@ -173,6 +232,32 @@
 
     .session {
         margin-left: 0px;
+    }
+
+    .navbar2-searchbar {
+        display: flex;
+        width: 100%;
+    }
+    .navbar2-searchbar input{
+        padding-left: 2em;
+        border-radius: 10px;
+        border-style: solid;
+        border-color: #93D497;
+    }
+
+    .navbar2-mobile i {
+        color: #93D497;
+        position: absolute;
+        left: 0.7em;
+        top: 43%;
+        transform: translateY(-50%);
+    }
+
+    .navbar2-mobile {
+        width: 100%;
+        display: flex;
+        flex-flow: row nowrap;
+        position: relative;
     }
 }
 
