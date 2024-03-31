@@ -66,7 +66,7 @@ a {
 }
 
 .parametro{
-    margin: 0px;
+    margin: 0;
 }
 
 
@@ -83,14 +83,15 @@ strong {
 }
 
 .books {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2%;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
 }
 
 .bookPreview {
-    width: calc(20.25% - 2%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 1% 2% 1%;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -106,15 +107,113 @@ strong {
 
 .bookCover {
     width: 100%;
-    height: auto;
+    object-fit: contain;
+    flex: 1;
+
 }
 
 .bookInfo {
     margin-top: 1%;
+
 }
 
 .bookPrice {
     font-weight: bold;
     text-align: center;
     padding: 3%;
+}
+
+.dropdown {
+    padding-left: 10px;
+    width: 20%;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.dropbtn {
+    width: 100%;
+    padding: 5px ;
+    font-size: 80%;
+    color: gray;
+    background-color: white;
+    font-weight: bold;
+    border: 2px solid gray; /* Grosor y color del borde */
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+.ajustes-mobile{
+    display: none;
+}
+
+.filter-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.ordenar{
+    white-space: nowrap;
+}
+
+#selectedCategory{
+    color: #77CF7C;
+}
+
+@media only screen and (max-width: 1100px) {
+    .books{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+
+    .main-category{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ajustes{
+        display: none;
+    }
+
+    .ajustes-mobile{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ordenar{
+        display: none;
+    }
+
+    #selectedSort{
+        display: none;
+    }
+
+    .dropdown{
+        width: 100%;
+        padding: 5px;
+    }
 }

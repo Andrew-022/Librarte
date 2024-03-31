@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="Librarte/src/js/utils.js"></script>
+    <script src="Librarte/src/author-details/author-details.js" defer></script>
 </head>
 <body>
 <header>
@@ -23,87 +24,14 @@
     <div class ="left-margin"></div>
     <div class="content">
         <article class="author">
-            <img class="picture" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Cervantes_J%C3%A1uregui.jpg" alt="Miguel de Cervantes">
+            <img id="imagenAutor" class="picture" src="" alt="Author picture">
             <section class="information">
-                <h1>Miguel de Cervantes</h1>
-                <p > Miguel de Cervantes Saavedra (Alcalá de Henares,4​ 29 de septiembre de 1547-Madrid, 22 de abril3​ de 1616) fue un novelista, poeta, dramaturgo y soldado español.
-
-                    Es ampliamente considerado una de las máximas figuras de la literatura española. Fue el autor de El ingenioso hidalgo don Quijote de la Mancha, novela conocida habitualmente como El Quijote, que lo llevó a ser mundialmente conocido y a la cual muchos críticos han descrito como la primera novela moderna, así como una de las mejores obras de la literatura universal, cuya cantidad de ediciones y traducciones solo es superada por la Biblia.5​ A Cervantes se le ha dado el apelativo de «Príncipe de los Ingenios».6​
-                </p>
+                <h1 id="nombreAutor"></h1>
+                <p id= "biografiaAutor"></p>
             </section>
         </article>
-        <h2>Libros de Miguel de Cervantes</h2>
+        <h2>Libros de <span id="nombreAutorSpan"></span></h2>
         <article class="books">
-
-            <div class="bookPreview">
-                <img class="bookCover" src="https://m.media-amazon.com/images/I/41RrI0dPBBL.jpg" alt="Miguel de Cervantes">
-                <b id="name" class="bookInfo">
-                    Don quijote de la Mancha
-                </b>
-                <p id="author" class="bookInfo">
-                    Miguel de Cervantes
-                </p>
-            </div>
-
-            <div class="bookPreview">
-                <img class="bookCover" src="https://m.media-amazon.com/images/I/41RrI0dPBBL.jpg" alt="Miguel de Cervantes">
-                <b id="name" class="bookInfo">
-                    Don quijote de la Mancha
-                </b>
-                <p id="author" class="bookInfo">
-                    Miguel de Cervantes
-                </p>
-            </div>
-
-            <div class="bookPreview">
-                <img class="bookCover" src="https://m.media-amazon.com/images/I/41RrI0dPBBL.jpg" alt="Miguel de Cervantes">
-                <b id="name" class="bookInfo">
-                    Don quijote de la Mancha
-                </b>
-                <p id="author" class="bookInfo">
-                    Miguel de Cervantes
-                </p>
-            </div>
-
-            <div class="bookPreview">
-                <img class="bookCover" src="https://m.media-amazon.com/images/I/41RrI0dPBBL.jpg" alt="Miguel de Cervantes">
-                <b id="name" class="bookInfo">
-                    Don quijote de la Mancha
-                </b>
-                <p id="author" class="bookInfo">
-                    Miguel de Cervantes
-                </p>
-            </div>
-
-            <div class="bookPreview">
-                <img class="bookCover" src="https://m.media-amazon.com/images/I/41RrI0dPBBL.jpg" alt="Miguel de Cervantes">
-                <b id="name" class="bookInfo">
-                    Don quijote de la Mancha
-                </b>
-                <p id="author" class="bookInfo">
-                    Miguel de Cervantes
-                </p>
-            </div>
-
-            <div class="bookPreview">
-                <img class="bookCover" src="https://m.media-amazon.com/images/I/41RrI0dPBBL.jpg" alt="Miguel de Cervantes">
-                <b id="name" class="bookInfo">
-                    Don quijote de la Mancha
-                </b>
-                <p id="author" class="bookInfo">
-                    Miguel de Cervantes
-                </p>
-            </div>
-
-            <div class="bookPreview">
-                <img class="bookCover" src="https://m.media-amazon.com/images/I/41RrI0dPBBL.jpg" alt="Miguel de Cervantes">
-                <b id="name" class="bookInfo">
-                    Don quijote de la Mancha
-                </b>
-                <p id="author" class="bookInfo">
-                    Miguel de Cervantes
-                </p>
-            </div>
 
         </article>
     </div>

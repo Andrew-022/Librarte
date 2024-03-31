@@ -26,7 +26,7 @@ main {
 .container {
     display: flex;
     justify-content: center;
-    width: 50vh;
+    margin: auto;
 }
 
 .container button {
@@ -55,6 +55,21 @@ button.active {
     color: black;
 }
 
+.welcome-message.register {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.welcome-message.register h1 {
+    color: #9bea9f;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.welcome-message.register p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
 
 input[type="text"],
 input[type="email"],
@@ -70,4 +85,51 @@ input[type="password"] {
 .inactive:hover {
     background-color: #9bea9f;
     color: white;
+}
+
+@media only screen and (max-width: 1100px) {
+    .content{
+        margin-top: 15%;
+    }
+    .container{
+        width: 90%;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 3%;
+
+    }
+    .container button {
+        padding: 3% 3%;
+    }
+    .btn-registro {
+        background-color: #77CF7C;
+        padding: 3%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .content{
+        margin-top: 15%;
+    }
+    .container{
+        width: 90%;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        padding: 5%;
+
+    }
+    .container button {
+        padding: 5% 3%;
+    }
+    .btn-registro {
+        background-color: #77CF7C;
+        padding: 5%;
+    }
+    .welcome-message.register p {
+        display: none;
+    }
 }

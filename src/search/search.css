@@ -9,21 +9,26 @@ main {
 strong {
     font-weight: bold; /* Texto en negrita */
 }
-
+.content-center{
+    align-self: center;
+}
 .books {
     display: flex;
     flex-wrap: wrap;
-    gap: 2%;
-    align-items: center;
+    gap: 1%;
 }
 
 .bookPreview {
-    width: calc(15%);
-    padding: 1% 2% 1%;
+    flex-grow: 1;
+    max-width: calc(19.2%);
+    padding: 1%;
     border: 1px solid #ccc;
     border-radius: 5px;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
+    box-sizing: border-box;
+
 }
+
 .bookPreview p{
     margin-top: 0;
 }
@@ -47,4 +52,16 @@ strong {
     font-weight: bold;
     text-align: center;
     padding: 3%;
+}
+
+@media only screen and (max-width: 1100px) {
+    .bookPreview {
+        max-width: calc(32.6%);
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .bookPreview {
+        max-width: calc(49.5%);
+    }
 }

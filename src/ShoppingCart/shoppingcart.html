@@ -7,14 +7,16 @@
     <base href="/">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="Librarte/src/js/utils.js"></script>
+    <script src="Librarte/src/shoppingcart/shoppingcart.js" defer></script>
     <link rel="stylesheet" href="Librarte/src/shoppingcart/shoppingcart.css">
     <link rel="stylesheet" href="Librarte/src/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>LibrArte</title>
 </head>
 <body>
+
     <header>
-        <script>include("header","Librarte/src/navbar/navbar.html")</script>
+        <!--<script>include("header","Librarte/src/navbar/navbar.html")</script>-->
     </header>
     <div class="flex-container">
         <div class="left-margin">
@@ -23,60 +25,6 @@
             <h1>Tu pedido</h1>
             <main class="shopping-cart-container">
                 <article class="items-container">
-                    <section class="cart-item">
-                        <img  class="item-image" src="https://www.surforma.com/media/filer_public/f5/79/f579812e-9b78-477c-8738-d67fa5fb07bc/l4054.jpg">
-                        <section class="item-details">
-                            <div class="item-details-left">
-                                <p class="item-title">[Título del producto]</p>
-                                <p class="item-author">[Autor del producto]</p>
-                                <p class="item-price">[$XX.XX]</p>
-                            </div>
-                        </section>
-                        <i class="fa-solid fa-trash"></i>
-                        <div class="item-controls-container">
-                            <div class="item-controls">
-                                <button class="decrease-button">&#8722;</button>
-                                <span class="item-quantity">1</span>
-                                <button class="increase-button">&#43;</button>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="cart-item">
-                        <img  class="item-image" src="https://www.surforma.com/media/filer_public/f5/79/f579812e-9b78-477c-8738-d67fa5fb07bc/l4054.jpg">
-                        <section class="item-details">
-                            <div class="item-details-left">
-                                <p class="item-title">[Título del producto]</p>
-                                <p class="item-author">[Autor del producto]</p>
-                                <p class="item-price">[$XX.XX]</p>
-                            </div>
-                        </section>
-                        <i class="fa-solid fa-trash"></i>
-                        <div class="item-controls-container">
-                            <div class="item-controls">
-                                <button class="decrease-button">&#8722;</button>
-                                <span class="item-quantity">1</span>
-                                <button class="increase-button">&#43;</button>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="cart-item">
-                        <img  class="item-image" src="https://www.surforma.com/media/filer_public/f5/79/f579812e-9b78-477c-8738-d67fa5fb07bc/l4054.jpg">
-                        <section class="item-details">
-                            <div class="item-details-left">
-                                <p class="item-title">[Título del producto]</p>
-                                <p class="item-author">[Autor del producto]</p>
-                                <p class="item-price">[$XX.XX]</p>
-                            </div>
-                        </section>
-                        <i class="fa-solid fa-trash"></i>
-                        <div class="item-controls-container">
-                            <div class="item-controls">
-                                <button class="decrease-button">&#8722;</button>
-                                <span class="item-quantity">1</span>
-                                <button class="increase-button">&#43;</button>
-                            </div>
-                        </div>
-                    </section>
                 </article>
                 <article class="checkout-container">
                     <h2>Resumen de la compra</h2>
@@ -87,7 +35,7 @@
                         </div>
                         <div class="summary-item">
                             <p>Gastos de Envío:</p>
-                            <div class="summary-price">XX€</div>
+                            <div class="summary-price">2.99€</div>
                         </div>
                         <div class="summary-item total">
                             <p>Total:</p>
@@ -102,7 +50,6 @@
         </div>
     </div>
     <footer>
-
     </footer>
 </body>
 </html>

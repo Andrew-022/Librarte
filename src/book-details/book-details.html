@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="Librarte/src/js/utils.js"></script>
+    <script src="Librarte/src/book-details/book-details.js" defer></script>
 </head>
 <body>
 <header>
@@ -23,28 +24,19 @@
     <div class ="left-margin"></div>
     <div class="content">
         <article class="book">
-            <section class="book-picture">
-                <img src="Librarte/src/assets/static/BajoLaMismaEstrella.jpg" alt="cover libro">
-            </section>
-
+            <img id="cover" class="picture" src="" alt="cover libro">
             <section class="sinopsis">
-                <h1 style="margin: 0px;" >BAJO LA MISMA ESTRELLA</h1>
-                <p class="editorial">DEBOLSILLO- 9788466335362</p>
+                <h1 id= "tittle" style="margin: 0px;" ></h1>
+                <p id="editorial" class="editorial"> </p>
                 <div class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <p class="nOpiniones">135 opiniones</p>
                 </div>
-                <p class="title-sinopsis">Sinopsis bajo la misma estrella</p>
-                <p >Bajo la misma estrella es la novela que ha catapultado a John Green al éxito. Una historia que explora cuán exquisita y trágica puede ser la aventura de saberse vivo y querer a alguien. Emotiva, irónica y afilada. Una novela teñida de humor y de tragedia que habla de nuestra capacidad para soñar incluso en las circunstancias más difíciles. A Hazel y a Gus les gustaría tener vidas más corrientes. Algunos dirían que no han nacido con estrella, que su mundo es injusto. Hazel y Gus son solo adolescentes, pero si algo les ha enseñado el cáncer que ambos padecen es que no hay tiempo para lamentaciones, porque, nos guste o no, solo existe el hoy y el ahora. Y por ello, con la intención de hacer realidad el mayor deseo de Hazel -conocer a su escritor favorito-, cruzarán juntos el Atlántico para vivir una aventura contrarreloj, tan catártica como desgarradora. Destino: Amsterdam, el lugar donde reside el enigmático y malhumorado escritor, la única persona que tal vez pueda ayudarles a ordenar las piezas del enorme puzle del que forman parte... Mejor libro del año segúnTime yEntretaintment Weekly. Más de 7 millones de ejemplares vendidos en el mundo. Número 1 en las listas debest sellers durante meses. La crítica ha dicho... «Una novela sobre la vida y la muerte, y sobre los que están atrapados entre las dos... Reirás, llorarás y te quedarás con ganas de más.» Markus Zusak, autor deLa ladrona de libros «Una novela imposible de olvidar, para jóvenes y no tan jóvenes.» USA Today «Absolutamente genial. [...] Un ejemplo perfecto de por qué los adultos leen novelas juveniles.» Time «Esta novela es un triunfo.» Booklist «Divertida... Conmovedora... Luminosa.» Entretaintment Weekly «Una mezcla de melancolía, dulzura, filosofía y humor.» New York Times «John Green aúna lo profundo y lo cotidiano en esta desgarradora novela.» Washington Post «Una historia dolorosamente bella sobre la vida y las pérdidas.» School Library Journal</p>
+                <p class="title-sinopsis">Sinopsis de <span id="tittleSpan"></span> </p>
+                <p id="sinopsisinfo"></p>
             </section>
 
             <section class="compra">
                 <div class="datosprecio">
-                    <p class="precio">16,99€</p>
+                    <p id="price" class="precio"></p>
                     <p class="envio">Envio gratis a partir de 999,99€</p>
                 </div>
                 <button class="boton-generico">Añadir a la cesta</button>
@@ -70,38 +62,28 @@
                 <p>Encuadernación: </p>
                 <p>ISBN: </p>
                 <p>Año de edición: </p>
-                <p>Plaza de edición: </p>
-                <p>Traductor: </p>
             </div>
             <div class="subdiv">
-                <p>304</p>
-                <p>DEBOLSILLO</p>
-                <p>CASTELLANO</p>
-                <p>Tapa blanda</p>
-                <p>9788466335362</p>
-                <p>2016</p>
-                <p>ES</p>
-                <p>Noemí Sobregués Arias</p>
+                <p id="nPages"></p>
+                <p id="editorial2"></p>
+                <p id="language"></p>
+                <p id="encuadernacion"></p>
+                <p id="isbn"></p>
+                <p id="publicationDate"></p>
             </div>
 
             <div class="caracteristicas">
-                <p>Fecha de lanzamiento:</p>
                 <p>Alto: </p>
                 <p>Ancho: </p>
                 <p>Grueso: </p>
                 <p>Peso: </p>
-                <p>Colección: </p>
-                <p>Número: </p>
             </div>
 
             <div class="subdiv">
-                <p>07/07/2016</p>
-                <p>19 cm</p>
-                <p>12,6 cm</p>
-                <p>1,7 cm</p>
-                <p>215 gr</p>
-                <p>BEST SELLER</p>
-                <p>026200</p>
+                <p id="alto"></p>
+                <p id="ancho"></p>
+                <p id="grueso"></p>
+                <p id="peso"></p>
             </div>
         </article>
 
@@ -114,85 +96,52 @@
 
         <div class="author-details">
             <script>
-                includeByQuery(".author-details", ".content","Librarte/src/author-details/author-details.html")
+                includeByQuery(".author-details", ".content","Librarte/src/author-details/author-details.html","Librarte/src/author-details/author-details.js")
             </script>
         </div>
         <div class="container">
             <div class="line"></div>
-            <div class="centered-word">Opiniones sobre BAJO LA MISMA ESTRELLA</div>
+            <div id= "textOpinion" class="centered-word">Opiniones sobre <span id="tittleSpan2"></span> </div>
             <div class="line"></div>
         </div>
 
         <article class="opiniones">
             <div class="puntuacion-con-estrellas">
-                <p class="puntuacion-circulo">4,2</p>
+                <p id="puntuation" class="puntuacion-circulo"></p>
                 <div class="estrellas-con-opiniones-column">
                     <div id="rating-opiniones" class="rating">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
                     </div>
-                    <p class="nOpiniones" style="font-size: 15px">135 opiniones</p>
+                    <p id="reviews" class="nOpiniones" style="font-size: 15px"></p>
                 </div>
             </div>
             <p style="font-size: 18px; margin: 5px">¿Que te ha parecido?</p>
             <button id="boton-opinion" class="boton-generico"> deja tu opinion</button>
         </article>
-
-        <section class="cajon-comentario">
-            <img class="profile-picture" src="Librarte/src/assets/static/tobias.jpg" alt="profile picture">
-            <div class="comentario">
-                <p class="username">Tobias</p>
-                <div id="rating-comentarios" class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <p style="margin: 0; color: #7B757E; padding-left: 5px;">6 de diciembre de 2024</p>
-                </div>
-                <p style="margin-top: 5px">Fue uno de los libros con los que me inicié en la lectura. Cada año me lo releo y de verdad que no me canso de el. Es una historia super dulce pero a al vez dura que te hace reflexionar y abrir los ojos frente a ciertas situaciones y creo que es un libro que todo el mundo debería leer.</p>
-            </div>
-        </section>
-
-        <section class="cajon-comentario">
-            <img class="profile-picture" src="Librarte/src/assets/static/tobias.jpg" alt="profile picture">
-            <div class="comentario">
-                <p class="username">Tobias</p>
-                <div id="rating-comentarios" class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <p style="margin: 0; color: #7B757E; padding-left: 5px;">6 de diciembre de 2024</p>
-                </div>
-                <p style="margin-top: 5px">Fue uno de los libros con los que me inicié en la lectura. Cada año me lo releo y de verdad que no me canso de el. Es una historia super dulce pero a al vez dura que te hace reflexionar y abrir los ojos frente a ciertas situaciones y creo que es un libro que todo el mundo debería leer.</p>
-            </div>
-        </section>
-
-        <section class="cajon-comentario">
-            <img class="profile-picture" src="Librarte/src/assets/static/tobias.jpg" alt="profile picture">
-            <div class="comentario">
-                <p class="username">Tobias</p>
-                <div id="rating-comentarios" class="rating">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <p style="margin: 0; color: #7B757E; padding-left: 5px;">6 de diciembre de 2024</p>
-                </div>
-                <p style="margin-top: 5px">Fue uno de los libros con los que me inicié en la lectura. Cada año me lo releo y de verdad que no me canso de el. Es una historia super dulce pero a al vez dura que te hace reflexionar y abrir los ojos frente a ciertas situaciones y creo que es un libro que todo el mundo debería leer.</p>
-            </div>
-        </section>
-
+        <article class="comentarios">
+        </article>
         <button class="boton-generico" style="width: 100%">Ver todos los comentarios</button>
         <div style="height: 30px;"></div>
     </div>
     <div class ="right-margin"></div>
+
+    <div id="overlay"></div>
+
+    <div id="popup">
+        <div class="popup-content">
+            <h2 class="commenttext" >¿Has leido <span id="tittleSpan3"></span>?</h2>
+            <p class="commenttext">deja tu opinion para ayudar a otros lectores</p>
+            <div id="starcontainercomment">
+                <i  onclick="changeStars(1,'starReview')" id="starReview0" class="fa-solid fa-star"></i>
+                <i onclick="changeStars(2,'starReview')" id="starReview1" class="fa-solid fa-star"></i>
+                <i onclick="changeStars(3,'starReview')" id="starReview2" class="fa-solid fa-star"></i>
+                <i onclick="changeStars(4,'starReview')" id="starReview3" class="fa-solid fa-star"></i>
+                <i onclick="changeStars(5,'starReview')" id="starReview4" class="fa-solid fa-star"></i>
+            </div>
+            <textarea id="commentInput" placeholder="¿Que te ha parecido"></textarea>
+            <button id="submitComment" class="boton-generico">Enviar</button>
+        </div>
+    </div>
+
 </div>
 </body>
 
