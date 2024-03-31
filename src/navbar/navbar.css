@@ -206,6 +206,11 @@
         width: 100%;
     }
 
+    .hamburger-menu {
+        width: 25%;
+        display: flex;
+    }
+
     .company-logo {
         margin-right: 0px;
         display: flex;
@@ -226,10 +231,7 @@
         padding-top: 0.5em;
     }
 
-    .hamburger-menu {
-        width: 25%;
-        display: flex;
-    }
+
 
     .account-items {
         width: 25%;
