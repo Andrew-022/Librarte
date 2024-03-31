@@ -25,7 +25,7 @@ function fetchBooksOnlyImages(containerID, amount) {
         .catch(error => console.error('Error cargando JSON:', error));
 }
 
-function includeByQuery(tag, query, file) {
+function includeByQuery(tag, query, file, jsFile) {
     const template = document.querySelector(tag);
     fetch(file)
         .then(response => response.text())
