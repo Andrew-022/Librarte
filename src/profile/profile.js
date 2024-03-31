@@ -35,3 +35,71 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    let nameElement = document.querySelector('.personal-data-name');
+    let lastNameElement = document.querySelector('.personal-data-last-name');
+    let usernameElement = document.querySelector('.personal-data-username');
+    let emailElement = document.querySelector('.personal-data-email');
+
+    let userData = JSON.parse(localStorage.getItem('userData'));
+
+    if (!userData) {
+        let testData = {
+            name: "testName",
+            lastName: "testLastName",
+            username: "testUser",
+            email: "test@test.com",
+            password: "test1234"
+        };
+
+        localStorage.setItem('userData', JSON.stringify(testData));
+    }
+    if (userData) {
+        nameElement.textContent = userData.name;
+        lastNameElement.textContent = userData.lastName;
+        usernameElement.textContent = userData.username;
+        emailElement.textContent = userData.email;
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    let passwordForm = document.getElementById('passwordForm');
+    let currentPassword = document.getElementById('currentPassword');
+    let newPasswordInput = document.getElementById('newPassword');
+    let confirmPasswordInput = document.getElementById('confirmPassword');
+
+    let userData = JSON.parse(localStorage.getItem('userData'));
+
+    passwordForm.addEventListener('submit', function(event) {
+        function showMessage(message) {
+            let messageDiv = document.getElementById("message");
+            messageDiv.innerHTML = message;
+        }
+
+        function containsLetterAndNumber(str) {
+            return /[a-zA-Z]/.test(str) && /\d/.test(str);
+        }
+
+        if (currentPassword.value !== userData.password) {
+            event.preventDefault();
+            showMessage("La contraseña actual es incorrecta.");
+            return;
+        }
+
+        if (newPasswordInput.value.length < 8 || !containsLetterAndNumber(newPasswordInput.value)
+            || confirmPasswordInput.value.length < 8 || !containsLetterAndNumber(confirmPasswordInput.value)) {
+            event.preventDefault();
+            showMessage("La contraseña tiene que tener más de 8 caracteres, letras y números.");
+            return;
+        } else if (newPasswordInput.value !== confirmPasswordInput.value) {
+            event.preventDefault();
+            showMessage("Las contraseñas no coinciden.");
+            return;
+        }
+        showMessage("Contraseña cambiada correctamente.")
+    });
+
+
+});
+
+

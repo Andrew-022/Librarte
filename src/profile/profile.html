@@ -65,7 +65,6 @@
                             </label>
                             <label>
                                 <p>Apellidos:</p>
-
                                 <p class="personal-data-last-name"></p>
                             </label>
                             <label>
@@ -92,12 +91,15 @@
                         </div>
                         <div class="password">
                             <h2>Cambio de contraseña</h2>
-                            <div class="password-inputs">
-                                <input type="text" placeholder="Contraseña actual"/>
-                                <input type="text" placeholder="Contraseña nueva"/>
-                                <input type="text" placeholder="Repetir contraseña nueva"/>
-                                <button type="button">Cambiar contraseña</button>
-                            </div>
+                            <form id="passwordForm">
+                                <div class="password-inputs">
+                                    <input type="password" id="currentPassword" placeholder="Contraseña actual (test1234)" required/>
+                                    <input type="password" id="newPassword" placeholder="Contraseña nueva" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" title="La contraseña debe tener al menos 8 caracteres, letras y números." required/>
+                                    <input type="password" id="confirmPassword" placeholder="Repetir contraseña nueva" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" title="La contraseña debe tener al menos 8 caracteres, letras y números." required/>
+                                    <button type="submit">Cambiar contraseña</button>
+                                </div>
+                            </form>
+                            <div id="message"></div>
                         </div>
                     </div>
                 </main>
