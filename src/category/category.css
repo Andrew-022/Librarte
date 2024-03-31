@@ -193,6 +193,7 @@ strong {
     .main-category{
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .ajustes{
@@ -202,6 +203,7 @@ strong {
     .ajustes-mobile{
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     .ordenar{

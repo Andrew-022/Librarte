@@ -71,15 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
     let userData = JSON.parse(localStorage.getItem('userData'));
 
     passwordForm.addEventListener('submit', function(event) {
-        function showMessage(message) {
-            let messageDiv = document.getElementById("message");
-            messageDiv.innerHTML = message;
-        }
-
-        function containsLetterAndNumber(str) {
-            return /[a-zA-Z]/.test(str) && /\d/.test(str);
-        }
-
         if (currentPassword.value !== userData.password) {
             event.preventDefault();
             showMessage("La contraseña actual es incorrecta.");
@@ -96,7 +87,20 @@ document.addEventListener('DOMContentLoaded', function() {
             showMessage("Las contraseñas no coinciden.");
             return;
         }
+
+        userData.password = newPasswordInput
+        localStorage.setItem('userData', JSON.stringify(userData));
+
         showMessage("Contraseña cambiada correctamente.")
+
+        function showMessage(message) {
+            let messageDiv = document.getElementById("message");
+            messageDiv.innerHTML = message;
+        }
+
+        function containsLetterAndNumber(str) {
+            return /[a-zA-Z]/.test(str) && /\d/.test(str);
+        }
     });
 
 

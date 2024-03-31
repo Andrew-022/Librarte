@@ -58,10 +58,16 @@ strong {
     .bookPreview {
         max-width: calc(32.6%);
     }
+    .content {
+        padding: 0.5em;
+    }
 }
 
 @media only screen and (max-width: 500px) {
     .bookPreview {
         max-width: calc(49.5%);
+    }
+    .content {
+        padding: 0.5em;
     }
 }

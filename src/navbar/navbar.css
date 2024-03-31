@@ -202,10 +202,6 @@
         justify-content: center;
     }
 
-    .navbar input {
-        width: 100%;
-    }
-
     .hamburger-menu {
         width: 25%;
         display: flex;
@@ -215,6 +211,10 @@
         margin-right: 0px;
         display: flex;
         flex-basis: auto;
+    }
+
+    .navbar input {
+        width: 100%;
     }
 
     .navbar-row1, .navbar-row2 {
@@ -254,6 +254,7 @@
         border-radius: 10px;
         border-style: solid;
         border-color: #93D497;
+        margin: 0;
     }
 
     .navbar2-mobile {
@@ -330,6 +331,7 @@
         border-radius: 10px;
         border-style: solid;
         border-color: #93D497;
+        margin: 0;
     }
 
     .navbar2-mobile i {

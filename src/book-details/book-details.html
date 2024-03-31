@@ -13,11 +13,9 @@
 </head>
 <body>
 <header>
-    <div class="navbar">
-        <script>
-            include(".navbar", "Librarte/src/navbar/navbar.html")
-        </script>
-    </div>
+    <script>
+        include("header", "Librarte/src/navbar/navbar.html")
+    </script>
 </header>
 
 <div class="flex-container">
@@ -37,12 +35,12 @@
             <section class="compra">
                 <div class="datosprecio">
                     <p id="price" class="precio"></p>
-                    <p class="envio">Envio gratis a partir de 999,99€</p>
+                    <p class="envio">Envío gratis a partir de 999,99€</p>
                 </div>
                 <button class="boton-generico">Añadir a la cesta</button>
                 <div class="envio-datos">
                     <i class="fa-solid fa-truck"></i>
-                    <p class="fecha-deliver">Recibelo el lunes 2 de febrero de 2026</p>
+                    <p class="fecha-deliver">Recíbelo el lunes 2 de febrero de 2026</p>
                 </div>
             </section>
 
@@ -50,7 +48,7 @@
 
         <div class="container">
             <div class="line"></div>
-            <div class="centered-word">Ficha tecnica</div>
+            <div class="centered-word">Ficha técnica</div>
             <div class="line"></div>
         </div>
 
@@ -114,8 +112,8 @@
                     <p id="reviews" class="nOpiniones" style="font-size: 15px"></p>
                 </div>
             </div>
-            <p style="font-size: 18px; margin: 5px">¿Que te ha parecido?</p>
-            <button id="boton-opinion" class="boton-generico"> deja tu opinion</button>
+            <p style="font-size: 18px; margin: 5px">¿Qué te ha parecido?</p>
+            <button id="boton-opinion" class="boton-generico">Deja tu opinión</button>
         </article>
         <article class="comentarios">
         </article>
@@ -128,8 +126,8 @@
 
     <div id="popup">
         <div class="popup-content">
-            <h2 class="commenttext" >¿Has leido <span id="tittleSpan3"></span>?</h2>
-            <p class="commenttext">deja tu opinion para ayudar a otros lectores</p>
+            <h2 class="commenttext" >¿Has leído <span id="tittleSpan3"></span>?</h2>
+            <p class="commenttext">Deja tu opinión para ayudar a otros lectores</p>
             <div id="starcontainercomment">
                 <i  onclick="changeStars(1,'starReview')" id="starReview0" class="fa-solid fa-star"></i>
                 <i onclick="changeStars(2,'starReview')" id="starReview1" class="fa-solid fa-star"></i>
@@ -137,7 +135,7 @@
                 <i onclick="changeStars(4,'starReview')" id="starReview3" class="fa-solid fa-star"></i>
                 <i onclick="changeStars(5,'starReview')" id="starReview4" class="fa-solid fa-star"></i>
             </div>
-            <textarea id="commentInput" placeholder="¿Que te ha parecido"></textarea>
+            <textarea id="commentInput" placeholder="¿Qué te ha parecido?"></textarea>
             <button id="submitComment" class="boton-generico">Enviar</button>
         </div>
     </div>
