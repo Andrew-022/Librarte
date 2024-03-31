@@ -11,6 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="Librarte/src/js/utils.js"></script>
+        <script src="Librarte/src/profile/profile.js"></script>
         <link rel="stylesheet" type="text/css" href="Librarte/src/index.css">
         <link rel="stylesheet" type="text/css" href="Librarte/src/profile/profile.css">
     </head>
@@ -21,8 +22,8 @@
         </header>
         <div class="flex-container">
             <div class="left-margin"></div>
-            <div class="content">
-                <main class="main-content">
+            <div class="content" id="content">
+                <main class="main-content" id="main-content-overlay">
                     <div class="side-bar">
                         <div class="inner-side-bar">
                             <ul>
@@ -35,25 +36,45 @@
                             </ul>
                         </div>
                     </div>
+                    <div class="side-bar-dropdown">
+                        <button id="dropdownBtn" class="dropbtn">
+                            Mis datos
+                            <i class="fa-solid fa-angle-down"></i>
+                        </button>
+                        <div id="popup" class="popup-content">
+                            <div class="popup-items">
+                                <h1>Mi cuenta</h1>
+                                <div class="line-separator"></div>
+                                <a href="#">Mis datos</a>
+                                <a href="#">Mis métodos de pago</a>
+                                <h1>Mis pedidos</h1>
+                                <div class="line-separator"></div>
+                                <a href="#">Pedidos en curso</a>
+                                <a href="#">Histórico de pedidos</a>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="profile-content">
-                        <h1>Mis Datos</h1>
+                        <h1>Mis datos</h1>
                         <div class="personal-data">
                             <h2>Datos personales y de contacto</h2>
                             <label>
                                 <p>Nombre:</p>
-                                <input type="text"/>
+                                <p class="personal-data-name"></p>
                             </label>
                             <label>
                                 <p>Apellidos:</p>
-                                <input type="text"/>
+
+                                <p class="personal-data-last-name"></p>
                             </label>
                             <label>
                                 <p>Usuario:</p>
-                                <input type="text"/>
+                                <p class="personal-data-username"></p>
                             </label>
                             <label>
                                 <p>Email:</p>
-                                <input type="text"/>
+                                <p class="personal-data-email"></p>
                             </label>
                         </div>
                         <div class="address">
@@ -80,6 +101,7 @@
                         </div>
                     </div>
                 </main>
+                <div class="overlay"></div>
             </div>
             <div class="right-margin"></div>
         </div>
