@@ -3,7 +3,7 @@
       "user": "Tobias",
       "review":"La lectura es entretenida y se hace ameno,muy sentimental que te hace reflexionar pero no para leer en época de bajón",
       "rating":3.6,
-      "picture": "Librarte/src/assets/static/tobias.jpg",
+      "picture": "../src/assets/static/tobias.jpg",
       "publicationDate": "6 de diciembre de 2024"
     },
     {
