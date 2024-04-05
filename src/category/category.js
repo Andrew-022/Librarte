@@ -1,6 +1,6 @@
 $(document).ready(function() {
     const librosContainer = document.querySelector('.books');
-    fetch('Librarte/src/booksJson/books.json')
+    fetch('../src/booksJson/books.json')
         .then(response => response.json())
         .then(libros => {
 

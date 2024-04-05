@@ -4,7 +4,7 @@ function include(tag, file, bookCollection) {
 
 function fetchBooksOnlyImages(containerID, amount) {
 
-    fetch('Librarte/src/book-collection/book-collection.json')
+    fetch('../src/book-collection/book-collection.json')
         .then(response => response.json())
         .then(data => {
             const booksContainer = document.getElementById(containerID);
@@ -57,7 +57,7 @@ function includeByQuery(tag, query, file, jsFile) {
 
 function fetchBooksAllAttributes(containerID) {
 
-    fetch('Librarte/src/book-collection/book-collection.json')
+    fetch('../src/book-collection/book-collection.json')
         .then(response => response.json())
         .then(data => {
             const booksContainer = document.getElementById(containerID);

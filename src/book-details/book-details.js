@@ -25,7 +25,7 @@ function changeStars(score, prefix) {
 }
 
 $(document).ready(function() {
-    fetch('Librarte/src/booksJson/books.json')
+    fetch('../src/booksJson/books.json')
         .then(response => response.json())
         .then(libros => {
             function buscarLibroPorId(id) {
@@ -88,7 +88,7 @@ $(document).ready(function() {
         .catch(error => console.error('Error al cargar el JSON de libros:', error));
 
         const reviewcontainer = document.querySelector('.comentarios');
-        fetch('Librarte/src/booksJson/reviews.json')
+        fetch('../src/booksJson/reviews.json')
             .then(response => response.json())
             .then(reviews => {
                     reviews.forEach(review => {

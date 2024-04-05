@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    fetch("Librarte/src/author-details/author.json")
+    fetch("../src/author-details/author.json")
         .then(response => response.json())
         .then(data => {
             // Acceder a los datos del JSON
@@ -22,7 +22,7 @@ $(document).ready(function() {
             const librosContainer = document.querySelector('.books');
 
             // Cargar el JSON de los libros
-            fetch('Librarte/src/booksJson/books.json')
+            fetch('../src/booksJson/books.json')
                 .then(response => response.json())
                 .then(libros => {
                     // Filtrar los libros del autor basados en las obras del autor

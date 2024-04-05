@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (usuario) {
             if (validatePassword(password, usuario.password)) {
-                window.location.href = "Librarte\\src\\home-page\\homepage.html";
+                window.location.href = "..\\src\\home-page\\homepage.html";
             } else {
                 mostrarMensaje("Contraseña incorrectos");
             }

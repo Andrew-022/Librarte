@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    fetch("Librarte/src/shoppingcart/shoppingcart.json")
+    fetch("../src/shoppingcart/shoppingcart.json")
         .then(response => response.json())
         .then(data => {
             const productos = data.productos;

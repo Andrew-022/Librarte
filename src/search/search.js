@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    fetch("Librarte/src/search/search.json")
+    fetch("../src/search/search.json")
         .then(response => response.json())
         .then(data => {
             const libros = data.libros;
