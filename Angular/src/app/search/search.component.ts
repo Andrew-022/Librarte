@@ -24,5 +24,4 @@ export class SearchComponent implements OnInit{
         this.books = response.books;
       });
   }
-
 }
