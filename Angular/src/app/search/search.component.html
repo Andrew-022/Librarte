@@ -5,12 +5,9 @@
   <div class="content">
     <p class="result">300 resultados para <strong>Quijote</strong></p>
     <div class="books">
-      <div *ngFor="let book of Books" class="bookPreview">
-        <img class="bookCover" [src]="book.imagen" [alt]="book.titulo">
-        <b class="bookTitle">{{ book.titulo }}</b>
-        <p class="bookAuthor">{{ book.autor }}</p>
-        <p class="bookPrice">$ {{ book.precio.toFixed(2) }}</p>
-      </div>
+      @for(book of this.books; track book) {
+        <app-book [book] = "book"></app-book>
+      }
     </div>
   </div>
   <div class="right-margin">
