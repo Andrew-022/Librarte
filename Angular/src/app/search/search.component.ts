@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { DatabaseJSONService } from "../services/database-json.service";
-import {Book, BookResponse} from "../model/book";
+import {Book} from "../model/book";
 import {NgForOf} from "@angular/common";
 import {BookComponent} from "../book/book.component";
 
@@ -20,7 +20,7 @@ export class SearchComponent implements OnInit{
   constructor(private databaseService: DatabaseJSONService) { }
   ngOnInit(): void {
     this.databaseService.getBooks("assets/search.json")
-      .subscribe((response: BookResponse) => {
+      .subscribe((response: any) => {
         this.books = response.books;
       });
   }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
-import {BookResponse} from "../model/book";
+import {Book} from "../model/book";
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,8 +10,8 @@ export class DatabaseJSONService {
 
   constructor() { }
 
-  getBooks(url: string): Observable<BookResponse> {
-    return new Observable<BookResponse>(observer => {
+  getBooks(url: string): Observable<Book> {
+    return new Observable<Book>(observer => {
       fetch(url)
         .then(response => {
           if (!response.ok) {
@@ -19,7 +20,7 @@ export class DatabaseJSONService {
           return response.json();
         })
         .then(data => {
-          observer.next(data as BookResponse);
+          observer.next(data as Book);
           observer.complete();
         })
         .catch(error => {

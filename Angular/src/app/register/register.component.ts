@@ -9,11 +9,11 @@ import {validateWorkspace} from "@angular/cli/src/utilities/config";
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  resultado!: string;
+  resultado: string = "";
   constructor(private fb: FormBuilder) {
   }
   registerform = this.fb.group({
-    nombre: ['', [Validators.required]],
+    nombre: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
     apellidos: ['',[ Validators.required]],
     mail: ['', [Validators.required, Validators.email]],
     contraseña: ['', [Validators.required,Validators.maxLength(16),Validators.minLength(8)]]
