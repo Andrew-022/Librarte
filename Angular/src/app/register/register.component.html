@@ -1,0 +1,26 @@
+<main class="flex-container">
+  <div class="left-margin">
+  </div>
+  <div class="content">
+    <section class="welcome-message register">
+      <h1>Únete a LibrArte</h1>
+      <p>¡Crea una cuenta para acceder a contenido exclusivo y disfrutar de una experiencia personalizada!</p>
+    </section>
+    <div class="container">
+      <button id="btnRegistro" class="active">Registro</button>
+      <button id="btnInicioSesion" class="inactive">Inicio de Sesión
+      </button>
+    </div>
+    <div  class="formulario">
+      <form [formGroup]="registerform" (ngSubmit)="submit()">
+        <input type="text" placeholder="Nombre" formControlName="nombre" title="Ingrese un nombre válido (solo letras y espacios)" required>
+        <input type="text" placeholder="Apellidos" formControlName="apellidos" title="Ingrese apellidos válidos (solo letras y espacios)" required>
+        <input type="email" formControlName="mail" placeholder="Correo electrónico" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Ingrese una dirección de correo electrónico válida" required>
+        <input type="password" formControlName="contraseña" placeholder="Contraseña" minlength="8" maxlength="16" title="La contraseña debe tener al menos 8 caracteres" required>
+        <button type="submit" class="btn-registro">Registrarse</button>
+      </form>
+    </div>
+  </div>
+  <div class="right-margin">
+  </div>
+</main>
