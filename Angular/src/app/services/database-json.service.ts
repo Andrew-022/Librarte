@@ -1,14 +1,24 @@
 import { Injectable } from '@angular/core';
-import {Observable} from "rxjs";
+import {catchError, Observable} from "rxjs";
 import {Book} from "../model/book";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {User} from "../model/user";
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class DatabaseJSONService {
-
-  constructor() { }
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+      'Access-Control-Allow-Credentials': 'true'
+    })
+  };
+  constructor(private http: HttpClient) { }
 
   getBooks(url: string): Observable<Book> {
     return new Observable<Book>(observer => {
@@ -28,4 +38,13 @@ export class DatabaseJSONService {
         });
     });
   }
+
+  postBooks(url: string, data: User)  {
+    this.http.post(url, data, this.httpOptions)
+        .subscribe((response) => {
+          console.log("Error with ", response)
+        });
+  }
+
+
 }

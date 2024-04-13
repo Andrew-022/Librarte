@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {ReactiveFormsModule, FormBuilder, Validators} from '@angular/forms';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {DatabaseJSONService} from "../services/database-json.service";
+import {User} from "../model/user";
 @Component({
   selector: 'app-register',
   standalone: true,
@@ -9,7 +11,10 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+
+  user: User = { name: "", email: "", apellidos: "", password: ""};
+
+  constructor(private fb: FormBuilder, private http: HttpClient, private databaseJSONService: DatabaseJSONService) {
   }
   registerForm = this.fb.group({
     nombre: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
@@ -20,10 +25,17 @@ export class RegisterComponent {
   submit(){
     if(this.registerForm.valid) {
       const formData = this.registerForm.value;
-    this.http.post('data/users.json', JSON.stringify(formData)).subscribe({
-        next: (response) => console.log('Respuesta del servidor:', response),
-        error: (error) => console.error('Error al enviar datos al servidor', error),
-      })
+      this.user.email = <string>formData.mail;
+      this.user.name = <string>formData.nombre;
+      this.user.apellidos = <string>formData.apellidos;
+      this.user.password = <string>formData.contraseña;
+
+      this.databaseJSONService.postBooks("http://localhost:4200/data/users", this.user)
+    // this.http.post('data/users.json', JSON.stringify(formData)).subscribe({
+    //     next: (response) => console.log('Respuesta del servidor:', response),
+    //     error: (error) => console.error('Error al enviar datos al servidor', error),
+    //   })
     }
+
   }
 }
