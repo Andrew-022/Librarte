@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {ReactiveFormsModule, FormBuilder, Validators} from '@angular/forms';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
-import {DatabaseJSONService} from "../services/database-json.service";
+import {UserJsonService} from "../services/user-json.service";
 import {User} from "../model/user";
 @Component({
   selector: 'app-register',
@@ -14,7 +14,7 @@ export class RegisterComponent {
 
   user: User = { name: "", email: "", apellidos: "", password: ""};
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private databaseJSONService: DatabaseJSONService) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private databaseJSONService: UserJsonService) {
   }
   registerForm = this.fb.group({
     nombre: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],

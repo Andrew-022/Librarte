@@ -18,21 +18,17 @@ app.post('/data/users', async (req, res) => {
       const data = await fs.promises.readFile('src/data/users.json');
       existingUsers = JSON.parse(data);
 
-
     } catch (error) {
-      console.error(error);
-      res.status(500).send('Internal Server Error');
+      // Continue
     }
-    if (Array.isArray(existingUsers)) {
+    if (existingUsers.length > 0) {
       existingUsers.push(userData);
-
       await fs.promises.writeFile('src/data/users.json', JSON.stringify(existingUsers));
-
       res.status(200).send('Data has been successfully appended.');
     } else {
-      res.status(500).send('Internal Server Error');
+      await fs.promises.writeFile('src/data/users.json', JSON.stringify([userData]));
+      res.status(200).send('Data has been successfully written.');
     }
-
 
   } catch (error) {
     console.error(error);

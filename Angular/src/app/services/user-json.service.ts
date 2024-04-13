@@ -8,7 +8,7 @@ import {User} from "../model/user";
 @Injectable({
   providedIn: 'root'
 })
-export class DatabaseJSONService {
+export class UserJsonService {
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
