@@ -1,0 +1,24 @@
+<main class="flex-container">
+  <div class="left-margin">
+  </div>
+  <div class="content">
+    <section class="welcome-message login">
+      <h1>Bienvenido a LibrArte</h1>
+      <p>¿Quieres disfrutar de una experiencia personalizada? ¡Inicia sesión para descubrir ofertas exclusivas y recomendaciones adaptadas a tus gustos!</p>
+    </section>
+    <div class="container">
+      <button id="btnRegistro" class="inactive" >Registro</button>
+      <button id="btnInicioSesion" class="active">Inicio de Sesión</button>
+    </div>
+    <div class="formulario">
+      <form [formGroup]="loginForm" (ngSubmit)="submit()">
+        <input type="email" formControlName="loginMail" placeholder="Correo electrónico" required>
+        <input type="password" formControlName="loginPwd" placeholder="Contraseña" required>
+        <button type="submit" class="btn-inicio">Iniciar sesión</button>
+      </form>
+    </div>
+    <div class="loginmsg">{{ loginMsg }}</div>
+  </div>
+  <div class="right-margin">
+  </div>
+</main>
