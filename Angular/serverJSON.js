@@ -8,6 +8,24 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+app.get('/data/users', async (req, res) => {
+  try {
+    let existingUsers = [];
+
+    try {
+      const data = await fs.promises.readFile('src/data/users.json');
+      existingUsers = JSON.parse(data);
+    } catch (error) {
+      // Continue
+    }
+
+    res.status(200).json(existingUsers);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
 app.post('/data/users', async (req, res) => {
   try {
     const userData = req.body;
