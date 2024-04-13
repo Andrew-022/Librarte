@@ -42,20 +42,6 @@ export function app(): express.Express {
       .catch((err) => next(err));
   });
 
-  server.post('/data/users', async (req, res) => {
-    try {
-      const userData = req.body;
-
-      await fs.writeFile('/data/users.json', JSON.stringify(userData));
-
-      res.status(200).send('Data has been successfully written.');
-    } catch (error) {
-
-      console.error(error);
-      res.status(500).send('Internal Server Error');
-    }
-  });
-
   return server;
 }
 

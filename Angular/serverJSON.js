@@ -1,5 +1,5 @@
 const express = require('express');
-const fs = require('fs').promises;
+const fs = require('fs');
 const cors = require('cors');
 
 const app = express();
@@ -9,17 +9,35 @@ app.use(cors());
 app.use(express.json());
 
 app.post('/data/users', async (req, res) => {
+  try {
+    const userData = req.body;
+
+    let existingUsers = [];
+
     try {
-        const userData = req.body;
+      const data = await fs.promises.readFile('src/data/users.json');
+      existingUsers = JSON.parse(data);
 
-        await fs.writeFile('/data/users.json', JSON.stringify(userData));
 
-        res.status(200).send('Data has been successfully written.');
     } catch (error) {
-
-        console.error(error);
-        res.status(500).send('Internal Server Error');
+      console.error(error);
+      res.status(500).send('Internal Server Error');
     }
+    if (Array.isArray(existingUsers)) {
+      existingUsers.push(userData);
+
+      await fs.promises.writeFile('src/data/users.json', JSON.stringify(existingUsers));
+
+      res.status(200).send('Data has been successfully appended.');
+    } else {
+      res.status(500).send('Internal Server Error');
+    }
+
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
 });
 
 app.listen(PORT, () => {

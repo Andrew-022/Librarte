@@ -30,7 +30,7 @@ export class RegisterComponent {
       this.user.apellidos = <string>formData.apellidos;
       this.user.password = <string>formData.contraseña;
 
-      this.databaseJSONService.postBooks("http://localhost:4200/data/users", this.user)
+      this.databaseJSONService.postBooks("http://localhost:3000/data/users", this.user)
     // this.http.post('data/users.json', JSON.stringify(formData)).subscribe({
     //     next: (response) => console.log('Respuesta del servidor:', response),
     //     error: (error) => console.error('Error al enviar datos al servidor', error),
