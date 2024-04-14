@@ -35,7 +35,23 @@ app.post('/data/users', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+app.get('/data/users', async (req, res) => {
+  try {
+    let existingUsers = [];
 
+    try {
+      const data = await fs.promises.readFile('src/data/users.json');
+      existingUsers = JSON.parse(data);
+    } catch (error) {
+      // Continue
+    }
+
+    res.status(200).json(existingUsers);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+});
 app.listen(PORT, () => {
     console.log(`Node Express server listening on http://localhost:${PORT}`);
 });

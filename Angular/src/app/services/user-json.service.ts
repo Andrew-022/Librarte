@@ -46,5 +46,7 @@ export class UserJsonService {
         });
   }
 
-
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>('http://localhost:3000/data/users');
+  }
 }

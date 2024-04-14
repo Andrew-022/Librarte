@@ -14,7 +14,7 @@ export class RegisterComponent {
 
   user: User = { name: "", email: "", apellidos: "", password: ""};
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private databaseJSONService: UserJsonService) {
+  constructor(private fb: FormBuilder, private databaseJSONService: UserJsonService) {
   }
   registerForm = this.fb.group({
     nombre: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
