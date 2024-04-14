@@ -31,9 +31,9 @@ export class RegisterComponent {
       this.user.password = <string>formData.password;
 
       this.userJsonService.postUser(this.user).subscribe(
-        (registered) => {
-          if(registered) {
-            console.log("User registered.")
+        (userIsRegistered) => {
+          if(userIsRegistered) {
+            console.log("User created.")
           } else {
             console.log("This email already exists.")
           }

@@ -13,7 +13,7 @@ import {User} from "../model/user";
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  user!: User
+  user: User = { name: "", email: "", apellidos: "", password: ""};
   loginMsg: string = '';
   constructor(private fb: FormBuilder, private userJSONService: UserJsonService) {
   }
@@ -27,17 +27,16 @@ export class LoginComponent {
       const email = this.loginForm.value.loginMail;
       const password = this.loginForm.value.loginPwd;
 
-      this.user.email = email || ""
-      this.user.password = password || ""
+      this.user.email = <string> email
+      this.user.password = <string> password
       this.user.name = ""
       this.user.apellidos = ""
+
       // Obtener los usuarios del JSON
       this.userJSONService.getLoggedUser(this.user).subscribe(userIsLogged => {
         if (userIsLogged) {
-          // Usuario autenticado
           console.log('Usuario autenticado');
         } else {
-          // Credenciales incorrectas
           this.loginMsg = 'Credenciales incorrectas'
         }
       });

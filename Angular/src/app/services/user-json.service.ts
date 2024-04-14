@@ -46,8 +46,9 @@ export class UserJsonService {
     return this.getUserIfExists(user).pipe(
       switchMap((exists) => {
         if (!exists) {
-          console.log("Entra post")
-          this.http.post(this.baseUrl, user, this.httpOptions)
+          this.http.post(this.baseUrl, user, this.httpOptions).subscribe((response) =>{
+            console.log("User created\n", response)
+          })
           return of(true);
         } else {
           return of(false);
