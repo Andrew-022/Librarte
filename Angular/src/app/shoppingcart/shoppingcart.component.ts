@@ -1,20 +1,20 @@
-import {Component, OnInit} from '@angular/core';
-import { UserJsonService } from "../services/user-json.service";
+import { Component } from '@angular/core';
 import {Book} from "../model/book";
+import {UserJsonService} from "../services/user-json.service";
 import {BookComponent} from "../book/book.component";
+import {last} from "rxjs";
 
 @Component({
-  selector: 'app-search',
+  selector: 'app-shoppingcart',
   standalone: true,
   imports: [
     BookComponent
   ],
-  templateUrl: './search.component.html',
-  styleUrl: './search.component.css'
+  templateUrl: './shoppingcart.component.html',
+  styleUrl: './shoppingcart.component.css'
 })
-export class SearchComponent implements OnInit{
+export class ShoppingcartComponent {
   books: Book[] = [];
-
   constructor(private databaseService: UserJsonService) { }
   ngOnInit(): void {
     this.databaseService.getBooks("assets/search.json")
@@ -22,4 +22,6 @@ export class SearchComponent implements OnInit{
         this.books = response.books;
       });
   }
+
+  protected readonly last = last;
 }

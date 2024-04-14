@@ -1,7 +1,34 @@
 
-<div class="bookPreview">
-  <img class="bookCover" src="{{book.imagen}}" alt="${libro.titulo}">
-  <b class="bookTitle">{{ book.titulo }}</b>
-  <p class="bookAuthor">{{ book.autor }}</p>
-  <p class="bookPrice">{{book.precio .toFixed(2)}}</p>
-</div>
+
+@if (cartView){
+  <section class="cart-item">
+    <img class="item-image" src="{{book.imagen}}" alt="Portada libro">
+    <section class="item-details">
+      <div class="item-details-left">
+        <p class="item-title">{{ book.titulo }}</p>
+        <p class="item-author">{{ book.autor }}</p>
+        <p class="item-price">{{book.precio .toFixed(2)}}</p>
+      </div>
+    </section>
+    <i class="fa-solid fa-trash"></i>
+    <div class="item-controls-container">
+      <div class="item-controls">
+        <button class="decrease-button">&#8722;</button>
+        <span class="item-quantity">1</span>
+        <button class="increase-button">&#43;</button>
+      </div>
+    </div>
+  </section>
+}
+@if (!cartView){
+  <div class="bookPreview">
+    <img class="bookCover" src="{{book.imagen}}" alt="${libro.titulo}">
+    <b class="bookTitle">{{ book.titulo }}</b>
+    <p class="bookAuthor">{{ book.autor }}</p>
+    <p class="bookPrice">{{book.precio .toFixed(2)}}</p>
+  </div>
+}
+
+
+
+

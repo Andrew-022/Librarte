@@ -1,0 +1,35 @@
+<div class="flex-container">
+  <div class="left-margin">
+  </div>
+  <div class="content">
+    <h1>Tu pedido</h1>
+    <main class="shopping-cart-container">
+      <article class="items-container">
+        @for(book of this.books; track book) {
+          <app-book [book] = "book" [cartView]= true></app-book>
+            <hr>
+        }
+      </article>
+      <article class="checkout-container">
+        <h2>Resumen de la compra</h2>
+        <section class="summary">
+          <div class="summary-item">
+            <p>Subtotal:</p>
+            <div class="summary-price">XX€</div>
+          </div>
+          <div class="summary-item">
+            <p>Gastos de Envío:</p>
+            <div class="summary-price">2.99€</div>
+          </div>
+          <div class="summary-item total">
+            <p>Total:</p>
+            <div class="summary-price total-price">XX€</div>
+          </div>
+          <button class="pay-button">Pagar</button>
+        </section>
+      </article>
+    </main>
+  </div>
+  <div class="right-margin">
+  </div>
+</div>

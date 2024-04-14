@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+  import { Component, Input } from '@angular/core';
 import {Book} from "../model/book";
+  import {NgClass} from "@angular/common";
 
 @Component({
   selector: 'app-book',
@@ -11,4 +12,5 @@ import {Book} from "../model/book";
 export class BookComponent {
 
   @Input() book!: Book;
+  @Input() cartView: boolean = false;
 }
