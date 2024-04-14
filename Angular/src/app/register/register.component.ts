@@ -32,7 +32,6 @@ export class RegisterComponent {
 
       this.userJsonService.postUser(this.user).subscribe(
         (registered) => {
-          console.log("Componente: ", registered)
           if(registered) {
             console.log("User registered.")
           } else {

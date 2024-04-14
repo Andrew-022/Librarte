@@ -45,14 +45,13 @@ export class UserJsonService {
   postUser(user: User): Observable<boolean> {
     return this.getUserIfExists(user).pipe(
       switchMap((exists) => {
-
         if (!exists) {
+          console.log("Entra post")
           this.http.post(this.baseUrl, user, this.httpOptions)
           return of(true);
         } else {
           return of(false);
         }
-
       })
     );
   }
@@ -66,7 +65,12 @@ export class UserJsonService {
       );
   }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get<User[]>('http://localhost:3000/data/users');
+  getLoggedUser(user: User): Observable<boolean> {
+    return this.http.get<User[]>(this.baseUrl)
+      .pipe(
+        map((users: User[]) => {
+          return users.some(u => u.email === user.email && u.password === user.password)
+        })
+      );
   }
 }
