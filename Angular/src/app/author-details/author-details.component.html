@@ -8,6 +8,8 @@
   </article>
   <h2>Libros de <span id="nombreAutorSpan">{{author.name}}</span></h2>
   <article class="books">
-
+      @for(book of this.books; track book) {
+          <app-book [book] = "book" [cartView]= false></app-book>
+      }
   </article>
 </div>

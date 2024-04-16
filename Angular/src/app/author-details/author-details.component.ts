@@ -1,9 +1,17 @@
 import { Component } from '@angular/core';
 import {author} from "../model/author";
+import {BookComponent} from "../book/book.component";
+import {Book} from "../model/book";
+import {UserJsonService} from "../services/user-json.service";
+import {last} from "rxjs";
+
+
 @Component({
   selector: 'app-author-details',
   standalone: true,
-  imports: [],
+  imports: [
+    BookComponent
+  ],
   templateUrl: './author-details.component.html',
   styleUrl: './author-details.component.css'
 })
@@ -15,4 +23,15 @@ export class AuthorDetailsComponent {
     cover:"https://imagessl.casadellibro.com/img/autores/jkrowling.jpg",
     works:[1,2,3,4],
   };
+
+  books: Book[] = [];
+  constructor(private databaseService: UserJsonService) { }
+  ngOnInit(): void {
+    this.databaseService.getBooks("assets/search.json")
+        .subscribe((response: any) => {
+          this.books = response.books;
+        });
+  }
+
+  protected readonly last = last;
 }
