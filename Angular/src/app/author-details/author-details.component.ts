@@ -17,7 +17,7 @@ import {logMessages} from "@angular-devkit/build-angular/src/tools/esbuild/utils
   styleUrl: './author-details.component.css'
 })
 export class AuthorDetailsComponent {
-  author: author = { id: 0, name: '', biography: '', cover:'' , works: [] };
+  author: author | undefined;
   books: Book[] = [];
   constructor(private databaseService: UserJsonService) { }
   ngOnInit(): void {

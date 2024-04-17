@@ -3,7 +3,7 @@ export interface Book {
   titulo: string;
   sinopsis: string;
   score: number;
-  nRevies:number;
+  nReviews:number;
   publicationDate: number;
   precio: number;
   num_pag: number;
