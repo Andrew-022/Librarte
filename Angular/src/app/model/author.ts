@@ -3,5 +3,5 @@ export interface author {
   name: string;
   biography: string;
   cover: string;
-  works: number[];
+  works: string[];
 }
