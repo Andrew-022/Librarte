@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/Librarte.iml" filepath="$PROJECT_DIR$/.idea/Librarte.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/librarte.iml" filepath="$PROJECT_DIR$/.idea/librarte.iml" />
     </modules>
   </component>
 </project>

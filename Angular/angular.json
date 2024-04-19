@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Librarte": {
+    "librarte": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Librarte:build:production"
+              "buildTarget": "librarte:build:production"
             },
             "development": {
-              "buildTarget": "Librarte:build:development"
+              "buildTarget": "librarte:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "Librarte:build"
+            "buildTarget": "librarte:build"
           }
         },
         "test": {
