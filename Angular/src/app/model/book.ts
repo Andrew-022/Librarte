@@ -19,4 +19,3 @@ export interface Book {
   grueso: number;
   peso: number;
 }
-

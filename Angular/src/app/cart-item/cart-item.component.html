@@ -1,0 +1,11 @@
+<section class="cart-item">
+  <app-book [bookId]="cartItem.bookId"></app-book>
+  <i class="fa-solid fa-trash"></i>
+  <div class="item-controls-container">
+    <div class="item-controls">
+      <button class="decrease-button">&#8722;</button>
+      <span class="item-quantity">{{cartItem.quantity}}</span>
+      <button class="increase-button">&#43;</button>
+    </div>
+  </div>
+</section>

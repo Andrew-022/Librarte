@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {catchError, Observable} from "rxjs";
+import {catchError, map, Observable} from "rxjs";
 import {Book} from "../model/book";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../model/user";
@@ -38,6 +38,12 @@ export class UserJsonService {
           observer.error(error);
         });
     });
+  }
+
+  getBookById(bookId: string): Observable<Book> {
+    return this.http.get<any>(`http://localhost:3000/data/books/${bookId}`).pipe(
+      map(response => response)
+    );
   }
 
   postBooks(url: string, data: User)  {
