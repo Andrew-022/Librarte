@@ -1,0 +1,58 @@
+.author{
+  display: flex;
+  flex-direction: row;
+  padding-top: 10px;
+}
+.picture{
+  width: 25%;
+  height: auto;
+  object-fit: contain;
+}
+.information{
+  padding-left: 20px;
+}
+
+.bookPreview{
+  display: flex;
+  width: 100%;
+  text-align: center;
+  font-size: 70%;
+  padding: 5px;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.bookCover{
+  width: 100%;
+  object-fit: contain;
+  padding-bottom: 10px;
+  flex: 1;
+}
+
+.books{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+}
+
+p{
+  text-align: justify;
+}
+
+.bookinfo{
+  display: flex;
+  align-items: center; /* Centra verticalmente */
+  flex-direction: column;
+}
+@media only screen and (max-width: 1100px) {
+  .author{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .books{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+}

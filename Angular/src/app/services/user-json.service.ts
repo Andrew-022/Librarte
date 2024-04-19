@@ -3,6 +3,7 @@ import {catchError, Observable} from "rxjs";
 import {Book} from "../model/book";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../model/user";
+import {author} from "../model/author";
 
 
 @Injectable({
@@ -48,5 +49,8 @@ export class UserJsonService {
 
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>('http://localhost:3000/data/users');
+  }
+  getAuthor(): Observable<any> {
+    return this.http.get<any>('http://localhost:3000/data/author');
   }
 }
