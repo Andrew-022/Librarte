@@ -1,0 +1,45 @@
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center; /* Alinea el contenido al centro */
+}
+
+.popup-content textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  height: 15vh; /* Establece la altura del textarea */
+  resize: none; /* Evita que el textarea sea redimensionable */
+}
+
+.popup-content button {
+  margin: 5px;
+}
+
+
+.commenttext{
+  padding-left: 5%;
+  padding-right: 5%;
+  text-align: center;
+  margin-top: 0;
+}
+
+
+#tittleSpan3{
+  color: #93D497;
+}
+
+#submitComment{
+  margin-left: auto;
+}

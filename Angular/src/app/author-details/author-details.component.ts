@@ -18,7 +18,7 @@ import {firebaseRepository} from "../services/firebaseRepository";
   styleUrl: './author-details.component.css'
 })
 export class AuthorDetailsComponent {
-  author: author | undefined;
+  author!: author;
   books: Book[] = [];
   constructor(private databaseService: UserJsonService, private firebase: firebaseRepository) { }
   ngOnInit(): void {

@@ -53,4 +53,8 @@ export class UserJsonService {
   getAuthor(): Observable<any> {
     return this.http.get<any>('http://localhost:3000/data/author');
   }
+
+  getReviews(): Observable<any> {
+    return this.http.get<any>('http://localhost:3000/data/reviews');
+  }
 }
