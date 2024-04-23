@@ -48,7 +48,9 @@ export class BookDetailsComponent {
   constructor(private dialogRef: MatDialog ,private databaseService: UserJsonService, private firebase: firebaseRepository) { }
 
   openDialog(){
-    this.dialogRef.open(PopUpReviewComponent);
+    this.dialogRef.open(PopUpReviewComponent, {
+      data: this.book // Aquí pasas el parámetro al componente
+    });
   }
   ngOnInit(): void {
 

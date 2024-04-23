@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, Inject, Input} from '@angular/core';
+import {Book} from "../model/book";
+import {MAT_DIALOG_DATA} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-pop-up-review',
@@ -8,5 +10,5 @@ import { Component } from '@angular/core';
   styleUrl: './pop-up-review.component.css'
 })
 export class PopUpReviewComponent {
-
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) { }
 }

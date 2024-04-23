@@ -11,7 +11,7 @@ import { MatDialogModule } from "@angular/material/dialog";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MatDialogModule,,RouterOutlet, SearchComponent, RegisterComponent, LoginComponent, ShoppingcartComponent, AuthorDetailsComponent, BookDetailsComponent],
+  imports: [MatDialogModule,RouterOutlet, SearchComponent, RegisterComponent, LoginComponent, ShoppingcartComponent, AuthorDetailsComponent, BookDetailsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
