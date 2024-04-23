@@ -1,11 +1,11 @@
 <section class="cart-item">
   <app-book [bookId]="cartItem.bookId"></app-book>
-  <i class="fa-solid fa-trash"></i>
+  <i class="fa-solid fa-trash" (click)="removeCartItem()"></i>
   <div class="item-controls-container">
     <div class="item-controls">
-      <button class="decrease-button">&#8722;</button>
+      <button class="decrease-button" (click)="decreaseQuantity()">&#8722;</button>
       <span class="item-quantity">{{cartItem.quantity}}</span>
-      <button class="increase-button">&#43;</button>
+      <button class="increase-button" (click)="increaseQuantity()">&#43;</button>
     </div>
   </div>
 </section>

@@ -8,9 +8,11 @@
     </section>
     <div class="container">
       <button id="btnRegistro" class="active">Registro</button>
-      <button id="btnInicioSesion" class="inactive">Inicio de Sesión
-      </button>
+      <button id="btnInicioSesion" class="inactive">Inicio de Sesión</button>
     </div>
+    @if (message){
+      <div>{{message}}</div>
+    }
     <div  class="formulario">
       <form [formGroup]="registerForm" (ngSubmit)="submit()">
         <input type="text" placeholder="Nombre" formControlName="nombre" title="Ingrese un nombre válido (solo letras y espacios)" required>

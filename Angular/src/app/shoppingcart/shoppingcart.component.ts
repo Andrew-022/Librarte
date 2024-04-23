@@ -6,6 +6,7 @@ import {last} from "rxjs";
 import {CartItem} from "../model/cart-item";
 import {CurrencyPipe} from "@angular/common";
 import {CartItemComponent} from "../cart-item/cart-item.component";
+import {remove} from "@angular/fire/database";
 
 @Component({
   selector: 'app-shoppingcart',
@@ -23,6 +24,7 @@ export class ShoppingcartComponent {
   cartItems: CartItem[] = [];
   subtotal: number = 0;
   total: number = 0;
+  currencyCode: string = 'EUR';
 
   constructor(private databaseService: UserJsonService) { }
   ngOnInit(): void {
@@ -47,4 +49,16 @@ export class ShoppingcartComponent {
     this.total = this.subtotal + 2.99;
   }
   protected readonly last = last;
+
+  updateCartItemQuantity(newQuantity: number, index: number) {
+    this.cartItems[index].quantity = newQuantity;
+    this.calculateSubtotal();
+  }
+
+  removeCartItem(index: number) {
+    this.cartItems.splice(index, 1); // Eliminar el cartItem del arreglo cartItems
+    this.calculateSubtotal(); // Volver a calcular el subtotal
+  }
+
+  protected readonly remove = remove;
 }
