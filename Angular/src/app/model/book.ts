@@ -8,7 +8,7 @@ export interface Book {
   precio: number;
   num_pag: number;
   language: string;
-  isbn: string;
+  isbn: number;
   encuadernacion: string;
   editorial: string;
   imagen: string;

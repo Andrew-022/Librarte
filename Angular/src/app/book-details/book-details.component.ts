@@ -30,7 +30,7 @@ export class BookDetailsComponent {
     sinopsis: "El día en que cumple once años, Harry Potter descubre que es hijo de dos conocidos hechiceros, de los que ha heredado poderes mágicos. Deberá acudir entonces a una famosa escuela de magia y hechicería: Howards.",
     score:3,
     nReviews: 150,
-    publicationDate: 2020,
+    publicationDate: "2020",
     precio: 34.15,
     num_pag: 368,
     language: "Castellano",

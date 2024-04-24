@@ -34,10 +34,13 @@ export class AuthorDetailsComponent {
         this.author = response;
       });
 
-    this.databaseService.getBooks("assets/search.json")
+    this.author.works.forEach((id) =>
+      this.databaseService.getBookById(id)
         .subscribe((response: any) => {
-          this.books =  response.books.filter((book: Book) => this.author.works.includes(book.id));
-        });
+          this.books.push(response)
+        })
+    )
+
   }
 
   protected readonly last = last;
