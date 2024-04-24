@@ -91,6 +91,52 @@ app.get('/data/reviews', async (req, res) => {
   }
 });
 
+
+app.get('/data/books', async (req, res) => {
+  try {
+    let authorData;
+
+    try {
+      const data = await fs.promises.readFile('src/data/author.json'); // Lee el archivo author.json
+      authorData = JSON.parse(data);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).send('Error interno del servidor al leer el archivo');
+    }
+
+    res.status(200).json(authorData); // Envía los datos del autor como respuesta
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error interno del servidor');
+  }
+});
+app.get('/data/books/:id', async (req, res) => {
+  try {
+    const bookId = req.params.id;
+
+    let booksData;
+
+    try {
+      const data = await fs.promises.readFile('src/data/books.json');
+      booksData = JSON.parse(data);
+    } catch (error) {
+      console.error(error);
+      return res.status(500).send('Error interno del servidor al leer el archivo de libros');
+    }
+
+    const book = booksData.books.find(book => book.id === bookId);
+
+    if (!book) {
+      return res.status(404).send('Libro no encontrado');
+    }
+
+    res.status(200).json(book);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error interno del servidor');
+  }
+});
+
 app.listen(PORT, () => {
     console.log(`Node Express server listening on http://localhost:${PORT}`);
 });

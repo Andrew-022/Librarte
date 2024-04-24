@@ -6,7 +6,7 @@
     <p class="result">300 resultados para <strong>Quijote</strong></p>
     <div class="books">
       @for(book of this.books; track book) {
-        <app-book [book] = "book"></app-book>
+        <app-book [book] = "book" [cartView]="false"></app-book>
       }
     </div>
   </div>
