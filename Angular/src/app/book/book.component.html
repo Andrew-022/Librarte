@@ -15,9 +15,11 @@
   @if (!cartView){
     <div class="bookPreview">
       <img class="bookCover" src="{{book.imagen}}" alt="${libro.titulo}">
-      <b class="bookTitle">{{ book.titulo }}</b>
-      <p class="bookAuthor">{{ book.autor }}</p>
-      <p class="bookPrice">{{book.precio .toFixed(2)}}</p>
+      <div class="bookInfo">
+        <b class="bookTitle">{{ book.titulo }}</b>
+        <p class="bookAuthor">{{ book.autor }}</p>
+        <p class="bookPrice">{{book.precio .toFixed(2)}}</p>
+      </div>
     </div>
   }
 }

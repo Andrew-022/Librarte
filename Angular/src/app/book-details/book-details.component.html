@@ -4,6 +4,9 @@
     <h1 id= "tittle" style="margin: 0px;" >{{book.titulo}}</h1>
     <p id="editorial" class="editorial">{{book.editorial}} {{book.isbn}}</p>
     <div class="rating">
+      <ng-container *ngFor="let star of [].constructor(5); let i = index">
+          <span class="fa-solid fa-star" [class.full]="i < book.score"></span>
+      </ng-container>
       <p id="reviews2" class="nOpiniones"> {{book.nReviews}} opiniones</p>
     </div>
     <p class="title-sinopsis">Sinopsis de <span id="tittleSpan">{{book.titulo}}</span> </p>
@@ -82,6 +85,9 @@
     <p id="puntuation" class="puntuacion-circulo">{{book.score}}</p>
     <div class="estrellas-con-opiniones-column">
       <div id="rating-opiniones" class="rating">
+        <ng-container *ngFor="let star of [].constructor(5); let i = index">
+          <span class="fa-solid fa-star" [class.full]="i < book.score"></span>
+        </ng-container>
       </div>
       <p id="reviews" class="nOpiniones" style="font-size: 15px">{{book.nReviews}} opiniones</p>
     </div>

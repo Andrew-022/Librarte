@@ -2,12 +2,10 @@
   <div class="popup-content">
     <h2 class="commenttext" >¿Has leído <span id="tittleSpan3">{{ data.titulo }}</span>?</h2>
     <p class="commenttext">Deja tu opinión para ayudar a otros lectores</p>
-    <div id="starcontainercomment">
-      <i id="starReview0" class="fa-solid fa-star"></i>
-      <i id="starReview1" class="fa-solid fa-star"></i>
-      <i id="starReview2" class="fa-solid fa-star"></i>
-      <i id="starReview3" class="fa-solid fa-star"></i>
-      <i id="starReview4" class="fa-solid fa-star"></i>
+    <div class="rating">
+      <ng-container *ngFor="let star of [].constructor(5); let i = index">
+        <span class="fa-solid fa-star" [class.full]="i < selectedStars"  (click)="rate(i + 1)" ></span>
+      </ng-container>
     </div>
     <textarea id="commentInput" placeholder="¿Qué te ha parecido?"></textarea>
     <button id="submitComment" class="boton-generico">Enviar</button>

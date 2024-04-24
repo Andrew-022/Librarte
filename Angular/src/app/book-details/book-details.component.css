@@ -60,11 +60,14 @@
 
 .rating{
   display: flex;
-  color: yellow;
+  color: grey;
   flex-direction: row;
   padding-top: 2px;
 }
 
+.fa-solid.fa-star.full{
+  color: yellow;
+}
 .nOpiniones{
   margin: 0;
   color: #7B757E;

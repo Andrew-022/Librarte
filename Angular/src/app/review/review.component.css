@@ -68,6 +68,17 @@ p{
   text-align: justify;
 }
 
+.rating{
+  display: flex;
+  color: grey;
+  flex-direction: row;
+  padding-top: 2px;
+}
+
+.fa-solid.fa-star.full{
+  color: yellow;
+}
+
 @media only screen and (max-width: 1100px) {
 
   .sinopsis{

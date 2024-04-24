@@ -1,3 +1,13 @@
+
+.rating{
+  color: grey;
+  padding-bottom: 3%;
+}
+
+.fa-solid.fa-star.full{
+  color: yellow;
+}
+
 #popup {
   background-color: white;
   padding: 20px;
