@@ -4,11 +4,11 @@ export interface Book {
   sinopsis: string;
   score: number;
   nReviews:number;
-  publicationDate: number;
+  publicationDate: string;
   precio: number;
   num_pag: number;
   language: string;
-  isbn: number;
+  isbn: string;
   encuadernacion: string;
   editorial: string;
   imagen: string;
