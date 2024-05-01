@@ -5,9 +5,13 @@
     <h1>Tu pedido</h1>
     <main class="shopping-cart-container">
       <article class="items-container">
-        @for(cartItem of this.cartItems; track cartItem) {
-          <app-cart-item [cartItem]="cartItem" (quantityChanged)="updateCartItemQuantity($event, $index)" (remove)="removeCartItem($index)"></app-cart-item>
+        @if(this.cartItems.length === 0){
+          <p class = "cart-menssge">¡Tu carrito está vacío!</p>
+        } @else {
+          @for(cartItem of this.cartItems; track cartItem) {
+            <app-cart-item [cartItem]="cartItem" (quantityChanged)="updateCartItemQuantity($event, $index)" (remove)="removeCartItem($index)"></app-cart-item>
             <hr>
+          }
         }
       </article>
       <article class="checkout-container">

@@ -43,8 +43,8 @@
 }
 
 .item-image {
-  width: 15%;
-  height: 90%;
+  width: 20%; /* Puedes ajustar este valor según el espacio que desees que ocupen las imágenes */
+  max-width: 100px; /* Establece un ancho máximo para el contenedor */
   margin-right: 3%;
   margin-left: 2%;
   background-color: #625f5f;
@@ -73,4 +73,10 @@
 .item-price {
   font-size: 1.1em;
   margin-top: 5%;
+}
+
+@media only screen and (max-width: 500px) {
+  .item-details-left {
+    font-size: 0.8em;
+  }
 }
