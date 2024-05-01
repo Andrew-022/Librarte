@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import {Book} from "../model/book";
 import {UserJsonService} from "../services/user-json.service";
+import {firebaseRepository} from "../services/firebaseRepository";
 import {Subscription} from "rxjs";
 
 @Component({
@@ -16,7 +17,7 @@ export class BookComponent {
   @Input() cartView: boolean = true;
   @Input() bookId!: string;
   private bookSubscription!: Subscription;
-  constructor(private databaseService: UserJsonService) { }
+  constructor(private databaseService: UserJsonService, private firebaseRepository: firebaseRepository) { }
 
   ngOnInit(): void {
     if (!this.book && this.bookId) {
@@ -24,11 +25,22 @@ export class BookComponent {
     }
   }
 
-  private loadBook(): void {
-    this.bookSubscription = this.databaseService.getBookById(this.bookId)
-      .subscribe((book: Book) => {
+
+  private async loadBook(): Promise<void> {
+    // this.bookSubscription = this.databaseService.getBookById(this.bookId)
+    //   .subscribe((book: Book) => {
+    //     this.book = book;
+    //   });
+    try {
+      const book = await this.firebaseRepository.getBookById(this.bookId);
+      if (book) {
         this.book = book;
-      });
+      } else {
+        console.log("No se encontró ningún libro con el ID proporcionado.");
+      }
+    } catch (error) {
+      console.error("Error al cargar el libro:", error);
+    }
   }
 
   ngOnDestroy(): void {

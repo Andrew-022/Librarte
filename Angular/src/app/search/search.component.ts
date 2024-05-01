@@ -5,6 +5,7 @@ import {BookComponent} from "../book/book.component";
 import {FormsModule} from "@angular/forms";
 import {firebaseRepository} from "../services/firebaseRepository";
 import {Observable} from "rxjs";
+import {CartService} from "../services/cart-service.service";
 
 @Component({
   selector: 'app-search',
@@ -21,7 +22,7 @@ export class SearchComponent implements OnInit{
   filteredBooks: Book[] = []; // Libros filtrados
   searchTerm: string = ''; // Término de búsqueda
 
-  constructor(private databaseService: UserJsonService, private firebaseRepository: firebaseRepository) { }
+  constructor(private databaseService: UserJsonService, private firebaseRepository: firebaseRepository, private cartService: CartService ) { }
   ngOnInit(): void {
     // this.databaseService.getBooks("assets/search.json")
     //   .subscribe((response: any) => {
@@ -40,6 +41,9 @@ export class SearchComponent implements OnInit{
       });
   }
 
+  // addToCart(bookId: string) {
+  //   this.cartService.addToCart(bookId);
+  // }
   filterBooks(): void {
     if (this.searchTerm.trim() === '') {
       this.filteredBooks = this.books;

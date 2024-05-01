@@ -9,6 +9,7 @@
     <div class="books">
       @for(book of filteredBooks; track book) {
         <app-book [book] = "book" [cartView]="false"></app-book>
+<!--        <button (click)="addToCart(book.id)">Añadir al carrito</button>-->
       }
     </div>
   </div>
