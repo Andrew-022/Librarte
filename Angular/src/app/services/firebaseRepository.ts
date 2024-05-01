@@ -1,8 +1,10 @@
 import {inject, Injectable} from "@angular/core";
-import {collection, collectionData, Firestore, getDoc, DocumentData, doc, DocumentSnapshot } from "@angular/fire/firestore";
+import {collection, collectionData, Firestore, getDoc, doc, DocumentSnapshot } from "@angular/fire/firestore";
 import {Observable} from "rxjs";
 import {author} from "../model/author";
 import {Book} from "../model/book";
+import {QuerySnapshot} from "@angular/fire/compat/firestore";
+import {getDocs} from "@angular/fire/firestore/lite";
 
 @Injectable({
   providedIn: "root",
@@ -46,5 +48,10 @@ export class firebaseRepository{
       console.error("Error al obtener el libro:", error);
       return undefined;
     }
+  }
+
+
+  async getAllBooks(){
+    return collectionData(collection(this._firestore,"books")) as Observable<Book[]>
   }
 }

@@ -3,6 +3,8 @@ import { UserJsonService } from "../services/user-json.service";
 import {Book} from "../model/book";
 import {BookComponent} from "../book/book.component";
 import {FormsModule} from "@angular/forms";
+import {firebaseRepository} from "../services/firebaseRepository";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-search',
@@ -19,18 +21,27 @@ export class SearchComponent implements OnInit{
   filteredBooks: Book[] = []; // Libros filtrados
   searchTerm: string = ''; // Término de búsqueda
 
-  constructor(private databaseService: UserJsonService) { }
+  constructor(private databaseService: UserJsonService, private firebaseRepository: firebaseRepository) { }
   ngOnInit(): void {
-    this.databaseService.getBooks("assets/search.json")
-      .subscribe((response: any) => {
-        this.books = response.books;
-        this.filteredBooks = this.books;
+    // this.databaseService.getBooks("assets/search.json")
+    //   .subscribe((response: any) => {
+    //     this.books = response.books;
+    //     this.filteredBooks = this.books;
+    //   });
+    this.firebaseRepository.getAllBooks()
+      .then((booksObservable: Observable<Book[]>) => {
+        booksObservable.subscribe((books: Book[]) => {
+          this.books = books;
+          this.filteredBooks = this.books;
+        });
+      })
+      .catch((error) => {
+        console.error("Error al obtener los libros:", error);
       });
   }
 
   filterBooks(): void {
     if (this.searchTerm.trim() === '') {
-      // Si el término de búsqueda está vacío, mostrar todos los libros
       this.filteredBooks = this.books;
     } else {
       const searchTermNumber = parseFloat(this.searchTerm.trim());
