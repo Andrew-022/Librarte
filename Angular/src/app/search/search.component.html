@@ -3,9 +3,11 @@
   <div class="left-margin">
   </div>
   <div class="content">
-    <p class="result">300 resultados para <strong>Quijote</strong></p>
+    <input type="text" [(ngModel)]="searchTerm" (keydown.enter)="filterBooks()" placeholder="Buscar libro">
+    <button (click)="filterBooks()">Buscar</button>
+    <p class="result">{{filteredBooks.length}} resultados para <strong>{{ searchTerm }}</strong></p>
     <div class="books">
-      @for(book of this.books; track book) {
+      @for(book of filteredBooks; track book) {
         <app-book [book] = "book" [cartView]="false"></app-book>
       }
     </div>
