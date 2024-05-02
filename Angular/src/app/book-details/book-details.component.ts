@@ -46,6 +46,11 @@ export class BookDetailsComponent {
         console.log("respuesta"+response);
         console.log("reviews"+this.reviews[0].picture);
       });
+
+  }
+
+  addbook(){
+    this.firebase.addEmptyBook();
   }
 
 //   this.databaseService.getBooks("assets/search.json")
