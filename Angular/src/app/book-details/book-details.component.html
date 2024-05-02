@@ -73,7 +73,7 @@
     <div class="line"></div>
   </div>
 
-  <app-author-details></app-author-details>
+  <app-author-details [authorid]="book.author_id"></app-author-details>
 
   <div class="container">
     <div class="line"></div>
@@ -94,7 +94,7 @@
       </div>
     </div>
     <p style="font-size: 18px; margin: 5px">¿Qué te ha parecido?</p>
-    <button (click)="addauthor()"  id="boton-opinion" class="boton-generico">Deja tu opinión</button>
+    <button (click)="openDialog()"  id="boton-opinion" class="boton-generico">Deja tu opinión</button>
   </article>
   <article class="comentarios">
     @for(review of this.reviews; track review) {

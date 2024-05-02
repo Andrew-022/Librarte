@@ -3,11 +3,14 @@ import {Book} from "../model/book";
 import {UserJsonService} from "../services/user-json.service";
 import {firebaseRepository} from "../services/firebaseRepository";
 import {Subscription} from "rxjs";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-book',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './book.component.html',
   styleUrl: './book.component.css'
 })
@@ -48,4 +51,5 @@ export class BookComponent {
       this.bookSubscription.unsubscribe();
     }
   }
+
 }

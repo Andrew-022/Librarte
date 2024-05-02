@@ -5,6 +5,7 @@ import {author} from "../model/author";
 import {Book} from "../model/book";
 import {QuerySnapshot} from "@angular/fire/compat/firestore";
 import {getDocs} from "@angular/fire/firestore/lite";
+import {review} from "../model/reviews";
 
 @Injectable({
   providedIn: "root",
@@ -101,5 +102,26 @@ export class firebaseRepository{
     } catch (error) {
       console.error("Error al añadir el autor:", error);
     }
+  }
+
+  async addReview(bookId:string, comentario:string, rating: number, user: string): Promise<void> {
+    try {
+      const review: review = {
+        picture: "",
+        publicationDate: "",
+        rating: rating,
+        review: comentario,
+        user: user,
+      };
+
+      await addDoc(collection(this._firestore, `books/${bookId}/reviews`), review);
+      console.log("Autor añadido correctamente con parámetros vacíos.");
+    } catch (error) {
+      console.error("Error al añadir el autor:", error);
+    }
+  }
+
+  getReviews(bookId: string): Observable<review[]> {
+    return collectionData(collection(this._firestore, `books/${bookId}/reviews`)) as Observable<review[]>;
   }
 }

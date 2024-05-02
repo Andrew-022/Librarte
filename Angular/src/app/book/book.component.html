@@ -13,7 +13,7 @@
     </div>
   }
   @if (!cartView){
-    <div class="bookPreview">
+    <div class="bookPreview" routerLink="/book/{{book.id}}">
       <img class="bookCover" src="{{book.imagen}}" alt="${libro.titulo}">
       <div class="bookInfo">
         <b class="bookTitle">{{ book.titulo }}</b>

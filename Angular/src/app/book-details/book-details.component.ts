@@ -36,26 +36,34 @@ export class BookDetailsComponent {
       data: this.book
     });
   }
-  async ngOnInit(): Promise<void> {
-    // this.databaseService.getBookById(this.id)
-    //     .subscribe((response: any) => {
-    //       this.book=response;
-    //     });
-    this.databaseService.getReviews()
-      .subscribe((response: any) => {
-        this.reviews =  response;
-        console.log("respuesta"+response);
-        console.log("reviews"+this.reviews[0].picture);
-      });
+  ngOnInit(): void {
 
-    const bookId = this.route.snapshot.paramMap.get('id');
-    if (bookId) {
-      this.book = await this.firebase.getBookById(bookId);
-      if(!this.book){
-        this.error=true;
+    // this.databaseService.getReviews()
+    //   .subscribe((response: any) => {
+    //     this.reviews = response;
+    //     console.log("respuesta" + response);
+    //     console.log("reviews" + this.reviews[0].picture);
+    //   });
+
+    this.route.paramMap.subscribe(async params => {
+      const id = params.get('id'); // Obtener el valor de 'id' de los parámetros
+      if (id !== null) { // Verificar que 'id' no sea nulo
+        this.id = id; // Asignar 'id' solo si no es nulo
+
+        // Obtén el libro correspondiente al nuevo id
+        if (this.id) {
+          this.book = await this.firebase.getBookById(this.id);
+          if (!this.book) {
+            this.error = true;
+          }
+        }
+        window.scrollTo(0, 0);
+        // Actualiza las reseñas cada vez que cambia el id
+        this.firebase.getReviews(this.id).subscribe(reviews => {
+          this.reviews = reviews;
+        });
       }
-    }
-
+    });
   }
 
   addbook(){
