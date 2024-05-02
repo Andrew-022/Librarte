@@ -9,6 +9,7 @@ import {ReviewComponent} from "../review/review.component";
 import { MatDialog } from "@angular/material/dialog";
 import {PopUpReviewComponent} from "../pop-up-review/pop-up-review.component";
 import {NgForOf} from "@angular/common";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -26,26 +27,34 @@ import {NgForOf} from "@angular/common";
 export class BookDetailsComponent {
   id: string = "2";
   reviews: review[] = [];
-  book!: Book;
-  constructor(private dialogRef: MatDialog ,private databaseService: UserJsonService, private firebase: firebaseRepository) { }
+  book: Book | undefined;
+  error=false;
+  constructor(private route: ActivatedRoute,private dialogRef: MatDialog ,private databaseService: UserJsonService, private firebase: firebaseRepository) { }
 
   openDialog(){
     this.dialogRef.open(PopUpReviewComponent, {
-      data: this.book // Aquí pasas el parámetro al componente
+      data: this.book
     });
   }
-  ngOnInit(): void {
-    this.databaseService.getBookById(this.id)
-        .subscribe((response: any) => {
-          this.book=response;
-        })
-
+  async ngOnInit(): Promise<void> {
+    // this.databaseService.getBookById(this.id)
+    //     .subscribe((response: any) => {
+    //       this.book=response;
+    //     });
     this.databaseService.getReviews()
       .subscribe((response: any) => {
         this.reviews =  response;
         console.log("respuesta"+response);
         console.log("reviews"+this.reviews[0].picture);
       });
+
+    const bookId = this.route.snapshot.paramMap.get('id');
+    if (bookId) {
+      this.book = await this.firebase.getBookById(bookId);
+      if(!this.book){
+        this.error=true;
+      }
+    }
 
   }
 
