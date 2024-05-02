@@ -53,6 +53,10 @@ export class BookDetailsComponent {
     this.firebase.addEmptyBook();
   }
 
+  addauthor(){
+    this.firebase.addEmptyAuthor();
+  }
+
 //   this.databaseService.getBooks("assets/search.json")
 // .subscribe((response: any) => {
 //   this.books =  response.books.filter((book: Book) => this.author.works.includes(book.id));

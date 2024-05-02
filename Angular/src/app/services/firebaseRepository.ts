@@ -85,4 +85,21 @@ export class firebaseRepository{
       console.error("Error al añadir el libro:", error);
     }
   }
+
+  async addEmptyAuthor(): Promise<void> {
+    try {
+      const emptyAuthor: author = {
+        id: "",
+        name: "",
+        biography: "",
+        cover: "",
+        works: [],
+      };
+
+      await addDoc(collection(this._firestore, "authors"), emptyAuthor);
+      console.log("Autor añadido correctamente con parámetros vacíos.");
+    } catch (error) {
+      console.error("Error al añadir el autor:", error);
+    }
+  }
 }
