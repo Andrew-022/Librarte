@@ -1,9 +1,8 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import {faUser, faCartShopping, faMagnifyingGlass, faUserPlus} from '@fortawesome/free-solid-svg-icons';
-import {RouterLink, RouterOutlet} from "@angular/router";
+import {RouterLink, Router, RouterOutlet, NavigationStart} from "@angular/router";
 import {SearchService} from "../services/search.service";
-
 
 @Component({
   selector: 'app-navbar',
@@ -18,12 +17,17 @@ export class NavbarComponent {
   protected readonly faMagnifyingGlass = faMagnifyingGlass;
   protected readonly faUserPlus = faUserPlus;
 
+  searchTerm: string = ''
+
   onInputChange(event: Event) {
     const searchText = (event.target as HTMLInputElement).value;
+
     this.searchService.setSearchQuery(searchText);
-    this.searchService.navigateToSearchPage(searchText); // Navegar a la página de búsqueda
+
+    if(searchText != '') {
+      this.searchService.navigateToSearchPage(searchText);
+    }
   }
 
-  constructor(private searchService: SearchService) {
-  }
+  constructor(private searchService: SearchService, private router: Router) { }
 }

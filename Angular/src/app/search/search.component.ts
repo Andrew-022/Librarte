@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit} from '@angular/core';
 import { UserJsonService } from "../services/user-json.service";
 import {Book} from "../model/book";
 import {BookComponent} from "../book/book.component";
@@ -19,27 +19,31 @@ import {SearchService} from "../services/search.service";
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'
 })
-export class SearchComponent implements OnInit{
+export class SearchComponent implements OnInit {
   books: Book[] = [];
   filteredBooks: Book[] = []; // Libros filtrados
   searchTerm: string = ''; // Término de búsqueda
 
   constructor(private searchService: SearchService, private databaseService: UserJsonService, private firebaseRepository: firebaseRepository, private cartService: CartService, private router: Router ) { }
   ngOnInit(): void {
-    this.firebaseRepository.getAllBooks()
-      .then((booksObservable: Observable<Book[]>) => {
-        booksObservable.subscribe((books: Book[]) => {
-          this.books = books;
-          this.filteredBooks = this.books;
-        });
-      })
-      .catch((error) => {
-        console.error("Error al obtener los libros:", error);
-      });
+    this.getBooks();
     this.searchService.getSearchQuery().subscribe(query => {
       this.searchTerm = query;
       this.filterBooks();
     });
+  }
+
+  getBooks() {
+    this.firebaseRepository.getAllBooks()
+        .then((booksObservable: Observable<Book[]>) => {
+          booksObservable.subscribe((books: Book[]) => {
+            this.books = books;
+            this.filteredBooks = this.books;
+          });
+        })
+        .catch((error) => {
+          console.error("Error al obtener los libros:", error);
+        });
   }
 
   filterBooks(): void {
