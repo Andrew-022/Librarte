@@ -29,7 +29,7 @@
             <p>Total:</p>
             <div class="summary-price total-price">{{ total | currency: currencyCode }}</div>
           </div>
-          <button class="pay-button">Pagar</button>
+          <button class="pay-button" (click)="onPay()">Pagar</button>
         </section>
       </article>
     </main>
