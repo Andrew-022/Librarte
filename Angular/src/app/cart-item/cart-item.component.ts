@@ -27,6 +27,6 @@ export class CartItemComponent {
     }
   }
   removeCartItem() {
-    this.remove.emit(); // Emitir evento para eliminar el cartItem
+    this.remove.emit();
   }
 }

@@ -24,6 +24,19 @@ export class RegisterComponent {
     mail: ['', [Validators.required, Validators.email, Validators.pattern('^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$')]],
     contraseña: ['', [Validators.required,Validators.maxLength(16),Validators.minLength(8)]]
   })
+    submit(){
+      const rawForm = this.registerForm.getRawValue();
+      this.authService.register(rawForm.mail, rawForm.nombre, rawForm.contraseña)
+        .subscribe({
+          next: () =>{
+            this.message = "Usuario Registrado"
+          },
+          error: (error) => {
+            this.message = error.code;
+          }
+        });
+    }
+
   // submitJSON(){
   //   if(this.registerForm.valid) {
   //     const formData = this.registerForm.value;
@@ -38,18 +51,7 @@ export class RegisterComponent {
   //        error: (error) => console.error('Error al enviar datos al servidor', error),
   //      })
   //   }
-    submit(){
-      const rawForm = this.registerForm.getRawValue();
-      this.authService.register(rawForm.mail, rawForm.nombre, rawForm.contraseña)
-        .subscribe({
-          next: () =>{
-            this.message = "Usuario Registrado"
-          },
-          error: (error) => {
-            this.message = error.code;
-          }
-        });
-    }
-  }
+  // }
+}
 
 

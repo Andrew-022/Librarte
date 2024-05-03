@@ -31,15 +31,6 @@ export class ShoppingcartComponent {
   constructor(private databaseService: UserJsonService, private cartService: CartService, private firebaseRepository: firebaseRepository,
               private authService: FirebaseAuthService, private router: Router) { }
   ngOnInit(): void {
-    // this.databaseService.getBooks("assets/search.json")
-    //   .subscribe((response: any) => {
-    //     this.books = response.books;
-    //     this.cartItems = this.books.map(book => ({
-    //       bookId: book.id,
-    //       quantity: 1
-    //     }));
-    //     this.calculateSubtotal();
-    //   });
     this.cartService.cartItems$.subscribe(items => {
       this.cartItems = items;
       this.calculateSubtotal();
@@ -77,5 +68,16 @@ export class ShoppingcartComponent {
         this.router.navigate(['login']);
       }
     });
+  }
+  useJSON(){
+    this.databaseService.getBooks("assets/search.json")
+      .subscribe((response: any) => {
+        this.books = response.books;
+        this.cartItems = this.books.map(book => ({
+          bookId: book.id,
+          quantity: 1
+        }));
+        this.calculateSubtotal();
+      });
   }
 }

@@ -24,24 +24,24 @@ export class LoginComponent {
     loginPwd: ['',[ Validators.required,]]
   });
 
-  // submitJSON() {
-  //   if (this.loginForm.valid) {
-  //     const email = this.loginForm.value.loginMail;
-  //     const password = this.loginForm.value.loginPwd;
-  //
-  //     // Obtener los usuarios del JSON
-  //     this.databaseJSONService.getUsers().subscribe(users => {
-  //       const user = users.find(u => u.email === email && u.password === password);
-  //       if (user) {
-  //         // Usuario autenticado
-  //         console.log('Usuario autenticado');
-  //       } else {
-  //         // Credenciales incorrectas
-  //         this.loginMsg = 'Credenciales incorrectas'
-  //       }
-  //     });
-  //   }
-  // }
+  submitJSON() {
+    if (this.loginForm.valid) {
+      const email = this.loginForm.value.loginMail;
+      const password = this.loginForm.value.loginPwd;
+
+      // Obtener los usuarios del JSON
+      this.databaseJSONService.getUsers().subscribe(users => {
+        const user = users.find(u => u.email === email && u.password === password);
+        if (user) {
+          // Usuario autenticado
+          console.log('Usuario autenticado');
+        } else {
+          // Credenciales incorrectas
+          this.loginMsg = 'Credenciales incorrectas'
+        }
+      });
+    }
+  }
 
   submit(){
     const rawForm = this.loginForm.getRawValue();

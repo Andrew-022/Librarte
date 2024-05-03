@@ -24,11 +24,6 @@ export class SearchComponent implements OnInit{
 
   constructor(private databaseService: UserJsonService, private firebaseRepository: firebaseRepository, private cartService: CartService ) { }
   ngOnInit(): void {
-    // this.databaseService.getBooks("assets/search.json")
-    //   .subscribe((response: any) => {
-    //     this.books = response.books;
-    //     this.filteredBooks = this.books;
-    //   });
     this.firebaseRepository.getAllBooks()
       .then((booksObservable: Observable<Book[]>) => {
         booksObservable.subscribe((books: Book[]) => {
@@ -41,9 +36,6 @@ export class SearchComponent implements OnInit{
       });
   }
 
-  // addToCart(bookId: string) {
-  //   this.cartService.addToCart(bookId);
-  // }
   filterBooks(): void {
     if (this.searchTerm.trim() === '') {
       this.filteredBooks = this.books;
@@ -61,5 +53,12 @@ export class SearchComponent implements OnInit{
         );
       }
     }
+  }
+  useJSON(){
+    this.databaseService.getBooks("assets/search.json")
+      .subscribe((response: any) => {
+        this.books = response.books;
+        this.filteredBooks = this.books;
+      });
   }
 }
