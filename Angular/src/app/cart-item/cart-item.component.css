@@ -1,0 +1,48 @@
+.cart-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 2% 2%;
+}
+
+.item-controls-container {
+  display: flex;
+  justify-content: flex-end; /* Alinear los botones a la derecha */
+  border: 1px solid #77CF7C ; /* Estilo del rectángulo */
+  padding: 0.75%; /* Espacio alrededor de los botones */
+  border-radius: 5%; /* Borde redondeado */
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+.item-controls button {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-left: 5px; /* Agregar margen entre los botones */
+}
+
+.item-controls .item-quantity {
+  padding: 0 5px;
+  font-size: 1em;
+}
+
+.fa-solid.fa-trash {
+  color: red;
+  margin: auto 2% auto auto;
+}
+
+.fa-solid.fa-trash:hover {
+  cursor: pointer;
+}
+app-book {
+  width: 75%;
+}
+
+@media only screen and (max-width: 500px) {
+  app-book {
+    width: 60%;
+  }
+}

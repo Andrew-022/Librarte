@@ -1,0 +1,23 @@
+[
+    {
+      "user": "Tobias",
+      "review":"La lectura es entretenida y se hace ameno,muy sentimental que te hace reflexionar pero no para leer en época de bajón",
+      "rating":3.6,
+      "picture": "/assets/static/tobias.jpg",
+      "publicationDate": "6 de diciembre de 2024"
+    },
+    {
+      "user": "Marco",
+      "review":"Fue el libro que me hizo ser adicta a los libros y siempre le voy a tener especial cariño. Lo leí con 13 y creo que es buena edad.",
+      "rating":2.3,
+      "picture": "https://depor.com/resizer/25quKBxP8Ti7cjCcmnR887FHER0=/1200x1200/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/DAYT2F5NUNB7VPAFKUPHNDXVQA.jpg",
+      "publicationDate": "6 de diciembre de 2024"
+    },
+    {
+      "user": "Juan Antonio",
+      "review":"¡Qué libro! Brillantemente triste. Créanme, ¡llorarás, reirás, te emocionarás! Muy bonita la historia, hermosa. Un absoluto 10. Te transporta a su historia. Lo leí en menos de 2 días. Altamente recomendable.",
+      "rating":4.8,
+      "picture": "https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/media/image/2018/11/doraemon.jpg?tf=3840x",
+      "publicationDate": "6 de diciembre de 2024"
+    }
+]

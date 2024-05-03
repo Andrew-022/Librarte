@@ -3,6 +3,7 @@ import {catchError, map, Observable, of, switchMap} from "rxjs";
 import {Book} from "../model/book";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../model/user";
+import {author} from "../model/author";
 
 
 @Injectable({
@@ -57,6 +58,18 @@ export class UserJsonService {
     );
   }
 
+  getBookById(bookId: string): Observable<Book> {
+    return this.http.get<any>(`http://localhost:3000/data/books/${bookId}`).pipe(
+      map(response => response)
+    );
+  }
+
+  postBooks(url: string, data: User)  {
+    this.http.post(url, data, this.httpOptions)
+        .subscribe((response) => {
+          console.log("Error with ", response)
+        });
+    }
   private getUserIfExists(user: User): Observable<boolean> {
     return this.http.get<User[]>(this.baseUrl)
       .pipe(
@@ -73,5 +86,16 @@ export class UserJsonService {
           return users.some(u => u.email === user.email && u.password === user.password)
         })
       );
+  }
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>('http://localhost:3000/data/users');
+  }
+
+  getAuthor(): Observable<any> {
+    return this.http.get<any>('http://localhost:3000/data/author');
+  }
+
+  getReviews(): Observable<any> {
+    return this.http.get<any>('http://localhost:3000/data/reviews');
   }
 }

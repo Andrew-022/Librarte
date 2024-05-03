@@ -1,0 +1,39 @@
+<div class="flex-container">
+  <div class="left-margin">
+  </div>
+  <div class="content">
+    <h1>Tu pedido</h1>
+    <main class="shopping-cart-container">
+      <article class="items-container">
+        @if(this.cartItems.length === 0){
+          <p class = "cart-menssge">¡Tu carrito está vacío!</p>
+        } @else {
+          @for(cartItem of this.cartItems; track cartItem) {
+            <app-cart-item [cartItem]="cartItem" (quantityChanged)="updateCartItemQuantity($event, $index)" (remove)="removeCartItem($index)"></app-cart-item>
+            <hr>
+          }
+        }
+      </article>
+      <article class="checkout-container">
+        <h2>Resumen de la compra</h2>
+        <section class="summary">
+          <div class="summary-item">
+            <p>Subtotal:</p>
+            <div class="summary-price">{{ subtotal | currency: currencyCode }}</div>
+          </div>
+          <div class="summary-item">
+            <p>Gastos de Envío:</p>
+            <div class="summary-price"> {{'2.99' | currency: currencyCode}}</div>
+          </div>
+          <div class="summary-item total">
+            <p>Total:</p>
+            <div class="summary-price total-price">{{ total | currency: currencyCode }}</div>
+          </div>
+          <button class="pay-button" (click)="onPay()">Pagar</button>
+        </section>
+      </article>
+    </main>
+  </div>
+  <div class="right-margin">
+  </div>
+</div>

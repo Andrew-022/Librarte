@@ -32,7 +32,7 @@ $(document).ready(function() {
                 return libros.find(libro => libro.id === id);
             }
 
-            const book = buscarLibroPorId(1);
+            const book = buscarLibroPorId(3);
 
             const tittle = book.title;
             const sinopsis = book.sinopsis;

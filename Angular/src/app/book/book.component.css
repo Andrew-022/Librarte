@@ -7,14 +7,27 @@
 .bookPreview b{
   text-align: center;
 }
+.bookPreview {
+  display: flex;
+  height: 100%;
+  text-align: center;
+  font-size: 70%;
+  padding: 5px;
+  cursor: pointer;
+  flex-direction: column;
+}
 
 .bookCover {
   width: 100%;
-  height: auto;
+  object-fit: contain;
+  padding-bottom: 10px;
+  flex: 1;
 }
 
-.bookInfo {
-  margin-top: 1%;
+.bookInfo{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 .bookPrice {
@@ -23,3 +36,47 @@
   padding: 3%;
 }
 
+.cart-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.item-image {
+  width: 20%; /* Puedes ajustar este valor según el espacio que desees que ocupen las imágenes */
+  max-width: 100px; /* Establece un ancho máximo para el contenedor */
+  margin-right: 3%;
+  margin-left: 2%;
+  background-color: #625f5f;
+  border: 1px solid #090707;
+}
+.item-details {
+  display: flex;
+  flex-grow: 1; /* Hacer que la sección de detalles crezca */
+}
+
+.item-details-left {
+  display: flex;
+  flex-direction: column; /* Apilar elementos verticalmente */
+  margin-right: 4%; /* Agregar espacio entre la columna de texto y los botones */
+}
+
+.item-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.item-author {
+  color: #888;
+  margin: 0;
+}
+.item-price {
+  font-size: 1.1em;
+  margin-top: 5%;
+}
+
+@media only screen and (max-width: 500px) {
+  .item-details-left {
+    font-size: 0.8em;
+  }
+}

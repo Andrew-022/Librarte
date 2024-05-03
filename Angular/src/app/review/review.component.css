@@ -1,0 +1,91 @@
+
+
+.opiniones{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+}
+
+#boton-opinion{
+  width: 200px;
+}
+.puntuacion-con-estrellas{
+  display: flex;
+  flex-direction: row;
+}
+
+.estrellas-con-opiniones-column{
+  margin-bottom: auto;
+  margin-top: auto;
+  padding: 5px;
+}
+
+
+#rating-opiniones{
+  font-size: 20px;
+}
+
+.profile-picture{
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  border: 1px solid gray;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-bottom: auto;
+  margin-right: 10px;
+  aspect-ratio: 1 / 1;
+}
+
+.cajon-comentario{
+  display: flex;
+  padding-top: 10px;
+}
+
+.comentario{
+  flex: 1;
+}
+.username{
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-weight: bold;
+  color: #7B757E;
+}
+
+.review{
+  margin-top: 5px;
+}
+
+.publicationDateReview{
+  margin: 0;
+  color: #7B757E;
+  padding-left: 5px;
+}
+
+p{
+  text-align: justify;
+}
+
+.rating{
+  display: flex;
+  color: grey;
+  flex-direction: row;
+  padding-top: 2px;
+}
+
+.fa-solid.fa-star.full{
+  color: yellow;
+}
+
+@media only screen and (max-width: 1100px) {
+
+  .sinopsis{
+    padding-left: 0;
+    flex: 1;
+    }
+  .opiniones{
+    padding-top: 30px;
+  }
+}

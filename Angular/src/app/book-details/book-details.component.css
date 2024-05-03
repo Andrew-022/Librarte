@@ -1,0 +1,326 @@
+
+
+#starcontainercomment{
+  padding-bottom: 5%;
+  font-size: 150%;
+}
+
+
+.book{
+  display: flex;
+  flex-flow: row wrap;
+  padding-top: 10px;
+  flex: 1;
+  width: 100%;
+}
+.book-picture {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: flex-start;
+  width: 25%;
+}
+.book-picture img{
+  min-width: 50%;
+  width: 100%;
+  height: auto;
+}
+
+.picture{
+  width: 25%;
+  height: 400px;
+}
+.sinopsis{
+  display: flex;
+  flex-flow: column wrap;
+  padding-left: 20px;
+  flex: 2;
+  width: 100%;
+}
+.compra {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 15%;
+}
+
+.title-sinopsis{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #7B757E;
+  font-size: 130%;
+  font-weight: bold;
+}
+
+.editorial{
+  margin: 0;
+  color: #7B757E;
+  font-size: 80%;
+}
+
+.rating{
+  display: flex;
+  color: grey;
+  flex-direction: row;
+  padding-top: 2px;
+}
+
+.fa-solid.fa-star.full{
+  color: yellow;
+}
+.nOpiniones{
+  margin: 0;
+  color: #7B757E;
+  font-size: 80%;
+  padding-left: 5px;
+}
+.leerMas{
+  color: #93D497;
+  cursor: pointer;
+}
+
+.datosprecio {
+  display: flex;
+}
+
+.precio {
+  font-weight: bold;
+  font-size: 120%;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+.envio {
+  margin-left: auto; /* Empuja el elemento hacia la derecha dentro de su contenedor */
+  margin-top: auto;
+  padding: 5px;
+  font-size: 70%;
+}
+
+.boton-generico{
+  padding: 5px ;
+  color: #93D497;
+  background-color: white;
+  font-weight: bold;
+  border: 2px solid #93D497; /* Grosor y color del borde */
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.boton-generico:active {
+  transform: scale(0.9); /* Reduce el tamaño del botón al hacer clic */
+}
+
+.envio-datos{
+  display: flex;
+  width: 70%;
+}
+
+.fa-solid.fa-truck{
+  color: #93D497;
+  margin-top: auto;
+  margin-bottom: auto;
+  padding: 10px;
+}
+.fecha-deliver{
+  color: #342E37;
+  font-size: 70%;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  margin: 0;
+}
+
+.line {
+  height: 2px;
+  background-color: black;
+  flex-grow: 1;
+  margin: 0;
+}
+
+.centered-word {
+  margin: 0 20px;
+  color: #342E37;
+  font-size: 130%;
+}
+
+.ficha-tecnica{
+  display: flex;
+  width: 100%
+}
+.subdiv{
+  flex: 1;
+}
+
+.caracteristicas{
+  flex: 1;
+  font-weight: bold;
+}
+
+
+.opiniones{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.puntuacion-circulo{
+  width: 100px; /* Ajusta el tamaño del círculo según tus necesidades */
+  height: 100px;
+  border-radius: 50%; /* Hace que el borde sea redondeado, creando un círculo */
+  background-color: #93D497; /* Puedes cambiar el color de fondo según tus preferencias */
+  text-align: center; /* Centra el contenido del párrafo dentro del círculo */
+  line-height: 100px;
+  font-size: 200%;
+  font-weight: bold;
+  margin: 0;
+}
+
+#boton-opinion{
+  width: 200px;
+}
+.puntuacion-con-estrellas{
+  display: flex;
+  flex-direction: row;
+}
+
+.estrellas-con-opiniones-column{
+  margin-bottom: auto;
+  margin-top: auto;
+  padding: 5px;
+}
+
+
+#rating-opiniones{
+  font-size: 20px;
+}
+
+.profile-picture{
+  width: 10%;
+  height: 10%;
+  border-radius: 50%;
+  border: 1px solid gray;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-bottom: auto;
+  margin-right: 10px;
+  aspect-ratio: 1 / 1;
+}
+
+.cajon-comentario{
+  display: flex;
+  padding-top: 10px;
+}
+
+.comentario{
+  flex: 1;
+}
+.username{
+  margin-bottom: 5px;
+  margin-top: 5px;
+  font-weight: bold;
+  color: #7B757E;
+}
+
+.author-details .content{
+  width: 100%;
+}
+
+.content {
+  padding: 0.5em;
+}
+.review{
+  margin-top: 5px;
+}
+
+.publicationDateReview{
+  margin: 0;
+  color: #7B757E;
+  padding-left: 5px;
+}
+
+p{
+  text-align: justify;
+}
+
+@media only screen and (max-width: 1100px) {
+  .book{
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sinopsis{
+    padding-left: 0;
+    flex: 1;
+  }
+
+  .title-sinopsis {
+    background-image: linear-gradient(to right, #93D497, #93D497);
+    background-size: 100% 2px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+  .editorial{
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+
+  .picture{
+    object-fit: scale-down;
+    background-image: linear-gradient(to right, #93D497, #93D497);
+    background-size: 100% 5px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  .compra{
+    width: 100%;
+  }
+
+  .envio-datos{
+    padding-top: 5px;
+  }
+
+  .ficha-tecnica{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .line{
+    background-color: #93D497;
+  }
+
+  .centered-word{
+    text-align: center;
+  }
+
+  #textOpinion{
+    background-image: linear-gradient(to right, #93D497, #93D497);
+    background-size: 100% 2px;
+    background-position: bottom;
+    background-repeat: no-repeat;
+  }
+
+  .opiniones{
+    padding-top: 30px;
+  }
+
+  .ficha-tecnica{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #popup {
+    width: 80%;
+  }
+}

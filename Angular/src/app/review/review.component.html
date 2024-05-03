@@ -1,0 +1,13 @@
+<section class="cajon-comentario">
+  <img class="profile-picture" src="{{review.picture}}" alt="profile picture">
+  <div class="comentario">
+    <p class="username">{{review.user}}</p>
+    <div id="rating-comentarios" class="rating">
+      <ng-container *ngFor="let star of [].constructor(5); let i = index">
+        <span class="fa-solid fa-star" [class.full]="i < review.rating"></span>
+      </ng-container>
+      <p style="margin: 0; color: #7B757E; padding-left: 5px;">{{review.publicationDate }}</p>
+    </div>
+    <p style="margin-top: 5px">{{review.review}}</p>
+  </div>
+</section>
