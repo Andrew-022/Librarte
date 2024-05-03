@@ -9,17 +9,34 @@ export class CartService {
   private cartItemsSubject = new BehaviorSubject<CartItem[]>([]);
   cartItems$ = this.cartItemsSubject.asObservable();
 
-  constructor() { }
-
+  constructor() {
+    this.loadCartFromStorage();
+  }
   addToCart(bookId: string) {
     const currentCartItems = this.cartItemsSubject.getValue();
-    const existingItem = currentCartItems.find(item => item.bookId === bookId);
+    const existingItemIndex = currentCartItems.findIndex(item => item.bookId === bookId);
 
-    if (existingItem) {
-      existingItem.quantity++;
+    if (existingItemIndex !== -1) {
+      const updatedCartItems = [...currentCartItems];
+      updatedCartItems[existingItemIndex].quantity++;
+      this.cartItemsSubject.next(updatedCartItems);
     } else {
-      currentCartItems.push({ bookId, quantity: 1 });
+      const updatedCartItems = [...currentCartItems, { bookId, quantity: 1 }];
+      this.cartItemsSubject.next(updatedCartItems);
     }
-    this.cartItemsSubject.next(currentCartItems);
+
+    this.saveCartToStorage(); // Guardar el carrito en el almacenamiento local después de cada modificación
+  }
+
+  private saveCartToStorage() {
+    const cartItems = this.cartItemsSubject.getValue();
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }
+
+  private loadCartFromStorage() {
+    const storedCartItems = localStorage.getItem('cartItems');
+    if (storedCartItems) {
+      this.cartItemsSubject.next(JSON.parse(storedCartItems));
+    }
   }
 }

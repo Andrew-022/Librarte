@@ -32,7 +32,7 @@ export class ShoppingcartComponent {
               private authService: FirebaseAuthService, private router: Router) { }
   ngOnInit(): void {
     this.cartService.cartItems$.subscribe(items => {
-      this.cartItems = items;
+      this.cartItems = items.slice(); // Crear una copia del array para asegurar la detección de cambios
       this.calculateSubtotal();
     });
   }

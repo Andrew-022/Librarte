@@ -10,6 +10,7 @@ import { MatDialog } from "@angular/material/dialog";
 import {PopUpReviewComponent} from "../pop-up-review/pop-up-review.component";
 import {NgForOf} from "@angular/common";
 import {ActivatedRoute} from "@angular/router";
+import {CartService} from "../services/cart-service.service";
 
 
 @Component({
@@ -29,7 +30,7 @@ export class BookDetailsComponent {
   reviews: review[] = [];
   book: Book | undefined;
   error=false;
-  constructor(private route: ActivatedRoute,private dialogRef: MatDialog ,private databaseService: UserJsonService, private firebase: firebaseRepository) { }
+  constructor(private cartservice: CartService, private route: ActivatedRoute,private dialogRef: MatDialog ,private databaseService: UserJsonService, private firebase: firebaseRepository) { }
 
   openDialog(){
     this.dialogRef.open(PopUpReviewComponent, {
@@ -65,7 +66,15 @@ export class BookDetailsComponent {
       }
     });
   }
-
+  addBookToCart(){
+    if(this.book){
+      console.log(this.book.id)
+      this.cartservice.addToCart(this.book.id)
+    }
+    else {
+      console.log("No existe el libro")
+    }
+  }
   addbook(){
     this.firebase.addEmptyBook();
   }
