@@ -1,104 +1,111 @@
-<article class="book">
-  <img id="cover" class="picture" src="{{book.imagen}}" alt="cover libro">
-  <section class="sinopsis">
-    <h1 id= "tittle" style="margin: 0px;" >{{book.titulo}}</h1>
-    <p id="editorial" class="editorial">{{book.editorial}} {{book.isbn}}</p>
-    <div class="rating">
-      <ng-container *ngFor="let star of [].constructor(5); let i = index">
-          <span class="fa-solid fa-star" [class.full]="i < book.score"></span>
-      </ng-container>
-      <p id="reviews2" class="nOpiniones"> {{book.nReviews}} opiniones</p>
-    </div>
-    <p class="title-sinopsis">Sinopsis de <span id="tittleSpan">{{book.titulo}}</span> </p>
-    <p id="sinopsisinfo">{{book.sinopsis}}</p>
-  </section>
-
-  <section class="compra">
-    <div class="datosprecio">
-      <p id="price" class="precio">{{book.precio}}€</p>
-      <p class="envio">Envío gratis a partir de 999,99€</p>
-    </div>
-    <button class="boton-generico">Añadir a la cesta</button>
-    <div class="envio-datos">
-      <i class="fa-solid fa-truck"></i>
-      <p class="fecha-deliver">Recíbelo el lunes 2 de febrero de 2026</p>
-    </div>
-  </section>
-
-</article>
-
-<div class="container">
-  <div class="line"></div>
-  <div class="centered-word">Ficha técnica</div>
-  <div class="line"></div>
-</div>
-<article class="ficha-tecnica">
-  <div class="caracteristicas">
-    <p>Nº de páginas: </p>
-    <p>Editorial: </p>
-    <p>Idioma: </p>
-    <p>Encuadernación: </p>
-    <p>ISBN: </p>
-    <p>Año de edición: </p>
-  </div>
-  <div class="subdiv">
-    <p id="nPages">{{book.num_pag}}</p>
-    <p id="editorial2">{{book.editorial}}</p>
-    <p id="language">{{book.language}}</p>
-    <p id="encuadernacion">{{book.encuadernacion}}</p>
-    <p id="isbn">{{book.isbn}}</p>
-    <p id="publicationDate">{{book.publicationDate}}</p>
-  </div>
-
-  <div class="caracteristicas">
-    <p>Alto: </p>
-    <p>Ancho: </p>
-    <p>Grueso: </p>
-    <p>Peso: </p>
-  </div>
-
-  <div class="subdiv">
-    <p id="alto">{{book.alto}} cm</p>
-    <p id="ancho">{{book.ancho}} cm</p>
-    <p id="grueso">{{book.grueso}} cm</p>
-    <p id="peso">{{book.peso}} g</p>
-  </div>
-</article>
-
-
-<div class="container">
-  <div class="line"></div>
-  <div class="centered-word">Escrito por...</div>
-  <div class="line"></div>
-</div>
-
-<app-author-details></app-author-details>
-
-<div class="container">
-  <div class="line"></div>
-  <div id= "textOpinion" class="centered-word">Opiniones sobre <span id="tittleSpan2">{{book.titulo}}</span> </div>
-  <div class="line"></div>
-</div>
-
-<article class="opiniones">
-  <div class="puntuacion-con-estrellas">
-    <p id="puntuation" class="puntuacion-circulo">{{book.score}}</p>
-    <div class="estrellas-con-opiniones-column">
-      <div id="rating-opiniones" class="rating">
-        <ng-container *ngFor="let star of [].constructor(5); let i = index">
-          <span class="fa-solid fa-star" [class.full]="i < book.score"></span>
-        </ng-container>
+@if(book){
+  <article class="book">
+    <img id="cover" class="picture" src="{{book.imagen}}" alt="cover libro">
+    <section class="sinopsis">
+      <h1 id= "tittle" style="margin: 0;" >{{book.titulo}}</h1>
+      <p id="editorial" class="editorial">{{book.editorial}} {{book.isbn}}</p>
+      <div class="rating">
+        @for(i of [].constructor(5); track i; let index = $index){
+          <span class="fa-solid fa-star" [class.full]="index < book.score"></span>
+        }
+        <p id="reviews2" class="nOpiniones"> {{book.nReviews}} opiniones</p>
       </div>
-      <p id="reviews" class="nOpiniones" style="font-size: 15px">{{book.nReviews}} opiniones</p>
-    </div>
+      <p class="title-sinopsis">Sinopsis de <span id="tittleSpan">{{book.titulo}}</span> </p>
+      <p id="sinopsisinfo">{{book.sinopsis}}</p>
+    </section>
+
+    <section class="compra">
+      <div class="datosprecio">
+        <p id="price" class="precio">{{book.precio}}€</p>
+        <p class="envio">Envío gratis a partir de 999,99€</p>
+      </div>
+      <button class="boton-generico">Añadir a la cesta</button>
+      <div class="envio-datos">
+        <i class="fa-solid fa-truck"></i>
+        <p class="fecha-deliver">Recíbelo el lunes 2 de febrero de 2026</p>
+      </div>
+    </section>
+
+  </article>
+
+  <div class="container">
+    <div class="line"></div>
+    <div class="centered-word">Ficha técnica</div>
+    <div class="line"></div>
   </div>
-  <p style="font-size: 18px; margin: 5px">¿Qué te ha parecido?</p>
-  <button (click)="openDialog()"  id="boton-opinion" class="boton-generico">Deja tu opinión</button>
-</article>
-<article class="comentarios">
-  @for(review of this.reviews; track review) {
-    <app-review [review]="review" ></app-review>
-  }
-</article>
-<button class="boton-generico" style="width: 100%">Ver todos los comentarios</button>
-<div style="height: 30px;"></div>
+  <article class="ficha-tecnica">
+    <div class="caracteristicas">
+      <p>Nº de páginas: </p>
+      <p>Editorial: </p>
+      <p>Idioma: </p>
+      <p>Encuadernación: </p>
+      <p>ISBN: </p>
+      <p>Año de edición: </p>
+    </div>
+    <div class="subdiv">
+      <p id="nPages">{{book.num_pag}}</p>
+      <p id="editorial2">{{book.editorial}}</p>
+      <p id="language">{{book.language}}</p>
+      <p id="encuadernacion">{{book.encuadernacion}}</p>
+      <p id="isbn">{{book.isbn}}</p>
+      <p id="publicationDate">{{book.publicationDate}}</p>
+    </div>
+
+    <div class="caracteristicas">
+      <p>Alto: </p>
+      <p>Ancho: </p>
+      <p>Grueso: </p>
+      <p>Peso: </p>
+    </div>
+
+    <div class="subdiv">
+      <p id="alto">{{book.alto}} cm</p>
+      <p id="ancho">{{book.ancho}} cm</p>
+      <p id="grueso">{{book.grueso}} cm</p>
+      <p id="peso">{{book.peso}} g</p>
+    </div>
+  </article>
+
+
+  <div class="container">
+    <div class="line"></div>
+    <div class="centered-word">Escrito por...</div>
+    <div class="line"></div>
+  </div>
+
+  <app-author-details [authorid]="book.author_id"></app-author-details>
+
+  <div class="container">
+    <div class="line"></div>
+    <div id= "textOpinion" class="centered-word">Opiniones sobre <span id="tittleSpan2">{{book.titulo}}</span> </div>
+    <div class="line"></div>
+  </div>
+
+  <article class="opiniones">
+    <div class="puntuacion-con-estrellas">
+      <p id="puntuation" class="puntuacion-circulo">{{book.score}}</p>
+      <div class="estrellas-con-opiniones-column">
+        <div id="rating-opiniones" class="rating">
+          @for(i of [].constructor(5); track i; let index = $index){
+            <span class="fa-solid fa-star" [class.full]="index < book.score"></span>
+          }
+        </div>
+        <p id="reviews" class="nOpiniones" style="font-size: 15px">{{book.nReviews}} opiniones</p>
+      </div>
+    </div>
+    <p style="font-size: 18px; margin: 5px">¿Qué te ha parecido?</p>
+    <button (click)="openDialog()"  id="boton-opinion" class="boton-generico">Deja tu opinión</button>
+  </article>
+  <article class="comentarios">
+    @for(review of this.reviews; track review) {
+      <app-review [review]="review" ></app-review>
+    }
+  </article>
+  <button class="boton-generico" style="width: 100%">Ver todos los comentarios</button>
+  <div style="height: 30px;"></div>
+}
+@if(error){
+  <h1>Libro no disponible</h1>
+  <img src="https://png.pngtree.com/background/20230525/original/pngtree-an-egg-with-a-sad-face-sitting-on-a-dark-background-picture-image_2726098.jpg" alt="nolibro:C">
+}
+

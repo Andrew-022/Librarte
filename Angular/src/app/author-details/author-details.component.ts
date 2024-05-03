@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {author} from "../model/author";
 import {BookComponent} from "../book/book.component";
 import {Book} from "../model/book";
 import {UserJsonService} from "../services/user-json.service";
 import {logMessages} from "@angular-devkit/build-angular/src/tools/esbuild/utils";
 import {firebaseRepository} from "../services/firebaseRepository";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -17,9 +18,10 @@ import {firebaseRepository} from "../services/firebaseRepository";
   styleUrl: './author-details.component.css'
 })
 export class AuthorDetailsComponent {
+  @Input() authorid!: string;
   author: author | undefined;
   books: Book[] = [];
-  constructor(private databaseService: UserJsonService, private firebase: firebaseRepository) { }
+  constructor(private route: ActivatedRoute,private databaseService: UserJsonService, private firebase: firebaseRepository) { }
   async ngOnInit(): Promise<void> {
 
     // this.firebase.getAuthors()
@@ -33,8 +35,12 @@ export class AuthorDetailsComponent {
     //     this.author = response;
     //   });
 
+
+    const id= this.route.snapshot.paramMap.get('authorid');
+    if(id){ this.authorid=id;}
+
     try {
-      this.author = await this.firebase.getAuthorById("iXcGKStBF26pY7gs5GCS");
+      this.author = await this.firebase.getAuthorById(this.authorid);
 
       if (!this.author) {
         console.log("No se encontró ningún autor con el ID proporcionado.");

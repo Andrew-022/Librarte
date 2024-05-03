@@ -3,10 +3,11 @@ import {FormBuilder, ReactiveFormsModule, Validators} from '@angular/forms';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {UserJsonService} from "../services/user-json.service";
 import {FirebaseAuthService} from "../services/firebase-auth.service";
+import {RouterLink} from "@angular/router";
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, HttpClientModule],
+  imports: [ReactiveFormsModule, HttpClientModule, RouterLink],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })

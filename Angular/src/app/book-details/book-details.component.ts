@@ -9,6 +9,7 @@ import {ReviewComponent} from "../review/review.component";
 import { MatDialog } from "@angular/material/dialog";
 import {PopUpReviewComponent} from "../pop-up-review/pop-up-review.component";
 import {NgForOf} from "@angular/common";
+import {ActivatedRoute} from "@angular/router";
 
 
 @Component({
@@ -26,26 +27,51 @@ import {NgForOf} from "@angular/common";
 export class BookDetailsComponent {
   id: string = "2";
   reviews: review[] = [];
-  book!: Book;
-  constructor(private dialogRef: MatDialog ,private databaseService: UserJsonService, private firebase: firebaseRepository) { }
+  book: Book | undefined;
+  error=false;
+  constructor(private route: ActivatedRoute,private dialogRef: MatDialog ,private databaseService: UserJsonService, private firebase: firebaseRepository) { }
 
   openDialog(){
     this.dialogRef.open(PopUpReviewComponent, {
-      data: this.book // Aquí pasas el parámetro al componente
+      data: this.book
     });
   }
   ngOnInit(): void {
-    this.databaseService.getBookById(this.id)
-        .subscribe((response: any) => {
-          this.book=response;
-        })
 
-    this.databaseService.getReviews()
-      .subscribe((response: any) => {
-        this.reviews =  response;
-        console.log("respuesta"+response);
-        console.log("reviews"+this.reviews[0].picture);
-      });
+    // this.databaseService.getReviews()
+    //   .subscribe((response: any) => {
+    //     this.reviews = response;
+    //     console.log("respuesta" + response);
+    //     console.log("reviews" + this.reviews[0].picture);
+    //   });
+
+    this.route.paramMap.subscribe(async params => {
+      const id = params.get('id'); // Obtener el valor de 'id' de los parámetros
+      if (id !== null) { // Verificar que 'id' no sea nulo
+        this.id = id; // Asignar 'id' solo si no es nulo
+
+        // Obtén el libro correspondiente al nuevo id
+        if (this.id) {
+          this.book = await this.firebase.getBookById(this.id);
+          if (!this.book) {
+            this.error = true;
+          }
+        }
+        window.scrollTo(0, 0);
+        // Actualiza las reseñas cada vez que cambia el id
+        this.firebase.getReviews(this.id).subscribe(reviews => {
+          this.reviews = reviews;
+        });
+      }
+    });
+  }
+
+  addbook(){
+    this.firebase.addEmptyBook();
+  }
+
+  addauthor(){
+    this.firebase.addEmptyAuthor();
   }
 
 //   this.databaseService.getBooks("assets/search.json")
