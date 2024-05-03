@@ -4,7 +4,7 @@
       <span class="navbar-brand" routerLink="/">Librarte</span>
       <form class="search-form">
         <div class="search-container">
-          <input type="text" class="search-input" placeholder="Buscar...">
+          <input type="text" class="search-input" (input)="onInputChange($event)" placeholder="Buscar...">
           <button type="submit">
             <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
           </button>
@@ -57,3 +57,4 @@
     </div>
   </div>
 </nav>
+<router-outlet></router-outlet>

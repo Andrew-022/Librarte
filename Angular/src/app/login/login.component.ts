@@ -36,7 +36,7 @@ export class LoginComponent {
       this.user.apellidos = ""
 
       // Obtener los usuarios del JSON
-      this.userJSONService.getLoggedUser(this.user).subscribe(userIsLogged => {
+      this.databaseJSONService.getLoggedUser(this.user).subscribe(userIsLogged => {
         if (userIsLogged) {
           console.log('Usuario autenticado');
         } else {

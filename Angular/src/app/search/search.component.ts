@@ -6,13 +6,15 @@ import {FormsModule} from "@angular/forms";
 import {firebaseRepository} from "../services/firebaseRepository";
 import {Observable} from "rxjs";
 import {CartService} from "../services/cart-service.service";
+import {Router} from "@angular/router";
+import {SearchService} from "../services/search.service";
 
 @Component({
   selector: 'app-search',
   standalone: true,
   imports: [
     BookComponent,
-    FormsModule
+    FormsModule,
   ],
   templateUrl: './search.component.html',
   styleUrl: './search.component.css'
@@ -22,7 +24,7 @@ export class SearchComponent implements OnInit{
   filteredBooks: Book[] = []; // Libros filtrados
   searchTerm: string = ''; // Término de búsqueda
 
-  constructor(private databaseService: UserJsonService, private firebaseRepository: firebaseRepository, private cartService: CartService ) { }
+  constructor(private searchService: SearchService, private databaseService: UserJsonService, private firebaseRepository: firebaseRepository, private cartService: CartService, private router: Router ) { }
   ngOnInit(): void {
     this.firebaseRepository.getAllBooks()
       .then((booksObservable: Observable<Book[]>) => {
@@ -34,6 +36,10 @@ export class SearchComponent implements OnInit{
       .catch((error) => {
         console.error("Error al obtener los libros:", error);
       });
+    this.searchService.getSearchQuery().subscribe(query => {
+      this.searchTerm = query;
+      this.filterBooks();
+    });
   }
 
   filterBooks(): void {

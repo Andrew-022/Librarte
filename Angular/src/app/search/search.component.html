@@ -1,10 +1,5 @@
-
 <main class="flex-container">
-  <div class="left-margin">
-  </div>
   <div class="content">
-    <input type="text" [(ngModel)]="searchTerm" (input)="filterBooks()" placeholder="Buscar libro">
-    <button (click)="filterBooks()">Buscar</button>
     <p class="result">{{filteredBooks.length}} resultados para <strong>{{ searchTerm }}</strong></p>
     <div class="books">
       @for(book of filteredBooks; track book) {
@@ -12,7 +7,5 @@
 <!--        <button (click)="addToCart(book.id)">Añadir al carrito</button>-->
       }
     </div>
-  </div>
-  <div class="right-margin">
   </div>
 </main>
