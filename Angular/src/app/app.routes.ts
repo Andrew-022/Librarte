@@ -14,5 +14,5 @@ export const routes: Routes = [
   { path: 'book/:id', component: BookDetailsComponent },
   { path: 'author/:authorid', component: AuthorDetailsComponent },
   { path: 'search', component: SearchComponent },
-  {path: 'shoppingcart', component: ShoppingcartComponent }
+  { path: 'shoppingcart', component: ShoppingcartComponent },
 ];
