@@ -1,0 +1,59 @@
+<nav class="navbar">
+  <div class="container">
+    <div class="top-row">
+      <span class="navbar-brand" routerLink="/">Librarte</span>
+      <form class="search-form">
+        <div class="search-container">
+          <input type="text" class="search-input" placeholder="Buscar...">
+          <button type="submit">
+            <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+          </button>
+        </div>
+      </form>
+
+      <div class="account-items">
+        <div class="account" hidden="true">
+          <fa-icon [icon]="faUser" size="xl"></fa-icon>
+          <span class="nav-link account">Mi cuenta</span>
+        </div>
+        <div class="session" routerLink="/login">
+          <fa-icon [icon]="faUser" size="xl"></fa-icon>
+          <span class="nav-link account">Iniciar sesión</span>
+        </div>
+        <div class="session" routerLink="/register">
+          <fa-icon [icon]="faUserPlus" size="xl"></fa-icon>
+          <span class="nav-link account">Registrarse</span>
+        </div>
+        <div class="cart" hidden="true">
+          <fa-icon [icon]="faCartShopping" size="xl"></fa-icon>
+          <span class="nav-link account">Cesta</span>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-row">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <span class="nav-link">Inicio</span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link">Imprescindibles</span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link">Ficción</span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link">No Ficción</span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link">Infantil</span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link">Cómic y Manga</span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link">Ofertas</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

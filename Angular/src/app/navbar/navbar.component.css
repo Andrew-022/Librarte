@@ -1,0 +1,106 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #93D497;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.top-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.navbar-brand {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0.5em;
+  padding-left: 0;
+}
+
+.nav-item {
+  margin-right: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-link.account {
+  padding-left: 0.5em;
+}
+
+.nav-link.active {
+  font-weight: bold;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.search-input {
+  width: 200px;
+  padding: 5px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+}
+
+.account-items {
+  display: flex;
+  flex-flow: row;
+}
+
+.navbar-brand, .search-form, .account, .session, .cart {
+  padding: 0em 1em 0em 1em;
+}
+.account *, .session *, .cart * {
+  cursor: pointer;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+}
+
+.search-form button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
