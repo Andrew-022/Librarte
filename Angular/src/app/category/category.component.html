@@ -1,0 +1,81 @@
+<div class="tittle">
+  <h1 class="main-tittle-category">Libros de <span id="selectedCategory">{{categories[selectedCategoryIndex]}}</span> </h1>
+</div>
+
+<article class="main-category">
+
+  <section class="ajustes">
+    <p class="titulo-categorias">Categorías</p>
+    <ul>
+      @for(category of categories;track category; let i = $index){
+        <li><a (click)="selectCategory(i)" [class.selected]="selectedCategoryIndex===i">{{ category }}</a></li>
+      }
+    </ul>
+    <p class="titulo-categorias">Filtros</p>
+    <div class="menu">
+      <div class="item">
+        <p class="parametro">Idioma</p>
+        <i class="fa-solid fa-angle-down icono"></i>
+      </div>
+      <div class="item">
+        <p class="parametro">Precio</p>
+        <i class="fa-solid fa-angle-down icono"></i>
+      </div>
+    </div>
+  </section>
+
+  <section class="ajustes-mobile">
+    <div class="filter-container">
+      <div class="dropdown">
+        <button id="Categorias" onclick="toggleDropdown('myDropdownCategory')" class="dropbtn" >Categorías</button>
+        <div id="myDropdownCategory" class="dropdown-content">
+          <a onclick="changeCategory(0)">Imprescindibles</a>
+          <a onclick="changeCategory(1)">Ficción</a>
+          <a onclick="changeCategory(2)">Cómic y Manga</a>
+          <a onclick="changeCategory(3)">No Ficción</a>
+          <a onclick="changeCategory(4)">Infantil</a>
+          <a onclick="changeCategory(5)">Fantasía</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button id="Filtros" onclick="toggleDropdown('myDropdownFilters')" class="dropbtn">Filtros</button>
+        <div id="myDropdownFilters" class="dropdown-content">
+          <a>Precio</a>
+          <a>Idioma</a>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button id="selectedSortMobile" onclick="toggleDropdown('myDropdownMobile')" class="dropbtn">Mas valorados</button>
+      <div id="myDropdownMobile" class="dropdown-content">
+        <a onclick="changeSort(0)">Mas valorados</a>
+        <a onclick="changeSort(1)">Titulo A-Z</a>
+        <a onclick="changeSort(2)">Titulo Z-A</a>
+        <a onclick="changeSort(3)">Precio ascendente</a>
+        <a onclick="changeSort(4)">Precio descendente</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="resultados">
+    <div class="sort">
+      <p style="padding-left: 10px; margin-right: auto; width: 100%">300 resultados</p>
+      <p class="ordenar">Ordenar por: </p>
+      <div class="dropdown">
+        <button class="dropbtn" [matMenuTriggerFor]="menu">{{sorts[selectedSortIndex]}}</button>
+        <mat-menu #menu="matMenu">
+          <div id="myDropdown" class="dropdown-content">
+            @for(sorts of sorts;track sorts; let i = $index){
+              <a (click)="selectSort(i)" >{{sorts}}</a>
+            }
+          </div>
+        </mat-menu>
+      </div>
+    </div>
+    <div class="books">
+      @for(book of books; track book) {
+        <app-book [book] = "book" [cartView]="false"></app-book>
+      }
+    </div>
+  </section>
+</article>

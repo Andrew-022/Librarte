@@ -5,6 +5,8 @@ import {BookComponent} from "./book/book.component";
 import {BookDetailsComponent} from "./book-details/book-details.component";
 import {AuthorDetailsComponent} from "./author-details/author-details.component";
 import {SearchComponent} from "./search/search.component";
+import {CategoryComponent} from "./category/category.component";
+import {ShoppingcartComponent} from "./shoppingcart/shoppingcart.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/register', pathMatch: 'full' },
@@ -13,4 +15,6 @@ export const routes: Routes = [
   { path: 'book/:id', component: BookDetailsComponent },
   { path: 'author/:authorid', component: AuthorDetailsComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'category', component: CategoryComponent },
+  { path: 'shoppingcart', component: ShoppingcartComponent },
 ];
