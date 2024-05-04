@@ -7,6 +7,8 @@ import {AuthorDetailsComponent} from "./author-details/author-details.component"
 import {SearchComponent} from "./search/search.component";
 import {ShoppingcartComponent} from "./shoppingcart/shoppingcart.component";
 import {HomepageComponent} from "./homepage/homepage.component";
+import {ProfileComponent} from "./profile/profile.component";
+import {AuthGuard} from "./guard/auth.guard";
 
 export const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -17,4 +19,5 @@ export const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'shoppingcart', component: ShoppingcartComponent },
   { path: 'home', component: HomepageComponent },
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
 ];
