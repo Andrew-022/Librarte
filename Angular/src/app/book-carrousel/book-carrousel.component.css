@@ -1,0 +1,29 @@
+.arrow-container {
+  display: flex;
+  bottom: -32px;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow {
+  margin-top: 0.5em;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease-in-out;
+}
+
+
+.arrow:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+h2 {
+  margin-top: 200px;
+}

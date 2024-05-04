@@ -9,7 +9,7 @@ import {ShoppingcartComponent} from "./shoppingcart/shoppingcart.component";
 import {HomepageComponent} from "./homepage/homepage.component";
 
 export const routes: Routes = [
-  { path: 'home', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'book/:id', component: BookDetailsComponent },

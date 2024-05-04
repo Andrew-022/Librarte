@@ -1,2 +1,57 @@
+<main class="content">
 
+  <article class="carousel">
+    <div class="carousel title">
+      <h1>Bestsellers</h1>
+    </div>
+    @for(slide of slides; track slide.id) {
+      <div class="carousel items" routerLink="/book/{{ slide.id }}">
+        <img src="{{ slide.imagen }}" alt="{{ slide.titulo }}" width="350px" height="400px">
+        <p>{{ slide.titulo }}</p>
+      </div>
+    }
+  </article>
+
+  <article class="books">
+    @for(book of bestSellerBooks; track book.id) {
+      <div class="books items" routerLink="/book/{{ book.id }}">
+        <img src="{{ book.imagen }}" alt="{{ book.titulo }}">
+        <p>{{ book.titulo }}</p>
+      </div>
+    }
+  </article>
+
+  <article class="recommended-books">
+    <div class="recommended-books title">
+      <h1>Recomendados &nbsp;<a href="#">Ver más</a></h1>
+    </div>
+    <div class="recommended-books content">
+      @for(book of recommendedBooks; track book.id) {
+        <div class="recommended-books items" routerLink="/book/{{ book.id }}">
+          <img src="{{ book.imagen }}" alt="{{ book.titulo }}">
+          <p>{{ book.titulo }}</p>
+          <p>{{ book.autor }}</p>
+          <p>{{ book.precio }}</p>
+        </div>
+      }
+    </div>
+  </article>
+
+  <article class="new-releases">
+    <div class="new-releases title">
+      <h1>Novedades &nbsp;<a href="#">Ver más</a></h1>
+    </div>
+    <div class="new-releases content">
+      @for(book of newReleasesBooks; track book.id) {
+        <div class="new-releases items" routerLink="/book/{{ book.id }}">
+          <img src="{{ book.imagen }}" alt="{{ book.titulo }}">
+          <p>{{ book.titulo }}</p>
+          <p>{{ book.autor }}</p>
+          <p>{{ book.precio }}</p>
+        </div>
+      }
+    </div>
+  </article>
+
+</main>
 

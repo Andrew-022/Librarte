@@ -1,3 +1,23 @@
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.center {
+  width: 70%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-margin, .right-margin {
+  width: 15%;
+  flex-direction: row;
+}
+
 .navbar {
   position: sticky;
   top: 0;

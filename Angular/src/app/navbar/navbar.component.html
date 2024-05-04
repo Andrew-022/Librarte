@@ -1,7 +1,7 @@
 <nav class="navbar">
   <div class="container">
     <div class="top-row">
-      <span class="navbar-brand" routerLink="/">Librarte</span>
+      <span class="navbar-brand" routerLink="/home">LibrArte</span>
       <form class="search-form">
         <div class="search-container">
           <input type="text" class="search-input" (input)="onInputChange($event)" placeholder="Buscar...">
@@ -57,4 +57,10 @@
     </div>
   </div>
 </nav>
-<router-outlet></router-outlet>
+<div class="container">
+  <div class="left-margin"></div>
+  <div class="center">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="right-margin"></div>
+</div>
