@@ -11,7 +11,7 @@ import {ProfileComponent} from "./profile/profile.component";
 import {AuthGuard} from "./guard/auth.guard";
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'book/:id', component: BookDetailsComponent },
@@ -20,4 +20,5 @@ export const routes: Routes = [
   { path: 'shoppingcart', component: ShoppingcartComponent },
   { path: 'home', component: HomepageComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: '**', redirectTo: 'home' },
 ];

@@ -34,26 +34,38 @@
     <h1>Mis datos</h1>
     <div class="personal-data">
       <h2>Datos personales y de contacto</h2>
-      <form>
+      <form [formGroup]="personalDataForm" (ngSubmit)="submitUserData()">
         <label>
           <p>Nombre:</p>
-          <p class="personal-data-name"></p>
+          <input type="text" class="personal-data-email" formControlName="nombre" placeholder="{{ user.nombre }}" required/>
         </label>
         <label>
           <p>Apellidos:</p>
-          <p class="personal-data-last-name"></p>
-        </label>
-        <label>
-          <p>Usuario:</p>
-          <p class="personal-data-username"></p>
+          <input type="text" class="personal-data-email" formControlName="apellidos" placeholder="{{ user.apellidos }}" required/>
         </label>
         <label>
           <p>Email:</p>
-          <p class="personal-data-email"></p>
+          <p class="personal-data-email">{{ user.email }}</p>
         </label>
-        <label>
+        <div class="profile-picture">
+          <div class="profile-picture-container">
+            <img src="{{ this.user.profilePicture }}" alt="Imagen de perfil">
+          </div>
 
+          <button (click)="fileInput.click()">Actualizar imagen de perfil</button>
+          <p>Formatos aceptados: JPGE y PNG. Tamaño máximo 10MB.</p>
+          <input hidden type="file" accept="image/png, image/jpeg" #fileInput (change)="uploadProfilePicture($event)">
+        </div>
+        <!-- No se usa ya que no se puede cambiar el email.
+        Si funcionase, requeriría de introducir la contraseña para efectuar el cambio.
+        <label>
+          <p>Contraseña:</p>
+          <input type="password" id="currentPassword" placeholder="Contraseña actual" formControlName="password" required/>
         </label>
+        -->
+        <div class="personal-data-button">
+          <button type="submit">Guardar</button>
+        </div>
       </form>
     </div>
     <div class="address">
@@ -72,11 +84,11 @@
 
     <div class="password">
       <h2>Cambio de contraseña</h2>
-      <form id="passwordForm">
+      <form [formGroup]="passwordDataForm" (ngSubmit)="submitChangeOfPassword()" id="passwordForm">
         <div class="password-inputs">
-          <input type="password" id="currentPassword" placeholder="Contraseña actual (test1234)" required/>
+          <input type="password" id="currentPassword" placeholder="Contraseña actual" formControlName="oldPassword" required/>
           <input type="password" id="newPassword" placeholder="Contraseña nueva" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}"
-                 title="La contraseña debe tener al menos 8 caracteres, letras y números." required/>
+                 title="La contraseña debe tener al menos 8 caracteres, letras y números." required formControlName="password"/>
           <input type="password" id="confirmPassword" placeholder="Repetir contraseña nueva"
                  pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" title="La contraseña debe tener al menos 8 caracteres, letras y números." required/>
           <button type="submit">Cambiar contraseña</button>

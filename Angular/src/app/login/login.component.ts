@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {FormBuilder, ReactiveFormsModule, Validators} from "@angular/forms";
 import {UserJsonService} from "../services/user-json.service";
 import {FirebaseAuthService} from "../services/firebase-auth.service";
-import {RouterLink} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {User} from "../model/user";
 
 @Component({
@@ -18,8 +18,11 @@ import {User} from "../model/user";
 export class LoginComponent {
   user: User = { name: "", email: "", apellidos: "", password: ""};
   loginMsg: string = '';
-  constructor(private fb: FormBuilder, private databaseJSONService: UserJsonService, private authService: FirebaseAuthService) {
-  }
+  constructor(private router: Router,
+              private fb: FormBuilder,
+              private databaseJSONService: UserJsonService,
+              private authService: FirebaseAuthService) { }
+
   loginForm = this.fb.nonNullable.group({
     loginMail: ['', [Validators.required]],
     loginPwd: ['',[ Validators.required,]]
@@ -52,6 +55,7 @@ export class LoginComponent {
       .subscribe({
         next: () =>{
           this.loginMsg = "Usuario Registrado"
+          this.router.navigate(['/home'])
         },
         error: (error) => {
           this.loginMsg = error.code;

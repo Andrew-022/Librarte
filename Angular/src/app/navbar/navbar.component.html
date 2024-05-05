@@ -12,19 +12,28 @@
       </form>
 
       <div class="account-items">
-        <div class="account" hidden="true">
-          <fa-icon [icon]="faUser" size="xl"></fa-icon>
-          <span class="nav-link account">Mi cuenta</span>
-        </div>
-        <div class="session" routerLink="/login">
-          <fa-icon [icon]="faUser" size="xl"></fa-icon>
-          <span class="nav-link account">Iniciar sesión</span>
-        </div>
-        <div class="session" routerLink="/register">
-          <fa-icon [icon]="faUserPlus" size="xl"></fa-icon>
-          <span class="nav-link account">Registrarse</span>
-        </div>
-        <div class="cart" hidden="true">
+        @if (loggedNavbarView) {
+          <div class="dropdown">
+            <button class="dropbtn">
+              <fa-icon [icon]="faUser" size="xl"></fa-icon>
+              <span class="nav-link account">Mi cuenta</span>
+            </button>
+            <div class="dropdown-content">
+              <a routerLink="/profile">Perfil</a>
+              <a (click)="onLogout()">Cerrar sesión</a>
+            </div>
+          </div>
+        } @else {
+          <div class="session" routerLink="/login">
+            <fa-icon [icon]="faUser" size="xl"></fa-icon>
+            <span class="nav-link account">Iniciar sesión</span>
+          </div>
+          <div class="session" routerLink="/register">
+            <fa-icon [icon]="faUserPlus" size="xl"></fa-icon>
+            <span class="nav-link account">Registrarse</span>
+          </div>
+        }
+        <div class="cart" routerLink="/shoppingcart">
           <fa-icon [icon]="faCartShopping" size="xl"></fa-icon>
           <span class="nav-link account">Cesta</span>
         </div>
@@ -57,10 +66,4 @@
     </div>
   </div>
 </nav>
-<div class="container">
-  <div class="left-margin"></div>
-  <div class="center">
-    <router-outlet></router-outlet>
-  </div>
-  <div class="right-margin"></div>
-</div>
+

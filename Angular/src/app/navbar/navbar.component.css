@@ -1,23 +1,3 @@
-.container {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.center {
-  width: 70%;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.left-margin, .right-margin {
-  width: 15%;
-  flex-direction: row;
-}
-
 .navbar {
   position: sticky;
   top: 0;
@@ -52,6 +32,7 @@
   color: #fff;
   font-size: 1.5rem;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .navbar-nav {
@@ -70,6 +51,7 @@
 .nav-link {
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .nav-link.account {
@@ -124,4 +106,52 @@
   padding: 0;
   margin: 0;
   cursor: pointer;
+}
+
+.dropbtn {
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  color: black;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn span{
+  color: black;
 }
