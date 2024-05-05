@@ -17,8 +17,8 @@
       <form [formGroup]="registerForm" (ngSubmit)="submit()">
         <input type="text" placeholder="Nombre" formControlName="nombre" title="Ingrese un nombre válido (solo letras y espacios)" required>
         <input type="text" placeholder="Apellidos" formControlName="apellidos" title="Ingrese apellidos válidos (solo letras y espacios)" required>
-        <input type="email" formControlName="mail" placeholder="Correo electrónico" title="Ingrese una dirección de correo electrónico válida" required>
-        <input type="password" formControlName="contraseña" placeholder="Contraseña"  title="La contraseña debe tener al menos 8 caracteres" required>
+        <input type="email" formControlName="email" placeholder="Correo electrónico" title="Ingrese una dirección de correo electrónico válida" required>
+        <input type="password" formControlName="password" placeholder="Contraseña"  title="La contraseña debe tener al menos 8 caracteres" required>
         <button type="submit" class="btn-registro">Registrarse</button>
       </form>
     </div>

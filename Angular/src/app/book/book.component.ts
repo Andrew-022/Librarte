@@ -30,10 +30,6 @@ export class BookComponent {
 
 
   private async loadBook(): Promise<void> {
-    // this.bookSubscription = this.databaseService.getBookById(this.bookId)
-    //   .subscribe((book: Book) => {
-    //     this.book = book;
-    //   });
     try {
       const book = await this.firebaseRepository.getBookById(this.bookId);
       if (book) {
@@ -51,5 +47,10 @@ export class BookComponent {
       this.bookSubscription.unsubscribe();
     }
   }
-
+  useJSON(){
+    this.bookSubscription = this.databaseService.getBookById(this.bookId)
+      .subscribe((book: Book) => {
+        this.book = book;
+      });
+  }
 }

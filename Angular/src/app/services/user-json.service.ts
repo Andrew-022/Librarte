@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {catchError, map, Observable} from "rxjs";
+import {catchError, map, Observable, of, switchMap} from "rxjs";
 import {Book} from "../model/book";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {User} from "../model/user";
@@ -10,6 +10,7 @@ import {author} from "../model/author";
   providedIn: 'root'
 })
 export class UserJsonService {
+
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type':  'application/json',
@@ -19,6 +20,9 @@ export class UserJsonService {
       'Access-Control-Allow-Credentials': 'true'
     })
   };
+
+  private baseUrl = 'http://localhost:3000/data/users';
+
   constructor(private http: HttpClient) { }
 
   getBooks(url: string): Observable<Book> {
@@ -39,6 +43,20 @@ export class UserJsonService {
         });
     });
   }
+  postUser(user: User): Observable<boolean> {
+    return this.getUserIfExists(user).pipe(
+      switchMap((exists) => {
+        if (!exists) {
+          this.http.post(this.baseUrl, user, this.httpOptions).subscribe((response) =>{
+            console.log("User created\n", response)
+          })
+          return of(true);
+        } else {
+          return of(false);
+        }
+      })
+    );
+  }
 
   getBookById(bookId: string): Observable<Book> {
     return this.http.get<any>(`http://localhost:3000/data/books/${bookId}`).pipe(
@@ -51,11 +69,28 @@ export class UserJsonService {
         .subscribe((response) => {
           console.log("Error with ", response)
         });
+    }
+  private getUserIfExists(user: User): Observable<boolean> {
+    return this.http.get<User[]>(this.baseUrl)
+      .pipe(
+        map((users: User[]) => {
+          return users.some(u => u.email === user.email);
+        })
+      );
   }
 
+  getLoggedUser(user: User): Observable<boolean> {
+    return this.http.get<User[]>(this.baseUrl)
+      .pipe(
+        map((users: User[]) => {
+          return users.some(u => u.email === user.email && u.password === user.password)
+        })
+      );
+  }
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>('http://localhost:3000/data/users');
   }
+
   getAuthor(): Observable<any> {
     return this.http.get<any>('http://localhost:3000/data/author');
   }

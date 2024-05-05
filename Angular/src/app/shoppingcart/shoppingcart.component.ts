@@ -7,6 +7,8 @@ import {CurrencyPipe} from "@angular/common";
 import {CartItemComponent} from "../cart-item/cart-item.component";
 import {CartService} from "../services/cart-service.service";
 import {firebaseRepository} from "../services/firebaseRepository";
+import {FirebaseAuthService} from "../services/firebase-auth.service";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-shoppingcart',
@@ -26,19 +28,11 @@ export class ShoppingcartComponent {
   total: number = 0;
   currencyCode: string = 'EUR';
 
-  constructor(private databaseService: UserJsonService, private cartService: CartService, private firebaseRepository: firebaseRepository) { }
+  constructor(private databaseService: UserJsonService, private cartService: CartService, private firebaseRepository: firebaseRepository,
+              private authService: FirebaseAuthService, private router: Router) { }
   ngOnInit(): void {
-    // this.databaseService.getBooks("assets/search.json")
-    //   .subscribe((response: any) => {
-    //     this.books = response.books;
-    //     this.cartItems = this.books.map(book => ({
-    //       bookId: book.id,
-    //       quantity: 1
-    //     }));
-    //     this.calculateSubtotal();
-    //   });
     this.cartService.cartItems$.subscribe(items => {
-      this.cartItems = items;
+      this.cartItems = items.slice(); // Crear una copia del array para asegurar la detección de cambios
       this.calculateSubtotal();
     });
   }
@@ -62,5 +56,28 @@ export class ShoppingcartComponent {
   removeCartItem(index: number) {
     this.cartItems.splice(index, 1); // Eliminar el cartItem del arreglo cartItems
     this.calculateSubtotal(); // Volver a calcular el subtotal
+  }
+
+  async onPay() {
+    this.authService.user$.subscribe(user => {
+      if (user) {
+        // Usuario autenticado, mostrar aviso de compra completada
+        console.log(user)
+        alert('¡Compra completada!');
+      } else {
+        this.router.navigate(['login']);
+      }
+    });
+  }
+  useJSON(){
+    this.databaseService.getBooks("assets/search.json")
+      .subscribe((response: any) => {
+        this.books = response.books;
+        this.cartItems = this.books.map(book => ({
+          bookId: book.id,
+          quantity: 1
+        }));
+        this.calculateSubtotal();
+      });
   }
 }

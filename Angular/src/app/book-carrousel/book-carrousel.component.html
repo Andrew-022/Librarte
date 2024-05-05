@@ -1,0 +1,19 @@
+<div class="carousel">
+  <ngx-slick-carousel class="carousel-items" #slickModal="slick-carousel" [config]="slideConfig" (init)="slickInit($event)">
+    @for (slide of slides; track slide.id) {
+      <div ngxSlickItem class="slide">
+        <img src="{{ slide.img }}" alt="{{ slide.title }}">
+      </div>
+    }
+
+  </ngx-slick-carousel>
+</div>
+<div class="arrow-container">
+  <span class="arrow arrow-prev">
+    <i class="fas fa-chevron-left"></i>
+  </span>
+
+  <span class="arrow arrow-next">
+    <i class="fas fa-chevron-right"></i>
+  </span>
+</div>

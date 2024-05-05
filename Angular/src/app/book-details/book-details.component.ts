@@ -30,7 +30,7 @@ export class BookDetailsComponent {
   reviews: review[] = [];
   book: Book | undefined;
   error=false;
-  constructor(private cartservice: CartService,private route: ActivatedRoute,private dialogRef: MatDialog ,private databaseService: UserJsonService, private firebase: firebaseRepository) { }
+  constructor(private cartservice: CartService, private route: ActivatedRoute,private dialogRef: MatDialog ,private databaseService: UserJsonService, private firebase: firebaseRepository) { }
 
   openDialog(){
     this.dialogRef.open(PopUpReviewComponent, {
@@ -66,13 +66,15 @@ export class BookDetailsComponent {
       }
     });
   }
-
-  addbooktocart(){
+  addBookToCart(){
     if(this.book){
-      this.cartservice.addToCart(this.book.id);
+      console.log(this.book.id)
+      this.cartservice.addToCart(this.book.id)
+    }
+    else {
+      console.log("No existe el libro")
     }
   }
-
   addbook(){
     this.firebase.addEmptyBook();
   }

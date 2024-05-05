@@ -1,0 +1,101 @@
+<main class="main-content" id="main-content-overlay">
+  <div class="side-bar">
+    <div class="inner-side-bar">
+      <ul>
+        <li><h2>Mi cuenta</h2></li>
+        <li><a href="#">Mis Datos</a></li>
+      </ul>
+      <ul>
+        <li><h2>Mis pedidos</h2></li>
+        <li><a href="#">Histórico de pedidos</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="side-bar-dropdown">
+    <button id="dropdownBtn" class="dropbtn">
+      Mis datos
+      <i class="fa-solid fa-angle-down"></i>
+    </button>
+    <div id="popup" class="popup-content">
+      <div class="popup-items">
+        <h1>Mi cuenta</h1>
+        <div class="line-separator"></div>
+        <a href="#">Mis datos</a>
+        <a href="#">Mis métodos de pago</a>
+        <h1>Mis pedidos</h1>
+        <div class="line-separator"></div>
+        <a href="#">Pedidos en curso</a>
+        <a href="#">Histórico de pedidos</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-content">
+    <h1>Mis datos</h1>
+    <div class="personal-data">
+      <h2>Datos personales y de contacto</h2>
+      <form [formGroup]="personalDataForm" (ngSubmit)="submitUserData()">
+        <label>
+          <p>Nombre:</p>
+          <input type="text" class="personal-data-email" formControlName="nombre" placeholder="{{ user.nombre }}" required/>
+        </label>
+        <label>
+          <p>Apellidos:</p>
+          <input type="text" class="personal-data-email" formControlName="apellidos" placeholder="{{ user.apellidos }}" required/>
+        </label>
+        <label>
+          <p>Email:</p>
+          <p class="personal-data-email">{{ user.email }}</p>
+        </label>
+        <div class="profile-picture">
+          <div class="profile-picture-container">
+            <img src="{{ this.user.profilePicture }}" alt="Imagen de perfil">
+          </div>
+
+          <button (click)="fileInput.click()">Actualizar imagen de perfil</button>
+          <p>Formatos aceptados: JPGE y PNG. Tamaño máximo 10MB.</p>
+          <input hidden type="file" accept="image/png, image/jpeg" #fileInput (change)="uploadProfilePicture($event)">
+        </div>
+        <!-- No se usa ya que no se puede cambiar el email.
+        Si funcionase, requeriría de introducir la contraseña para efectuar el cambio.
+        <label>
+          <p>Contraseña:</p>
+          <input type="password" id="currentPassword" placeholder="Contraseña actual" formControlName="password" required/>
+        </label>
+        -->
+        <div class="personal-data-button">
+          <button type="submit">Guardar</button>
+        </div>
+      </form>
+    </div>
+    <div class="address">
+      <h2>Dirección de envío</h2>
+      <div class="edit-address">
+        <span>C/Perojo, 30-38,35110 Vecindario, Las Palmas</span>
+        <i class="fa-solid fa-pen-to-square"></i>Editar
+      </div>
+      <div class="add-address">
+        <i class="fa-solid fa-pen-to-square"></i>
+        <label>
+          <input type="text" placeholder="Añadir nueva dirección"/>
+        </label>
+      </div>
+    </div>
+
+    <div class="password">
+      <h2>Cambio de contraseña</h2>
+      <form [formGroup]="passwordDataForm" (ngSubmit)="submitChangeOfPassword()" id="passwordForm">
+        <div class="password-inputs">
+          <input type="password" id="currentPassword" placeholder="Contraseña actual" formControlName="oldPassword" required/>
+          <input type="password" id="newPassword" placeholder="Contraseña nueva" pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}"
+                 title="La contraseña debe tener al menos 8 caracteres, letras y números." required formControlName="password"/>
+          <input type="password" id="confirmPassword" placeholder="Repetir contraseña nueva"
+                 pattern="(?=.*\d)(?=.*[a-zA-Z]).{8,}" title="La contraseña debe tener al menos 8 caracteres, letras y números." required/>
+          <button type="submit">Cambiar contraseña</button>
+        </div>
+      </form>
+      <div id="message"></div>
+    </div>
+
+  </div>
+</main>
