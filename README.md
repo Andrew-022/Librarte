@@ -1,6 +1,16 @@
--Para ejecutar proyecto, entrar en carpeta /Angular\n
-    cd .\Angular\\n
--Instalar dependencias\n
-    npm install\n
--ejecutar\n
-    ng serve
+- Para ejecutar el proyecto, navega a la carpeta `/Angular`:
+
+
+``` cd .\Angular\```
+
+- Instala las dependencias:
+
+```npm install```
+
+
+- Ejecuta el servidor de desarrollo:
+
+```ng serve```
+
+
+
