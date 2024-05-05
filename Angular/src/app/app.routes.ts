@@ -9,6 +9,7 @@ import {ShoppingcartComponent} from "./shoppingcart/shoppingcart.component";
 import {HomepageComponent} from "./homepage/homepage.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {AuthGuard} from "./guard/auth.guard";
+import {CategoryComponent} from "./category/category.component";
 
 export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -19,6 +20,7 @@ export const routes: Routes = [
   { path: 'search', component: SearchComponent },
   { path: 'shoppingcart', component: ShoppingcartComponent },
   { path: 'home', component: HomepageComponent },
+  { path: 'category/:category', component: CategoryComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: '**', redirectTo: 'home' },
 ];

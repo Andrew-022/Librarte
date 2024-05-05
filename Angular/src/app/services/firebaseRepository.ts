@@ -6,6 +6,7 @@ import {Book} from "../model/book";
 import {QuerySnapshot} from "@angular/fire/compat/firestore";
 import {getDocs} from "@angular/fire/firestore/lite";
 import {review} from "../model/reviews";
+import {category} from "../model/category";
 
 @Injectable({
   providedIn: "root",
@@ -47,6 +48,23 @@ export class firebaseRepository{
       }
     } catch (error) {
       console.error("Error al obtener el libro:", error);
+      return undefined;
+    }
+  }
+
+  async getCategoryById(categoryid: string): Promise<category | undefined> {
+    try {
+      const docRef = doc(this._firestore, "collections", categoryid);
+      const docSnap: DocumentSnapshot<any> = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        return { ...docSnap.data(), id: docSnap.id } as category;
+      } else {
+        console.log("No se encontró ninguna categoria con el ID proporcionado.");
+        return undefined;
+      }
+    } catch (error) {
+      console.error("Error al obtener la categoria:", error);
       return undefined;
     }
   }

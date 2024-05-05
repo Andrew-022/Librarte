@@ -8,7 +8,7 @@
     <p class="titulo-categorias">Categorías</p>
     <ul>
       @for(category of categories;track category; let i = $index){
-        <li><a (click)="selectCategory(i)" [class.selected]="selectedCategoryIndex===i">{{ category }}</a></li>
+        <li><a  routerLink="/category/{{categories[i]}}"  [class.selected]="selectedCategoryIndex===i">{{ category }}</a></li>
       }
     </ul>
     <p class="titulo-categorias">Filtros</p>
@@ -59,7 +59,7 @@
 
   <section class="resultados">
     <div class="sort">
-      <p style="padding-left: 10px; margin-right: auto; width: 100%">300 resultados</p>
+      <p style="padding-left: 10px; margin-right: auto; width: 100%">{{books.length}} resultados</p>
       <p class="ordenar">Ordenar por: </p>
       <div class="dropdown">
         <button class="dropbtn" [matMenuTriggerFor]="menu">{{sorts[selectedSortIndex]}}</button>
